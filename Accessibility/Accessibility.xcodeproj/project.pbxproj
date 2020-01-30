@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
+		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
+		2FB7EC6823E3382700A11887 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar.json */; };
 		9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */; };
 		9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */; };
 		9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */; };
@@ -16,7 +19,22 @@
 		9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2F40FB9923E33AF500A1DACB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CA4C16823E31CE30033BAB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CA4C16F23E31CE30033BAB5;
+			remoteInfo = Accessibility;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
+		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
+		2F40FB9823E33AF500A1DACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FB7EC6723E3382700A11887 /* calendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calendar.json; sourceTree = "<group>"; };
 		9CA4C17023E31CE30033BAB5 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F40FB9123E33AF500A1DACB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA4C16D23E31CE30033BAB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +64,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F40FB9523E33AF500A1DACB /* AccessibilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */,
+				2F40FB9823E33AF500A1DACB /* Info.plist */,
+				2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */,
+			);
+			path = AccessibilityTests;
+			sourceTree = "<group>";
+		};
+		2FB7EC6623E3380200A11887 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7EC6723E3382700A11887 /* calendar.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9CA4C16723E31CE30033BAB5 = {
 			isa = PBXGroup;
 			children = (
 				9CA4C17223E31CE30033BAB5 /* Accessibility */,
+				2F40FB9523E33AF500A1DACB /* AccessibilityTests */,
 				9CA4C17123E31CE30033BAB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA4C17023E31CE30033BAB5 /* Accessibility.app */,
+				2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +103,7 @@
 		9CA4C17223E31CE30033BAB5 /* Accessibility */ = {
 			isa = PBXGroup;
 			children = (
+				2FB7EC6623E3380200A11887 /* Data */,
 				9CA4C18A23E31D170033BAB5 /* Storyboards */,
 				9CA4C18923E31D050033BAB5 /* Models */,
 				9CA4C18823E31CFA0033BAB5 /* Views */,
@@ -105,6 +151,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F40FB9323E33AF500A1DACB /* AccessibilityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F40FB9B23E33AF500A1DACB /* Build configuration list for PBXNativeTarget "AccessibilityTests" */;
+			buildPhases = (
+				2F40FB9023E33AF500A1DACB /* Sources */,
+				2F40FB9123E33AF500A1DACB /* Frameworks */,
+				2F40FB9223E33AF500A1DACB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F40FB9A23E33AF500A1DACB /* PBXTargetDependency */,
+			);
+			name = AccessibilityTests;
+			productName = AccessibilityTests;
+			productReference = 2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9CA4C16F23E31CE30033BAB5 /* Accessibility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CA4C18423E31CE50033BAB5 /* Build configuration list for PBXNativeTarget "Accessibility" */;
@@ -128,10 +192,14 @@
 		9CA4C16823E31CE30033BAB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Marina Miranda Aranha";
 				TargetAttributes = {
+					2F40FB9323E33AF500A1DACB = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 9CA4C16F23E31CE30033BAB5;
+					};
 					9CA4C16F23E31CE30033BAB5 = {
 						CreatedOnToolsVersion = 11.2;
 					};
@@ -151,11 +219,19 @@
 			projectRoot = "";
 			targets = (
 				9CA4C16F23E31CE30033BAB5 /* Accessibility */,
+				2F40FB9323E33AF500A1DACB /* AccessibilityTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F40FB9223E33AF500A1DACB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA4C16E23E31CE30033BAB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,12 +239,22 @@
 				9CA4C18023E31CE50033BAB5 /* LaunchScreen.storyboard in Resources */,
 				9CA4C17D23E31CE50033BAB5 /* Assets.xcassets in Resources */,
 				9CA4C17B23E31CE30033BAB5 /* Main.storyboard in Resources */,
+				2FB7EC6823E3382700A11887 /* calendar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F40FB9023E33AF500A1DACB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */,
+				2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA4C16C23E31CE30033BAB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +267,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F40FB9A23E33AF500A1DACB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CA4C16F23E31CE30033BAB5 /* Accessibility */;
+			targetProxy = 2F40FB9923E33AF500A1DACB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9CA4C17923E31CE30033BAB5 /* Main.storyboard */ = {
@@ -202,6 +296,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F40FB9C23E33AF500A1DACB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
+				INFOPLIST_FILE = AccessibilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oliveiramatheus.AccessibilityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accessibility.app/Accessibility";
+			};
+			name = Debug;
+		};
+		2F40FB9D23E33AF500A1DACB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
+				INFOPLIST_FILE = AccessibilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oliveiramatheus.AccessibilityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accessibility.app/Accessibility";
+			};
+			name = Release;
+		};
 		9CA4C18223E31CE50033BAB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -259,6 +393,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -321,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -339,7 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -355,6 +490,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F40FB9B23E33AF500A1DACB /* Build configuration list for PBXNativeTarget "AccessibilityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F40FB9C23E33AF500A1DACB /* Debug */,
+				2F40FB9D23E33AF500A1DACB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CA4C16B23E31CE30033BAB5 /* Build configuration list for PBXProject "Accessibility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
