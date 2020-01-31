@@ -17,6 +17,8 @@
 		9CA4C17D23E31CE50033BAB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4C17C23E31CE50033BAB5 /* Assets.xcassets */; };
 		9CA4C18023E31CE50033BAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4C17E23E31CE50033BAB5 /* LaunchScreen.storyboard */; };
 		9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */; };
+		9CDA0EDE23E463C900749D19 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA0EDD23E463C900749D19 /* CollectionViewCell.swift */; };
+		9CDA0EE123E4742A00749D19 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA0EDF23E4742A00749D19 /* CalendarCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		9CA4C17F23E31CE50033BAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CA4C18123E31CE50033BAB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		9CDA0EDD23E463C900749D19 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9CDA0EDF23E4742A00749D19 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,7 @@
 		9CA4C18723E31CF30033BAB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */,
+				9CDA0EDC23E4639D00749D19 /* Home */,
 				9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */,
 			);
 			path = Controllers;
@@ -146,6 +150,16 @@
 				9CA4C17923E31CE30033BAB5 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9CDA0EDC23E4639D00749D19 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */,
+				9CDA0EDD23E463C900749D19 /* CollectionViewCell.swift */,
+				9CDA0EDF23E4742A00749D19 /* CalendarCollectionViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CDA0EE123E4742A00749D19 /* CalendarCollectionViewCell.swift in Sources */,
+				9CDA0EDE23E463C900749D19 /* CollectionViewCell.swift in Sources */,
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
 				9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */,
