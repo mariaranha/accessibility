@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A79EADB23E45CF600C5D7F3 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EADA23E45CF600C5D7F3 /* ResultTableViewController.swift */; };
+		3A79EADE23E4615B00C5D7F3 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EADD23E4615B00C5D7F3 /* CardTableViewCell.swift */; };
+		3A79EAE023E4617900C5D7F3 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EADF23E4617900C5D7F3 /* ResultTableViewCell.swift */; };
+		3A79EAE223E4618F00C5D7F3 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EAE123E4618F00C5D7F3 /* RankingTableViewCell.swift */; };
+		3A79EAE423E469F700C5D7F3 /* Ranking2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EAE323E469F700C5D7F3 /* Ranking2TableViewCell.swift */; };
+		3A79EAE623E46A0300C5D7F3 /* Ranking3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79EAE523E46A0300C5D7F3 /* Ranking3TableViewCell.swift */; };
 		9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */; };
 		9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */; };
 		9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A79EADA23E45CF600C5D7F3 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		3A79EADD23E4615B00C5D7F3 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		3A79EADF23E4617900C5D7F3 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		3A79EAE123E4618F00C5D7F3 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		3A79EAE323E469F700C5D7F3 /* Ranking2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking2TableViewCell.swift; sourceTree = "<group>"; };
+		3A79EAE523E46A0300C5D7F3 /* Ranking3TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking3TableViewCell.swift; sourceTree = "<group>"; };
 		9CA4C17023E31CE30033BAB5 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +86,12 @@
 		9CA4C18723E31CF30033BAB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A79EADA23E45CF600C5D7F3 /* ResultTableViewController.swift */,
+				3A79EADD23E4615B00C5D7F3 /* CardTableViewCell.swift */,
+				3A79EADF23E4617900C5D7F3 /* ResultTableViewCell.swift */,
+				3A79EAE123E4618F00C5D7F3 /* RankingTableViewCell.swift */,
+				3A79EAE323E469F700C5D7F3 /* Ranking2TableViewCell.swift */,
+				3A79EAE523E46A0300C5D7F3 /* Ranking3TableViewCell.swift */,
 				9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */,
 				9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */,
 			);
@@ -174,8 +192,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
+				3A79EADE23E4615B00C5D7F3 /* CardTableViewCell.swift in Sources */,
+				3A79EAE223E4618F00C5D7F3 /* RankingTableViewCell.swift in Sources */,
+				3A79EAE023E4617900C5D7F3 /* ResultTableViewCell.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
+				3A79EADB23E45CF600C5D7F3 /* ResultTableViewController.swift in Sources */,
 				9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */,
+				3A79EAE423E469F700C5D7F3 /* Ranking2TableViewCell.swift in Sources */,
+				3A79EAE623E46A0300C5D7F3 /* Ranking3TableViewCell.swift in Sources */,
 				9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = SRXXZJ8JG5;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -339,7 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = SRXXZJ8JG5;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
