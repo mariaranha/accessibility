@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Discipline {
+class Discipline: Decodable {
     var name: String
     var sport: String
     var normalDates: [Int]

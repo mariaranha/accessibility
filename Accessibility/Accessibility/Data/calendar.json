@@ -1,394 +1,396 @@
-[
-    { 
-        "discipline" : "",
-        "sport": "opening",
-        "normal": [24],
-        "medal": [],
-        "is1v1": false
-    },
-    {
-        "discipline": "swimming",
-        "sport": "aquatics",
-        "normal": [25],
-        "medal": [26, 27, 28,29, 30, 31, 1, 2],
-        "is1v1": false
-    },
-    {
-       "discipline": "diving",
-       "sport": "aquatics",
-       "normal": [31, 1, 3, 5, 7],
-       "medal": [26, 27, 28, 29, 2, 4, 6, 8],
-       "is1v1": false
-    },
-    {
-        "discipline": "artistic swimming",
-        "sport": "aquatics",
-        "normal": [3, 4, 7],
-        "medal": [5, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "water polo",
-        "sport": "aquatics",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
-        "medal": [8, 9],
-        "is1v1": true
-    },
-    {
-        "discipline": "marathon swimming",
-        "sport": "aquatics",
-        "normal": [],
-        "medal": [5, 6],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "archery",
-        "normal": [24, 28, 29, 30],
-        "medal": [25, 26, 27, 31, 1],
-        "is1v1": false
-    },
-    {
-        "discipline": "track & field",
-        "sport": "athletics",
-        "normal": [],
-        "medal": [31, 1, 2, 3, 4, 5, 6, 7, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "marathon",
-        "sport": "athletics",
-        "normal": [],
-        "medal": [8, 9],
-        "is1v1": false
-    },
-    {
-        "discipline": "race walk",
-        "sport": "athletics",
-        "normal": [],
-        "medal": [6, 7],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "badminton",
-        "normal": [25, 26, 27, 28, 29, 30],
-        "medal": [31, 1, 2, 3],
-        "is1v1": true
-    },
-    {
-        "discipline": "baseball",
-        "sport": "baseball/softball",
-        "normal": [29, 30, 31, 1, 2, 3, 4, 5, 6],
-        "medal": [8],
-        "is1v1": true
-    },
-    {
-        "discipline": "softball",
-        "sport": "baseball/softball",
-        "normal": [22, 23, 25, 26, 27],
-        "medal": [28],
-        "is1v1": true
-    },
-    {
-        "discipline": "3x3 basketball",
-        "sport": "basketball",
-        "normal": [25, 26, 27, 28],
-        "medal": [29],
-        "is1v1": false
-    },
-    {
-        "discipline": "basketball",
-        "sport": "basketball",
-        "normal": [26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
-        "medal": [8, 9],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "boxing",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2],
-        "medal": [4, 5, 6, 7, 8, 9],
-        "is1v1": true
-    },
-    {
-        "discipline": "slalom",
-        "sport": "canoe",
-        "normal": [26,  29],
-        "medal": [27, 28, 30, 31],
-        "is1v1": false
-    },
-    {
-        "discipline": "sprint",
-        "sport": "canoe",
-        "normal": [3, 5, 7],
-        "medal": [4, 6, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "bmx freestyle",
-        "sport": "cycling",
-        "normal": [1],
-        "medal": [2],
-        "is1v1": false
-    },
-    {
-        "discipline": "bmx racing",
-        "sport": "cycling",
-        "normal": [30],
-        "medal": [31],
-        "is1v1": false
-    },
-    {
-        "discipline": "mountain bike",
-        "sport": "cycling",
-        "normal": [],
-        "medal": [27, 28],
-        "is1v1": false
-    },
-    {
-        "discipline": "road",
-        "sport": "cycling",
-        "normal": [],
-        "medal": [25, 26, 29],
-        "is1v1": false
-    },
-    {
-        "discipline": "track",
-        "sport": "cycling",
-        "normal": [],
-        "medal": [3, 4, 5, 6, 7, 8, 9],
-        "is1v1": false
-    },
-    {
-        "discipline": "dressage",
-        "sport": "equestrian",
-        "normal": [25, 26],
-        "medal": [28, 39],
-        "is1v1": false
-    },
-    {
-        "discipline": "eventing",
-        "sport": "equestrian",
-        "normal": [31, 1, 2],
-        "medal": [3],
-        "is1v1": false
-    },
-    {
-        "discipline": "jumping",
-        "sport": "equestrian",
-        "normal": [4, 7],
-        "medal": [5, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "fencing",
-        "normal": [],
-        "medal": [25, 26, 27, 28, 29, 30, 31, 1, 2],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "football",
-        "normal": [22, 23, 25, 26, 28, 29, 31, 1, 3, 4],
-        "medal": [6, 7, 8],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "golf",
-        "normal": [30, 31, 1, 5, 6, 7],
-        "medal": [2, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "artistic",
-        "sport": "gymnastics",
-        "normal": [25, 26],
-        "medal": [27, 28, 29, 30],
-        "is1v1": false
-    },
-    {
-        "discipline": "rhythmic",
-        "sport": "gymnastics",
-        "normal": [7],
-        "medal": [8, 9],
-        "is1v1": false
-    },
-    {
-        "discipline": "trampoline",
-        "sport": "gymnastics",
-        "normal": [],
-        "medal": [31, 1],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "handball",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1,  2, 3, 4, 5, 6, 7],
-        "medal": [8, 9],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "hockey",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1,  2, 3, 4, 5],
-        "medal": [6, 7],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "judo",
-        "normal": [],
-        "medal": [25, 26, 27, 28, 29, 30, 31, 1],
-        "is1v1": true
-    },
-    {
-        "discipline": "kata",
-        "sport": "karate",
-        "normal": [],
-        "medal": [6,  7, 8],
-        "is1v1": true
-    },
-    {
-        "discipline": "kumite",
-        "sport": "karate",
-        "normal": [],
-        "medal": [6,  7, 8],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "modern pentathlon",
-        "normal": [6],
-        "medal": [7, 8],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "rowing",
-        "normal": [24, 25, 26, 27],
-        "medal": [28, 29, 30,  31],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "rugby",
-        "normal": [27, 28, 30, 31],
-        "medal": [29, 1],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "sailing",
-        "normal": [26, 27, 28, 29, 30, 31],
-        "medal": [1, 2, 3, 4, 5],
-        "is1v1": false
-    },
-    {
-        "discipline": "rifle & pistol",
-        "sport": "shooting",
-        "normal": [30, 2],
-        "medal": [25, 26, 28, 31, 1, 3],
-        "is1v1": false
-    },
-    {
-        "discipline": "shotgun",
-        "sport": "shooting",
-        "normal": [26, 29],
-        "medal": [27, 30, 1],
-        "is1v1": false
-    },
-    {
-        "discipline": "park",
-        "sport": "skateboarding",
-        "normal": [],
-        "medal": [5, 6],
-        "is1v1": false
-    },
-    {
-        "discipline": "street",
-        "sport": "skateboarding",
-        "normal": [],
-        "medal": [26, 27],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "sport climbing",
-        "normal": [4, 5],
-        "medal": [6, 7],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "surfing",
-        "normal": [26, 27,  28],
-        "medal": [29],
-        "is1v1": false
-    },
-    {
-        "discipline": "",
-        "sport": "table tennis",
-        "normal": [25, 26, 28, 29, 2, 3, 4, 5],
-        "medal": [27, 30,  31, 6, 7],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "taekwondo",
-        "normal": [],
-        "medal": [25, 26, 27, 28],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "tennis",
-        "normal": [25, 26, 27, 28, 29, 30],
-        "medal": [31, 1, 2],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "triathlon",
-        "normal": [],
-        "medal": [27, 28, 1],
-        "is1v1": false
-    },
-    {
-        "discipline": "beach volleyball",
-        "sport": "volleyball",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6],
-        "medal": [7, 8],
-        "is1v1": true
-    },
-    {
-        "discipline": "volleyball",
-        "sport": "volleyball",
-        "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
-        "medal": [8, 9],
-        "is1v1": true
-    },
-    {
-        "discipline": "",
-        "sport": "weightlifting",
-        "normal": [],
-        "medal": [25, 26, 27, 28, 29, 1, 2, 3, 4, 5],
-        "is1v1": false
-    },
-    {
-        "discipline": "freestyle",
-        "sport": "wrestling",
-        "normal": [2],
-        "medal": [3, 4, 5, 6, 7, 8],
-        "is1v1": true
-    },
-    {
-        "discipline": "greco-roman",
-        "sport": "wrestling",
-        "normal": [2],
-        "medal": [3, 4, 5, 6, 7, 8],
-        "is1v1": true
-    }
-]
+{
+    "discipline": [
+        {
+            "name" : "",
+            "sport": "opening",
+            "normal": [24],
+            "medal": [],
+            "is1v1": false
+        },
+        {
+            "name": "swimming",
+            "sport": "aquatics",
+            "normal": [25],
+            "medal": [26, 27, 28,29, 30, 31, 1, 2],
+            "is1v1": false
+        },
+        {
+           "name": "diving",
+           "sport": "aquatics",
+           "normal": [31, 1, 3, 5, 7],
+           "medal": [26, 27, 28, 29, 2, 4, 6, 8],
+           "is1v1": false
+        },
+        {
+            "name": "artistic swimming",
+            "sport": "aquatics",
+            "normal": [3, 4, 7],
+            "medal": [5, 8],
+            "is1v1": false
+        },
+        {
+            "name": "water polo",
+            "sport": "aquatics",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
+            "medal": [8, 9],
+            "is1v1": true
+        },
+        {
+            "name": "marathon swimming",
+            "sport": "aquatics",
+            "normal": [],
+            "medal": [5, 6],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "archery",
+            "normal": [24, 28, 29, 30],
+            "medal": [25, 26, 27, 31, 1],
+            "is1v1": false
+        },
+        {
+            "name": "track & field",
+            "sport": "athletics",
+            "normal": [],
+            "medal": [31, 1, 2, 3, 4, 5, 6, 7, 8],
+            "is1v1": false
+        },
+        {
+            "name": "marathon",
+            "sport": "athletics",
+            "normal": [],
+            "medal": [8, 9],
+            "is1v1": false
+        },
+        {
+            "name": "race walk",
+            "sport": "athletics",
+            "normal": [],
+            "medal": [6, 7],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "badminton",
+            "normal": [25, 26, 27, 28, 29, 30],
+            "medal": [31, 1, 2, 3],
+            "is1v1": true
+        },
+        {
+            "name": "baseball",
+            "sport": "baseball/softball",
+            "normal": [29, 30, 31, 1, 2, 3, 4, 5, 6],
+            "medal": [8],
+            "is1v1": true
+        },
+        {
+            "name": "softball",
+            "sport": "baseball/softball",
+            "normal": [22, 23, 25, 26, 27],
+            "medal": [28],
+            "is1v1": true
+        },
+        {
+            "name": "3x3 basketball",
+            "sport": "basketball",
+            "normal": [25, 26, 27, 28],
+            "medal": [29],
+            "is1v1": false
+        },
+        {
+            "name": "basketball",
+            "sport": "basketball",
+            "normal": [26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
+            "medal": [8, 9],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "boxing",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2],
+            "medal": [4, 5, 6, 7, 8, 9],
+            "is1v1": true
+        },
+        {
+            "name": "slalom",
+            "sport": "canoe",
+            "normal": [26,  29],
+            "medal": [27, 28, 30, 31],
+            "is1v1": false
+        },
+        {
+            "name": "sprint",
+            "sport": "canoe",
+            "normal": [3, 5, 7],
+            "medal": [4, 6, 8],
+            "is1v1": false
+        },
+        {
+            "name": "bmx freestyle",
+            "sport": "cycling",
+            "normal": [1],
+            "medal": [2],
+            "is1v1": false
+        },
+        {
+            "name": "bmx racing",
+            "sport": "cycling",
+            "normal": [30],
+            "medal": [31],
+            "is1v1": false
+        },
+        {
+            "name": "mountain bike",
+            "sport": "cycling",
+            "normal": [],
+            "medal": [27, 28],
+            "is1v1": false
+        },
+        {
+            "name": "road",
+            "sport": "cycling",
+            "normal": [],
+            "medal": [25, 26, 29],
+            "is1v1": false
+        },
+        {
+            "name": "track",
+            "sport": "cycling",
+            "normal": [],
+            "medal": [3, 4, 5, 6, 7, 8, 9],
+            "is1v1": false
+        },
+        {
+            "name": "dressage",
+            "sport": "equestrian",
+            "normal": [25, 26],
+            "medal": [28, 39],
+            "is1v1": false
+        },
+        {
+            "name": "eventing",
+            "sport": "equestrian",
+            "normal": [31, 1, 2],
+            "medal": [3],
+            "is1v1": false
+        },
+        {
+            "name": "jumping",
+            "sport": "equestrian",
+            "normal": [4, 7],
+            "medal": [5, 8],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "fencing",
+            "normal": [],
+            "medal": [25, 26, 27, 28, 29, 30, 31, 1, 2],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "football",
+            "normal": [22, 23, 25, 26, 28, 29, 31, 1, 3, 4],
+            "medal": [6, 7, 8],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "golf",
+            "normal": [30, 31, 1, 5, 6, 7],
+            "medal": [2, 8],
+            "is1v1": false
+        },
+        {
+            "name": "artistic",
+            "sport": "gymnastics",
+            "normal": [25, 26],
+            "medal": [27, 28, 29, 30],
+            "is1v1": false
+        },
+        {
+            "name": "rhythmic",
+            "sport": "gymnastics",
+            "normal": [7],
+            "medal": [8, 9],
+            "is1v1": false
+        },
+        {
+            "name": "trampoline",
+            "sport": "gymnastics",
+            "normal": [],
+            "medal": [31, 1],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "handball",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1,  2, 3, 4, 5, 6, 7],
+            "medal": [8, 9],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "hockey",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1,  2, 3, 4, 5],
+            "medal": [6, 7],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "judo",
+            "normal": [],
+            "medal": [25, 26, 27, 28, 29, 30, 31, 1],
+            "is1v1": true
+        },
+        {
+            "name": "kata",
+            "sport": "karate",
+            "normal": [],
+            "medal": [6,  7, 8],
+            "is1v1": true
+        },
+        {
+            "name": "kumite",
+            "sport": "karate",
+            "normal": [],
+            "medal": [6,  7, 8],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "modern pentathlon",
+            "normal": [6],
+            "medal": [7, 8],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "rowing",
+            "normal": [24, 25, 26, 27],
+            "medal": [28, 29, 30,  31],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "rugby",
+            "normal": [27, 28, 30, 31],
+            "medal": [29, 1],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "sailing",
+            "normal": [26, 27, 28, 29, 30, 31],
+            "medal": [1, 2, 3, 4, 5],
+            "is1v1": false
+        },
+        {
+            "name": "rifle & pistol",
+            "sport": "shooting",
+            "normal": [30, 2],
+            "medal": [25, 26, 28, 31, 1, 3],
+            "is1v1": false
+        },
+        {
+            "name": "shotgun",
+            "sport": "shooting",
+            "normal": [26, 29],
+            "medal": [27, 30, 1],
+            "is1v1": false
+        },
+        {
+            "name": "park",
+            "sport": "skateboarding",
+            "normal": [],
+            "medal": [5, 6],
+            "is1v1": false
+        },
+        {
+            "name": "street",
+            "sport": "skateboarding",
+            "normal": [],
+            "medal": [26, 27],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "sport climbing",
+            "normal": [4, 5],
+            "medal": [6, 7],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "surfing",
+            "normal": [26, 27,  28],
+            "medal": [29],
+            "is1v1": false
+        },
+        {
+            "name": "",
+            "sport": "table tennis",
+            "normal": [25, 26, 28, 29, 2, 3, 4, 5],
+            "medal": [27, 30,  31, 6, 7],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "taekwondo",
+            "normal": [],
+            "medal": [25, 26, 27, 28],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "tennis",
+            "normal": [25, 26, 27, 28, 29, 30],
+            "medal": [31, 1, 2],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "triathlon",
+            "normal": [],
+            "medal": [27, 28, 1],
+            "is1v1": false
+        },
+        {
+            "name": "beach volleyball",
+            "sport": "volleyball",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6],
+            "medal": [7, 8],
+            "is1v1": true
+        },
+        {
+            "name": "volleyball",
+            "sport": "volleyball",
+            "normal": [25, 26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7],
+            "medal": [8, 9],
+            "is1v1": true
+        },
+        {
+            "name": "",
+            "sport": "weightlifting",
+            "normal": [],
+            "medal": [25, 26, 27, 28, 29, 1, 2, 3, 4, 5],
+            "is1v1": false
+        },
+        {
+            "name": "freestyle",
+            "sport": "wrestling",
+            "normal": [2],
+            "medal": [3, 4, 5, 6, 7, 8],
+            "is1v1": true
+        },
+        {
+            "name": "greco-roman",
+            "sport": "wrestling",
+            "normal": [2],
+            "medal": [3, 4, 5, 6, 7, 8],
+            "is1v1": true
+        }
+    ]
+}
