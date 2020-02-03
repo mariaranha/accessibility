@@ -9,5 +9,16 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var sportImage: UIImageView!
+    @IBOutlet weak var sportNameLabel: UILabel!
+    
+    class var reuseIdentifier: String {
+        return "CellReuseIdentifier"
+    }
+    
+    func configureCell(sportImage: UIImage, sport: String) {
+        self.sportImage.image = sportImage
+        self.sportNameLabel.text = sport
+    }
     
 }

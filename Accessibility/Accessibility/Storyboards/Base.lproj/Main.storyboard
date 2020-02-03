@@ -84,6 +84,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="58" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-o1-Pk7">
+                                                            <rect key="frame" x="10" y="25" width="40" height="31"/>
+                                                        </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ztH-YI-ygN">
                                                             <rect key="frame" x="19" y="9" width="21.5" height="42"/>
                                                             <subviews>
@@ -106,12 +109,17 @@
                                                         <constraint firstAttribute="bottom" secondItem="ztH-YI-ygN" secondAttribute="bottom" constant="9" id="Hha-pr-Iw6"/>
                                                         <constraint firstItem="ztH-YI-ygN" firstAttribute="top" secondItem="Rsc-tw-ed7" secondAttribute="top" constant="9" id="I7B-dL-GmC"/>
                                                         <constraint firstItem="ztH-YI-ygN" firstAttribute="leading" secondItem="Rsc-tw-ed7" secondAttribute="leading" constant="19" id="IFT-pf-5Es"/>
+                                                        <constraint firstItem="A8t-o1-Pk7" firstAttribute="leading" secondItem="Rsc-tw-ed7" secondAttribute="leading" constant="10" id="Ots-ID-Skz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="A8t-o1-Pk7" secondAttribute="bottom" constant="4" id="X7T-lJ-8mX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="A8t-o1-Pk7" secondAttribute="trailing" constant="8" id="fX7-4x-D2f"/>
                                                         <constraint firstAttribute="trailing" secondItem="ztH-YI-ygN" secondAttribute="trailing" constant="17.5" id="hAq-WG-bNi"/>
+                                                        <constraint firstItem="A8t-o1-Pk7" firstAttribute="top" secondItem="Rsc-tw-ed7" secondAttribute="top" constant="25" id="lgC-dM-2iT"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="58" height="60"/>
                                                 <connections>
                                                     <outlet property="dayLabel" destination="eCF-ZZ-wPM" id="IIv-tB-IhH"/>
+                                                    <outlet property="selectedImage" destination="A8t-o1-Pk7" id="xEq-lB-56W"/>
                                                     <outlet property="weekDayLabel" destination="gcW-hg-1we" id="Kxy-lw-1We"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -121,8 +129,8 @@
                                             <outlet property="delegate" destination="419-8s-BFe" id="BNN-m4-LnG"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoje, 31 de janeiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1T-mB-L3h">
-                                        <rect key="frame" x="147.5" y="73" width="119.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 de Julho de 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1T-mB-L3h">
+                                        <rect key="frame" x="140.5" y="73" width="133.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -135,16 +143,80 @@
                                     <constraint firstAttribute="height" constant="90" id="i0R-zX-IQQ"/>
                                 </constraints>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-AE-3a6">
+                                <rect key="frame" x="0.0" y="186" width="414" height="627"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0hT-mM-KaA">
+                                    <size key="itemSize" width="137" height="163"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="163"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4N8-5g-n7l">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="163"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-dg-XfN">
+                                                    <rect key="frame" x="4" y="6" width="129" height="151"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Xe-m5-8b8">
+                                                    <rect key="frame" x="23" y="30" width="90.5" height="91.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grupo 77" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-iR-UOU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90.5" height="65.5"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arco e flecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
+                                                            <rect key="frame" x="0.0" y="73.5" width="90.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3W1-dg-XfN" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="4" id="6qL-Xg-lwR"/>
+                                                <constraint firstItem="5Xe-m5-8b8" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="23" id="NbO-QY-2B7"/>
+                                                <constraint firstAttribute="trailing" secondItem="3W1-dg-XfN" secondAttribute="trailing" constant="4" id="PTZ-4l-BhK"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Xe-m5-8b8" secondAttribute="bottom" constant="41.5" id="Qo8-Mr-gps"/>
+                                                <constraint firstItem="5Xe-m5-8b8" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="30" id="Xhz-EE-1nM"/>
+                                                <constraint firstAttribute="bottom" secondItem="3W1-dg-XfN" secondAttribute="bottom" constant="6" id="ePu-Sp-z6T"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Xe-m5-8b8" secondAttribute="trailing" constant="23.5" id="hzJ-hV-FOP"/>
+                                                <constraint firstItem="3W1-dg-XfN" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="6" id="wzU-pD-T88"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="137" height="163"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="419-8s-BFe" id="q91-j2-pJa"/>
+                                    <outlet property="delegate" destination="419-8s-BFe" id="j5c-dw-5Q4"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="top" secondItem="r9s-lB-SrO" secondAttribute="top" id="3NZ-kI-Exg"/>
+                            <constraint firstItem="HEI-AE-3a6" firstAttribute="trailing" secondItem="r9s-lB-SrO" secondAttribute="trailing" id="BJd-NK-4br"/>
+                            <constraint firstItem="HEI-AE-3a6" firstAttribute="leading" secondItem="r9s-lB-SrO" secondAttribute="leading" id="JXe-Hf-dd1"/>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="leading" secondItem="r9s-lB-SrO" secondAttribute="leading" id="LfC-z1-cK7"/>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="trailing" secondItem="r9s-lB-SrO" secondAttribute="trailing" id="b1D-Mi-sec"/>
+                            <constraint firstItem="HEI-AE-3a6" firstAttribute="bottom" secondItem="r9s-lB-SrO" secondAttribute="bottom" id="n5W-1e-De2"/>
+                            <constraint firstItem="HEI-AE-3a6" firstAttribute="top" secondItem="RT6-Pm-eVx" secondAttribute="bottom" constant="8" id="q1B-no-CrF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r9s-lB-SrO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Esportes do Dia" largeTitleDisplayMode="always" id="7fq-io-hFf"/>
+                    <connections>
+                        <outlet property="calendarCollectionView" destination="uwZ-0F-t5G" id="cA4-Xb-RBO"/>
+                        <outlet property="collectionView" destination="HEI-AE-3a6" id="TRH-CB-2Gz"/>
+                        <outlet property="dayLabel" destination="c1T-mB-L3h" id="2m1-6y-l1j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6x-VK-buq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,4 +320,9 @@
             <point key="canvasLocation" x="-952.17391304347836" y="970.98214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Grupo 77" width="50.5" height="65.5"/>
+        <image name="card" width="129" height="151"/>
+        <image name="selected" width="35" height="35"/>
+    </resources>
 </document>
