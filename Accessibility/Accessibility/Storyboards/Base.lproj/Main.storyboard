@@ -46,6 +46,17 @@
                     <view key="view" contentMode="scaleToFill" id="hlF-X6-hJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05A-Mg-Fes">
+                                <rect key="frame" x="142" y="426" width="131" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Color Mode"/>
+                                <connections>
+                                    <segue destination="VxA-3B-6tk" kind="show" id="8SH-aV-RCw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dZv-hb-EJ7"/>
                     </view>
@@ -54,6 +65,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMN-DS-cm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971.0144927536232" y="970.98214285714278"/>
+        </scene>
+        <!--colorMode-->
+        <scene sceneID="sti-UK-EZa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="colorMode" id="VxA-3B-6tk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nqc-zW-zs4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSt-jF-CcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="965"/>
         </scene>
         <!--Esportes do Dia-->
         <scene sceneID="SZX-FT-vyz">

@@ -12,7 +12,7 @@ class SportMatchesViewController: UIViewController {
     
     @IBOutlet weak var matchesTableView: UITableView!
     
-    //Navigation bar title
+    //Navigation bar title - CHANGE
     var sportTitle: String = "Boxe"
     
     //Card Labels
@@ -30,6 +30,13 @@ class SportMatchesViewController: UIViewController {
     var firstCountryFlag: [UIImage] = []
     var secondCountryFlag: [UIImage] = []
     var emptyFlag = UIImage()
+    
+    //Corner colors
+    var cornerColors = [UserCornerImage.blue,
+                        UserCornerImage.yellow,
+                        UserCornerImage.black,
+                        UserCornerImage.green,
+                        UserCornerImage.red]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,20 +67,33 @@ class SportMatchesViewController: UIViewController {
         
         //POPOULATE CARDS
         
-        //Card Labels
-        matchTitle = ["Feminino", "Masculino"]
-        subtitle = ["Peso Mosca (48-51kg) - Eliminatórias", "Peso Galo (56kg) - Quartas de final"]
-        numberOfPoints = ["–","30"]
-        firstCountryText = ["BRA", "USA"]
-        secondCountryText = ["CHN", "PAK"]
-        dayText = ["24", "24"]
-        monthText = ["JUN", "JUN"]
-        timeText = ["09:30", "01:00"]
+        //Card Labels - CHANGE
+        matchTitle = ["Feminino", "Masculino", "Teste", "Teste", "Teste", "Teste", "Teste"]
+        subtitle = ["Peso Mosca (48-51kg) - Eliminatórias", "Peso Galo (56kg) - Quartas de final", "Teste", "Teste", "Teste", "Teste", "Teste"]
+        numberOfPoints = ["–","30", "40", "50", "60", "30", "–"]
+        firstCountryText = ["BRA", "USA", "BLA", "BLA", "BLA", "BLA", "BLA"]
+        secondCountryText = ["CHN", "PAK", "BLA", "BLA", "BLA", "BLA", "BLA"]
+        dayText = ["24", "24", "23", "04", "09", "12", "20"]
+        monthText = ["JUN", "JUN", "BLA", "BLA", "BLA", "BLA", "BLA", ]
+        timeText = ["09:30", "01:00", "09:30", "01:00", "09:30", "01:00", "01:00"]
         
-        //Card Images
+        //Card Images - CHANGE
         cornerImage = []
-        firstCountryFlag = [UIImage(named: "brazil-flag-xl") ?? emptyFlag, UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag]
-        secondCountryFlag = [UIImage(named: "china-flag-xl") ?? emptyFlag, UIImage(named: "pakistan-flag-xl") ?? emptyFlag]
+        firstCountryFlag = [UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                            UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
+                            UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                            UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
+                            UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                            UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
+                            UIImage(named: "brazil-flag-xl") ?? emptyFlag]
+        
+        secondCountryFlag = [UIImage(named: "china-flag-xl") ?? emptyFlag,
+                             UIImage(named: "pakistan-flag-xl") ?? emptyFlag,
+                             UIImage(named: "china-flag-xl") ?? emptyFlag,
+                             UIImage(named: "pakistan-flag-xl") ?? emptyFlag,
+                             UIImage(named: "china-flag-xl") ?? emptyFlag,
+                             UIImage(named: "pakistan-flag-xl") ?? emptyFlag,
+                             UIImage(named: "pakistan-flag-xl") ?? emptyFlag]
         
     }
 }
@@ -101,7 +121,66 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
         cell.firstCountryImage.image = firstCountryFlag[indexPath.row]
         cell.secondCountryImage.image = secondCountryFlag[indexPath.row]
         
+        //When is set to corlorful corner mode
+        let cornerDefaultColor = UserDefaultsStruct.CornerMode.color
+        
+        if cornerDefaultColor == "colorful" {
+            colorfulCorner()
+            cell.cornerImage.image = cornerImage[indexPath.row]
+            
+        //Set one color only
+        } else {
+            for _ in 0...(matchTitle.count - 1) {
+                var cornerImg = UIImage()
+                cornerImageName(UserCornerImage(rawValue: cornerDefaultColor) ?? UserCornerImage.red, &cornerImg)
+                cornerImage.append(cornerImg)
+            }
+            
+            cell.cornerImage.image = cornerImage[indexPath.row]
+        }
+        
+        
         return cell
+    }
+    
+    func colorfulCorner() {
+        //Card Corner Image - For colorfull mode
+        let numberOfMatches = matchTitle.count
+        var randomNumber = Int.random(in: 0...4)
+        
+        for _ in 0...(numberOfMatches - 1) {
+            
+            if randomNumber < 4 {
+                randomNumber += 1
+            } else {
+                randomNumber = 0
+            }
+            
+            let corner = cornerColors[randomNumber]
+            var cornerImg = UIImage()
+            
+            //Set the image for each case
+            cornerImageName(corner, &cornerImg)
+            
+            cornerImage.append(cornerImg)
+        }
+    }
+    
+    func cornerImageName(_ corner: UserCornerImage, _ cornerImg: inout UIImage) {
+        switch corner {
+        case .blue:
+            cornerImg = UIImage(named: "corner-blue") ?? UIImage()
+        case .yellow:
+            cornerImg = UIImage(named: "corner-yellow") ?? UIImage()
+        case .black:
+            cornerImg = UIImage(named: "corner-black") ?? UIImage()
+        case .green:
+            cornerImg = UIImage(named: "corner-green") ?? UIImage()
+        case .red:
+            cornerImg = UIImage(named: "corner-red") ?? UIImage()
+        case .colorfull:
+            break
+        }
     }
     
 }
