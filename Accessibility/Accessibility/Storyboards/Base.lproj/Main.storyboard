@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sports View Controller-->
-        <scene sceneID="cZE-hm-Nsl">
-            <objects>
-                <viewController id="pJZ-ww-rgL" customClass="SportsViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="J7U-q4-dNq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Dba-d6-Cm7"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VBp-4a-TBa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pWA-Db-v0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3895.652173913044" y="408.48214285714283"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="SOV-YP-xbF">
             <objects>
@@ -196,18 +180,128 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0eV-XV-5lS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Esportes" id="3kC-3Z-l50"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bIa-2S-JWf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bIa-2S-JWf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YZk-dx-TXg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="pJZ-ww-rgL" kind="relationship" relationship="rootViewController" id="pnf-C8-vJU"/>
+                        <segue destination="WJR-0f-r5f" kind="relationship" relationship="rootViewController" id="VPd-Yv-93Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgo-YM-arr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2985.507246376812" y="408.48214285714283"/>
+        </scene>
+        <!--Esportes-->
+        <scene sceneID="mqd-px-ueO">
+            <objects>
+                <tableViewController id="WJR-0f-r5f" customClass="AllSportsTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NBV-Bd-VCb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sportCell" id="TiH-7r-OD0" customClass="AllSportsTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TiH-7r-OD0" id="BqA-bv-7qt">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grupo 77" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVh-x9-h0F">
+                                            <rect key="frame" x="16" y="15.5" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="Iee-yM-SSY"/>
+                                                <constraint firstAttribute="height" constant="44" id="wOR-if-x2c"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-vB-kco">
+                                            <rect key="frame" x="76" y="27" width="283" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kxc-vB-kco" secondAttribute="trailing" constant="16" id="2MK-hC-zPG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kxc-vB-kco" secondAttribute="bottom" constant="16" id="ADv-F2-a9T"/>
+                                        <constraint firstItem="kxc-vB-kco" firstAttribute="leading" secondItem="uVh-x9-h0F" secondAttribute="trailing" constant="16" id="HM7-Q9-oO6"/>
+                                        <constraint firstItem="kxc-vB-kco" firstAttribute="top" secondItem="BqA-bv-7qt" secondAttribute="topMargin" constant="16" id="aJd-d9-Q6n"/>
+                                        <constraint firstItem="uVh-x9-h0F" firstAttribute="centerY" secondItem="kxc-vB-kco" secondAttribute="centerY" id="eJW-Li-ulc"/>
+                                        <constraint firstItem="uVh-x9-h0F" firstAttribute="leading" secondItem="BqA-bv-7qt" secondAttribute="leading" constant="16" id="urJ-h1-aTg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellView" destination="BqA-bv-7qt" id="CNu-7e-FQs"/>
+                                    <outlet property="sportIcon" destination="uVh-x9-h0F" id="MVu-aG-RJ4"/>
+                                    <outlet property="sportName" destination="kxc-vB-kco" id="9w3-D9-vd8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WJR-0f-r5f" id="00U-6d-flF"/>
+                            <outlet property="delegate" destination="WJR-0f-r5f" id="Aq4-t0-5FZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Esportes" largeTitleDisplayMode="always" id="vpV-zo-Fyw"/>
+                    <connections>
+                        <segue destination="9wJ-eD-RgC" kind="show" identifier="goToDisciplines" id="gSw-S4-oS0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCs-8G-grF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3789.8550724637685" y="407.8125"/>
+        </scene>
+        <!--Subcategorias-->
+        <scene sceneID="TVQ-bd-FHb">
+            <objects>
+                <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sgy-Ur-aLL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
+                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yI6-Xy-LMU" secondAttribute="bottom" constant="16" id="DXE-wk-IWP"/>
+                                        <constraint firstItem="yI6-Xy-LMU" firstAttribute="top" secondItem="Fjl-k7-PGg" secondAttribute="topMargin" constant="16" id="Mjk-tg-f1V"/>
+                                        <constraint firstItem="yI6-Xy-LMU" firstAttribute="leading" secondItem="Fjl-k7-PGg" secondAttribute="leadingMargin" constant="16" id="NOx-ik-upZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yI6-Xy-LMU" secondAttribute="trailing" constant="16" id="tYe-Vm-c09"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subcategoryName" destination="yI6-Xy-LMU" id="sUG-9e-WyE"/>
+                                    <outlet property="subcategoryView" destination="Fjl-k7-PGg" id="Hst-o8-Zi8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9wJ-eD-RgC" id="dxC-IV-UiT"/>
+                            <outlet property="delegate" destination="9wJ-eD-RgC" id="RmU-rq-jJX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Subcategorias" id="qUd-JG-104"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BgZ-GO-bc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4558" y="408"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="yuT-wT-q8N">
@@ -248,4 +342,7 @@
             <point key="canvasLocation" x="-952.17391304347836" y="970.98214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Grupo 77" width="50.5" height="65.5"/>
+    </resources>
 </document>

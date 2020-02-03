@@ -11,6 +11,7 @@ import Foundation
 class JSONManager {
     
     private var json: [Discipline] = []
+    private var sports: [String] = []
     
     public func loadJSONFile() -> [Discipline] {
         // Loading JSON file and building and building JSON array.
@@ -40,5 +41,34 @@ class JSONManager {
         return json
     }
     
+    public func getSportsOnly() -> [String] {
+        // This function returns all sports at the
+        // olympic games as a sorted string array.
+        
+        self.json = loadJSONFile()
+        for element in json {
+            sports.append(element.sport)
+        }
+        sports = Array(Set(self.sports)).sorted()
+        
+        return sports
+    }
     
+    public func getSubcategories(sport: String ) -> [String] {
+        // Returns a array of subcategories based on the
+        // given sport parameter
+        
+        var subcategories: [String] = []
+        
+        if (self.json.count == 0) {
+            self.json = loadJSONFile()
+        }
+        for element in json {
+            if (element.sport == sport) {
+                subcategories.append(element.name)
+            }
+        }
+        
+        return subcategories
+    }
 }
