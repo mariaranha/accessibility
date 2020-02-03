@@ -47,6 +47,9 @@ class SportMatchesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        //Reload if needed
+        matchesTableView.reloadData()
+        
         //Changing status bar color
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true

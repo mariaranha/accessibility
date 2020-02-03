@@ -49,7 +49,7 @@ extension ColorModeViewController: UITableViewDelegate, UITableViewDataSource {
         case 4:
             UserDefaultsStruct.CornerMode.color = "red"
         default:
-            UserDefaultsStruct.CornerMode.color = "colorfull"
+            UserDefaultsStruct.CornerMode.color = "colorful"
         }
 
     }
