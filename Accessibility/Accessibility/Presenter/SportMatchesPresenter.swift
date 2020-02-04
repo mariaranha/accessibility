@@ -14,12 +14,8 @@ import UIKit
 //    let secondTitle: String?
 //}
 
-
-
 class SportMatchesPresenter {
     
-    //User default for color
-    let cornerDefaultColor = UserDefaultsStruct.CornerMode.color
     var cornerImages: [UIImage] = []
     var numberOfCard = 2 //get from model
     
@@ -63,9 +59,13 @@ class SportMatchesPresenter {
     }
     
     func setCornerImage() {
+        //User default for color
+        let cornerDefaultColor = UserDefaultsStruct.CornerMode.color
         if cornerDefaultColor == .colorful {
+            cornerImages = []
             colorfulCorner()
         } else {
+            cornerImages = []
             for _ in 0...(numberOfCard - 1) {
                 var cornerImg = UIImage()
                 cornerImageName(cornerDefaultColor, &cornerImg)

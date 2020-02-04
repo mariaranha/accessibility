@@ -25,20 +25,19 @@ class SportMatchesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let nib = UINib.init(nibName: "CardView", bundle: nil)
-        self.matchesTableView.register(nib, forCellReuseIdentifier: "cardView")
         
-        cardsViewModel = presenter.formatCards()
-        
-        emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        //Reload if needed
+        cardsViewModel = presenter.formatCards()
         matchesTableView.reloadData()
+        
+        let nib = UINib.init(nibName: "CardView", bundle: nil)
+        self.matchesTableView.register(nib, forCellReuseIdentifier: "cardView")
+        
+        emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
         
         //Changing status bar color
         if #available(iOS 13.0, *) {

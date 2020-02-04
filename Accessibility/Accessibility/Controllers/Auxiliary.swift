@@ -15,7 +15,7 @@ enum UserCornerImage: String {
     case black
     case green
     case red
-    case colorful
+    case colorful 
 }
 
 struct UserDefaultsStruct {
@@ -34,7 +34,7 @@ struct UserDefaultsStruct {
                 return UserCornerImage(rawValue: rawValue) ?? defaultMode
             }
             set {
-                defaults.set(newValue, forKey: "CornerMode")
+                defaults.set(newValue.rawValue, forKey: "CornerMode")
             }
         }
     }
