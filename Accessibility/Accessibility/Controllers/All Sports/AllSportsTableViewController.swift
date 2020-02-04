@@ -39,8 +39,10 @@ class AllSportsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "sportCell", for: indexPath) as! AllSportsTableViewCell
+        let sportName: String = sports[indexPath.row]
         
-        cell.sportName.text = sports[indexPath.row].capitalized
+        cell.sportName.text = sportName.capitalized
+        cell.sportIcon.image = getIcon(sport: sportName)
 
         return cell
     }
@@ -61,6 +63,19 @@ class AllSportsTableViewController: UITableViewController {
             }
             
         }
+    }
+    
+    // MARK: - Functions
+    
+    private func getIcon(sport: String) -> UIImage {
+        
+        let defaultIcon: UIImage = UIImage(named: "soccer-icon")!
+        
+        if let icon = UIImage(named: "\(sport)-icon") {
+            return icon
+        }
+        
+        return defaultIcon
     }
 
 }
