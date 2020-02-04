@@ -38,7 +38,7 @@ class ResultTableViewController: UITableViewController {
         else if indexPath.row == 1{
             let cell : ResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultTableViewCell
 
-                cell.title.text = "Resultado"
+                cell.title.text = "RESULTADO"
                 return cell
 
             }
@@ -46,7 +46,7 @@ class ResultTableViewController: UITableViewController {
             let cell : RankingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RankingCell", for: indexPath) as! RankingTableViewCell
 
             cell.countryFlag.image = UIImage(named: "southkorea.png")
-            cell.countryName.text = "South Korea"
+            cell.countryName.text = "USA"
             cell.medalIcon.image = UIImage(named: "gold.pdf")
             
             return cell
@@ -56,7 +56,7 @@ class ResultTableViewController: UITableViewController {
             let cell : Ranking2TableViewCell = tableView.dequeueReusableCell(withIdentifier: "Ranking2Cell", for: indexPath) as! Ranking2TableViewCell
 
             cell.countryFlag.image = UIImage(named: "guinea.png")
-            cell.countryName.text = "Guinea"
+            cell.countryName.text = "USA"
             cell.medalIcon.image = UIImage(named: "silver.pdf")
             
             return cell
@@ -65,19 +65,13 @@ class ResultTableViewController: UITableViewController {
             let cell : Ranking3TableViewCell = tableView.dequeueReusableCell(withIdentifier: "Ranking3Cell", for: indexPath) as! Ranking3TableViewCell
 
             cell.countryFlag.image = UIImage(named: "jamaica.png")
-            cell.countryName.text = "Jamaica"
+            cell.countryName.text = "USA"
             cell.medalIcon.image = UIImage(named: "bronze.pdf")
             
             return cell
         }
         
         }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-         return UITableView.automaticDimension
-        
-    }
         
     }
 
