@@ -13,6 +13,10 @@
 		0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529DD23E480C800E6D584 /* Auxiliary.swift */; };
 		0B2529E023E84D9300E6D584 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529DF23E84D9200E6D584 /* Profile.storyboard */; };
 		0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */; };
+		0B2529E923E8D25000E6D584 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529E823E8D25000E6D584 /* Card.swift */; };
+		0B2529EB23E8D29900E6D584 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529EA23E8D29900E6D584 /* DetailViewController.swift */; };
+		0B2529ED23E8D5FC00E6D584 /* CardContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529EC23E8D5FC00E6D584 /* CardContentViewController.swift */; };
+		0B2529EF23E8D89B00E6D584 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529EE23E8D89B00E6D584 /* Animator.swift */; };
 		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
 		2FB7EC6823E3382700A11887 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar.json */; };
@@ -42,6 +46,10 @@
 		0B2529DD23E480C800E6D584 /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Auxiliary.swift; path = Accessibility/Controllers/Auxiliary.swift; sourceTree = SOURCE_ROOT; };
 		0B2529DF23E84D9200E6D584 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModeViewController.swift; sourceTree = "<group>"; };
+		0B2529E823E8D25000E6D584 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Accessibility/Controllers/Card.swift; sourceTree = SOURCE_ROOT; };
+		0B2529EA23E8D29900E6D584 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B2529EC23E8D5FC00E6D584 /* CardContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentViewController.swift; sourceTree = "<group>"; };
+		0B2529EE23E8D89B00E6D584 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Accessibility/Controllers/Animator.swift; sourceTree = SOURCE_ROOT; };
 		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
 		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
@@ -135,6 +143,8 @@
 				9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */,
 				9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */,
 				0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */,
+				0B2529EA23E8D29900E6D584 /* DetailViewController.swift */,
+				0B2529EC23E8D5FC00E6D584 /* CardContentViewController.swift */,
 				0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */,
 			);
 			path = Controllers;
@@ -144,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */,
+				0B2529E823E8D25000E6D584 /* Card.swift */,
+				0B2529EE23E8D89B00E6D584 /* Animator.swift */,
 				0B2529DD23E480C800E6D584 /* Auxiliary.swift */,
 			);
 			path = Views;
@@ -279,12 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2529EF23E8D89B00E6D584 /* Animator.swift in Sources */,
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
+				0B2529E923E8D25000E6D584 /* Card.swift in Sources */,
 				0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */,
 				0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */,
 				0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
 				9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */,
+				0B2529ED23E8D5FC00E6D584 /* CardContentViewController.swift in Sources */,
+				0B2529EB23E8D29900E6D584 /* DetailViewController.swift in Sources */,
 				0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */,
 				9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */,
 			);

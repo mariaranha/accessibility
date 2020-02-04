@@ -108,7 +108,7 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = matchesTableView.dequeueReusableCell(withIdentifier: "cardCell") as! CardTableViewCell
+        let cell = matchesTableView.dequeueReusableCell(withIdentifier: "cardCell") as! Card
         
         //Card Labels
         cell.titleLabel.text = matchTitle[indexPath.row]
@@ -142,6 +142,10 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
             cell.cornerImage.image = cornerImage[indexPath.row]
         }
         
+        //Explandable card
+        let cardContent = storyboard!.instantiateViewController(withIdentifier: "CardContent")
+        let card = cell
+        card.shouldPresent(cardContent, from: self, fullscreen: true)
         
         return cell
     }

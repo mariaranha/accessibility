@@ -19,14 +19,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" rowHeight="200" id="gYL-SA-eok" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" rowHeight="200" id="gYL-SA-eok" customClass="Card" customModule="Accessibility" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gYL-SA-eok" id="kth-Dh-pPH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C30-cN-D94">
+                                                <view tag="1000" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C30-cN-D94">
                                                     <rect key="frame" x="16" y="8" width="382" height="184"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-O0-a3m">
@@ -260,19 +260,19 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="cornerImage" destination="ZnP-gC-fHx" id="w8m-Zc-Mjn"/>
-                                            <outlet property="dayLabel" destination="L9f-OJ-rTv" id="9mS-Kq-O8U"/>
-                                            <outlet property="firstCountryImage" destination="kmb-WW-JnC" id="ZLj-GR-O0n"/>
-                                            <outlet property="firstCountryLabel" destination="mkz-d1-RZY" id="AEb-Wz-eMP"/>
-                                            <outlet property="monthLabel" destination="SFi-nv-ibR" id="Y99-z4-4Oy"/>
-                                            <outlet property="numberOfPointsLabel" destination="9tC-4d-5hn" id="CdI-de-x1S"/>
-                                            <outlet property="pointsLabel" destination="0zE-kW-Pdm" id="V4P-Pn-2ai"/>
-                                            <outlet property="ringImage" destination="cdj-Ai-Qzy" id="5KR-Iy-hxn"/>
-                                            <outlet property="secondCountryImage" destination="n7e-gO-739" id="BEd-Hm-hxX"/>
-                                            <outlet property="secondCountryLabel" destination="AI7-eV-4OW" id="TFC-eE-3Je"/>
-                                            <outlet property="subtitleLabel" destination="9QH-y3-KEo" id="g6l-ws-et8"/>
-                                            <outlet property="timeLabel" destination="ahc-Kr-YKB" id="j3U-m0-yFC"/>
-                                            <outlet property="titleLabel" destination="luo-EM-ain" id="6S0-dW-uY4"/>
+                                            <outlet property="cornerImage" destination="ZnP-gC-fHx" id="XBm-Md-ihF"/>
+                                            <outlet property="dayLabel" destination="L9f-OJ-rTv" id="tVI-a4-te5"/>
+                                            <outlet property="firstCountryImage" destination="kmb-WW-JnC" id="biO-pH-qNp"/>
+                                            <outlet property="firstCountryLabel" destination="mkz-d1-RZY" id="XPq-Zw-ZwD"/>
+                                            <outlet property="monthLabel" destination="SFi-nv-ibR" id="jRK-WH-efS"/>
+                                            <outlet property="numberOfPointsLabel" destination="9tC-4d-5hn" id="Qsf-X5-Oy9"/>
+                                            <outlet property="pointsLabel" destination="0zE-kW-Pdm" id="TrT-FW-Bke"/>
+                                            <outlet property="ringImage" destination="cdj-Ai-Qzy" id="9vC-NO-Tdn"/>
+                                            <outlet property="secondCountryImage" destination="n7e-gO-739" id="6jI-o4-7wV"/>
+                                            <outlet property="secondCountryLabel" destination="AI7-eV-4OW" id="GEU-O1-Ycv"/>
+                                            <outlet property="subtitleLabel" destination="9QH-y3-KEo" id="GUB-lP-Bo4"/>
+                                            <outlet property="timeLabel" destination="ahc-Kr-YKB" id="5uc-kZ-Wyg"/>
+                                            <outlet property="titleLabel" destination="luo-EM-ain" id="8Wy-XW-u7I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -302,6 +302,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQG-T1-tie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1139.1304347826087" y="-257.14285714285711"/>
+        </scene>
+        <!--Card Content View Controller-->
+        <scene sceneID="ZAU-3B-yRK">
+            <objects>
+                <viewController storyboardIdentifier="CardContent" id="FRJ-Ee-r3S" customClass="CardContentViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6b-Ed-E9y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="168-u9-vjt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5C-Qo-ayq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="-257"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tw6-zf-m5F">
