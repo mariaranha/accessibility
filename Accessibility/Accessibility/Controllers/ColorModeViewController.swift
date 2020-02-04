@@ -39,17 +39,17 @@ extension ColorModeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            UserDefaultsStruct.CornerMode.color = "blue"
+            UserDefaultsStruct.CornerMode.color = .blue
         case 1:
-            UserDefaultsStruct.CornerMode.color = "yellow"
+            UserDefaultsStruct.CornerMode.color = .yellow
         case 2:
-            UserDefaultsStruct.CornerMode.color = "black"
+            UserDefaultsStruct.CornerMode.color = .black
         case 3:
-            UserDefaultsStruct.CornerMode.color = "green"
+            UserDefaultsStruct.CornerMode.color = .green
         case 4:
-            UserDefaultsStruct.CornerMode.color = "red"
+            UserDefaultsStruct.CornerMode.color = .red
         default:
-            UserDefaultsStruct.CornerMode.color = "colorful"
+            UserDefaultsStruct.CornerMode.color = .colorful
         }
 
     }

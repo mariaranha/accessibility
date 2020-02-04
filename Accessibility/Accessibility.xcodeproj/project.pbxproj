@@ -13,6 +13,9 @@
 		0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529DD23E480C800E6D584 /* Auxiliary.swift */; };
 		0B2529E023E84D9300E6D584 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529DF23E84D9200E6D584 /* Profile.storyboard */; };
 		0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */; };
+		0B2529F123E8EE3200E6D584 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529F023E8EE3200E6D584 /* CardView.xib */; };
+		0B2529F323E8EEC000E6D584 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529F223E8EEC000E6D584 /* CardView.swift */; };
+		0B2529F623E8F4D900E6D584 /* SportMatchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */; };
 		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
 		2FB7EC6823E3382700A11887 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar.json */; };
@@ -42,6 +45,9 @@
 		0B2529DD23E480C800E6D584 /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Auxiliary.swift; path = Accessibility/Controllers/Auxiliary.swift; sourceTree = SOURCE_ROOT; };
 		0B2529DF23E84D9200E6D584 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModeViewController.swift; sourceTree = "<group>"; };
+		0B2529F023E8EE3200E6D584 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		0B2529F223E8EEC000E6D584 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMatchesPresenter.swift; sourceTree = "<group>"; };
 		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
 		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
@@ -76,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2529F423E8F4C000E6D584 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		2F40FB9523E33AF500A1DACB /* AccessibilityTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +134,7 @@
 				9CA4C18923E31D050033BAB5 /* Models */,
 				9CA4C18823E31CFA0033BAB5 /* Views */,
 				9CA4C18723E31CF30033BAB5 /* Controllers */,
+				0B2529F423E8F4C000E6D584 /* Presenter */,
 				9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */,
 				9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */,
 				9CA4C17C23E31CE50033BAB5 /* Assets.xcassets */,
@@ -145,6 +160,8 @@
 			children = (
 				0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */,
 				0B2529DD23E480C800E6D584 /* Auxiliary.swift */,
+				0B2529F023E8EE3200E6D584 /* CardView.xib */,
+				0B2529F223E8EEC000E6D584 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +277,7 @@
 				9CA4C17D23E31CE50033BAB5 /* Assets.xcassets in Resources */,
 				9CA4C17B23E31CE30033BAB5 /* Main.storyboard in Resources */,
 				2FB7EC6823E3382700A11887 /* calendar.json in Resources */,
+				0B2529F123E8EE3200E6D584 /* CardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
+				0B2529F323E8EEC000E6D584 /* CardView.swift in Sources */,
 				0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */,
+				0B2529F623E8F4D900E6D584 /* SportMatchesPresenter.swift in Sources */,
 				0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */,
 				0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,

@@ -10,32 +10,28 @@ import Foundation
 import UIKit
 
 enum UserCornerImage: String {
-    case blue = "blue"
-    case yellow = "yellow"
-    case black = "black"
-    case green = "green"
-    case red = "red"
-    case colorfull = "colorful"
-}
-
-struct Country {
-    var code = String()
-    var flag = UIImage()
+    case blue
+    case yellow
+    case black
+    case green
+    case red
+    case colorful
 }
 
 struct UserDefaultsStruct {
     
     private static let defaults = UserDefaults.standard
     
-    //Default
-    struct DefaultCorner {
-        static let color = UserCornerImage.colorfull.rawValue
-    }
-    
-    struct CornerMode {
-        static var color: String {
+    enum CornerMode {
+        private static let defaultMode = UserCornerImage.colorful
+        
+        static var color: UserCornerImage {
             get {
-                return defaults.string(forKey: "CornerMode") ?? DefaultCorner.color
+                guard let rawValue = defaults.string(forKey: "CornerMode") else {
+                    return defaultMode
+                }
+                
+                return UserCornerImage(rawValue: rawValue) ?? defaultMode
             }
             set {
                 defaults.set(newValue, forKey: "CornerMode")

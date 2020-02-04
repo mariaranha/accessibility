@@ -7,29 +7,17 @@
 //
 
 import UIKit
+import Foundation
 
 class CardTableViewCell: UITableViewCell {
     
     //Card Labels
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var numberOfPointsLabel: UILabel!
-    @IBOutlet weak var firstCountryLabel: UILabel!
-    @IBOutlet weak var secondCountryLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    
-    //Card Images
-    @IBOutlet weak var ringImage: UIImageView!
-    @IBOutlet weak var cornerImage: UIImageView!
-    @IBOutlet weak var firstCountryImage: UIImageView!
-    @IBOutlet weak var secondCountryImage: UIImageView!
+    @IBOutlet weak var cardView: CardView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        cardView?.contentView.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,4 +26,7 @@ class CardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configure(with viewModel: CardView.ViewModel) {
+        cardView?.configure(with: viewModel)
+    }
 }
