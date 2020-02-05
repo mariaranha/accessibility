@@ -40,7 +40,6 @@ class AllSportsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "sportCell", for: indexPath) as! AllSportsTableViewCell
         let sportName: String = sports[indexPath.row]
-        
         cell.sportName.text = sportName.capitalized
         cell.sportIcon.image = getIcon(sport: sportName)
 
@@ -61,7 +60,6 @@ class AllSportsTableViewController: UITableViewController {
             if let nextViewController = segue.destination as? DisciplinesTableViewController {
                 nextViewController.subcategories = jsonManager.getSubcategories(sport: self.selectedSport)
             }
-            
         }
     }
     

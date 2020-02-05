@@ -125,6 +125,39 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == calendarCollectionView {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
+                cell.selectDay(isSelected: true)
+                var month: String!
+                var day = Int(cell.dayLabel.text!)!
+                if day < 10 {
+                    month = "Agosto"
+                } else {
+                    month = "Julho"
+                }
+                self.dayLabel.text = "\(day) de \(month!) de 2020"
+
+            }
+        } else {
+            
+            
+            
+        }
+        
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == calendarCollectionView{
+            if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
+                cell.selectDay(isSelected: false)
+
+            }
+        }
+    }
+
+    
     // MARK: - Loading icons
     
     private func getIcon(sport: String) -> UIImage {
@@ -166,44 +199,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     private func getMonthDay() -> Int {
         // Return the user current month day
+        
         let date = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: date)
         let monthDay = components.day
         return monthDay ?? 32
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == calendarCollectionView {
-            if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
-                cell.selectDay(isSelected: true)
-                var month: String!
-                var day = Int(cell.dayLabel.text!)!
-                if day < 10 {
-                    month = "Agosto"
-                } else {
-                    month = "Julho"
-                }
-                self.dayLabel.text = "\(day) de \(month!) de 2020"
-
-            }
-        } else {
-            
-            
-            
-        }
-        
-
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if collectionView == calendarCollectionView{
-            if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
-                cell.selectDay(isSelected: false)
-
-            }
-        } 
-    }
-
 }
 
