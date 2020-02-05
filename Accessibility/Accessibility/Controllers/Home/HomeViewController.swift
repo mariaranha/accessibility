@@ -16,8 +16,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var monthDay: Int!
     var json: [Discipline] = []
-    var disciplinesOfTheDay: [Discipline] = []
     var sportsOfTheDay: [String] = []
+    var sportsNumber: Int!
     let jsonManager = JSONManager()
     
     var screenSize: CGRect!
@@ -33,14 +33,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         self.monthDay = getMonthDay()
         json = jsonManager.loadJSONFile()
-        loadSportsOfTheDay(day: self.monthDay)
-        
+        sportsOfTheDay = loadSportsOfTheDay(day: self.monthDay)
+        self.sportsNumber = sportsOfTheDay.count
         setCalendarStackHeight()
-        
         let nc = NotificationCenter.default
-        
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
-        
     }
     
     deinit {
@@ -76,27 +73,35 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.layoutIfNeeded()
     }
     
-    // MARK: - Collection View functions
+    // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView == calendarCollectionView {
+            // Returning calendar views
+            
             return days.count
         } else {
-            return sportsOfTheDay.count
+            // Returning the sports views
+            
+            return sportsNumber
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == calendarCollectionView {
+            // Setting calendar cells
+            
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier,
-            for: indexPath) as? CalendarCollectionViewCell {
+                                                             for: indexPath) as? CalendarCollectionViewCell {
                 let day = days[indexPath.row]
                 let weekDay = weekDays[indexPath.row % 7]
                 cell.configureCell(weekDay: weekDay, day: day)
                 
-                if Int(day) == 22{
-                    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+                if Int(day) == 22 {
+                    collectionView.selectItem(at: indexPath, animated: true,
+                                              scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
                     
                 } else {
                     cell.selectDay(isSelected: false)
@@ -104,13 +109,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 return cell
             }
+            
         } else {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as? CollectionViewCell {
+            // Setting sports cells
+            
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier,
+                                                             for: indexPath) as? CollectionViewCell {
                 let sportName = sportsOfTheDay[indexPath.row]
                 let iconName = getIcon(sport: sportName)
                 cell.configureCell(sportImage: iconName, sport: sportName)
-                           
-                           
                 return cell
             }
         }
@@ -118,7 +125,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return UICollectionViewCell()
     }
     
+    // MARK: - Loading icons
+    
     private func getIcon(sport: String) -> UIImage {
+        // Returns the icon of the sport passed as parameter
         
         let defaultIcon: UIImage = UIImage(named: "soccer-icon")!
         
@@ -131,22 +141,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: - JSON Functions
     
-    private func loadSportsOfTheDay(day: Int) {
+    private func loadSportsOfTheDay(day: Int) -> [String] {
+        // Loads all sports of the day
+        
+        var sports: [String] = []
         for discipline in self.json {
             for disciplineDay in discipline.normalDates {
                 if disciplineDay == day {
-                    self.disciplinesOfTheDay.append(discipline)
-                    self.sportsOfTheDay.append(discipline.sport)
+                    sports.append(discipline.sport)
                 }
             }
-            
             for disciplineDay in discipline.medalDates {
                 if disciplineDay  == day {
-                    self.disciplinesOfTheDay.append(discipline)
-                    self.sportsOfTheDay.append(discipline.sport)
+                    sports.append(discipline.sport)
                 }
             }
         }
+        
+        sports = Array(Set(sports)).sorted() // Removing duplicated sports
+        return sports
     }
     
     // MARK: - Months of the day
@@ -158,15 +171,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let components = calendar.dateComponents([.day], from: date)
         let monthDay = components.day
         return monthDay ?? 32
-    }
-    
-    private func printSportsOfTheDay() {
-        // Removing duplicated sports
-        let unique = Array(Set(self.sportsOfTheDay)).sorted()
-        
-        for sport in unique {
-            print(sport)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
