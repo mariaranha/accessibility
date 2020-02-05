@@ -11,6 +11,7 @@
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
 		2FB7EC6823E3382700A11887 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar.json */; };
 		2FC0931D23E4538100F7881A /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0931C23E4538100F7881A /* Discipline.swift */; };
+		9C52CF8223E9C15E00A3853E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */; };
 		9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */; };
 		9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */; };
 		9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 		2F40FB9823E33AF500A1DACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FB7EC6723E3382700A11887 /* calendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calendar.json; sourceTree = "<group>"; };
 		2FC0931C23E4538100F7881A /* Discipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Discipline.swift; path = AccessibilityTests/Discipline.swift; sourceTree = SOURCE_ROOT; };
+		9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		9CA4C17023E31CE30033BAB5 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		9CA4C18823E31CFA0033BAB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				2FC0931D23E4538100F7881A /* Discipline.swift in Sources */,
 				9CDA0EE123E4742A00749D19 /* CalendarCollectionViewCell.swift in Sources */,
+				9C52CF8223E9C15E00A3853E /* UIViewExtensions.swift in Sources */,
 				9CDA0EDE23E463C900749D19 /* CollectionViewCell.swift in Sources */,
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
@@ -476,7 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

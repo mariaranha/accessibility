@@ -23,13 +23,56 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
+    @IBOutlet weak var calendarStackHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var dayLabel: UILabel!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.monthDay = getMonthDay()
+        
+        setCalendarStackHeight()
+        
+        let nc = NotificationCenter.default
+        
+        nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        
+    }
+    
+    deinit {
+        let nc = NotificationCenter.default
+
+        nc.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    @objc func fontChanged(_ notification: Notification) {
+        print("fontChanged")
+        
+        setCalendarStackHeight()
+    }
+    
+    func setCalendarStackHeight(){
+        var userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        var size = userFontSize.pointSize
+                
+        if size <= 20 {
+            self.calendarStackHeight.constant = 90
+        //    self.selectedImageTop.constant = 26
+        } else if size > 20 && size <= 30 {
+            self.calendarStackHeight.constant = 125
+       //     self.selectedImageTop.constant = 30
+        } else if size > 30 && size <= 40 {
+            self.calendarStackHeight.constant = 160
+        //    self.selectedImageTop.constant = 32
+        } else if size > 40 {
+            self.calendarStackHeight.constant = 250
+        //    self.selectedImageTop.constant = 34
+        }
+        
+        self.collectionView.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
