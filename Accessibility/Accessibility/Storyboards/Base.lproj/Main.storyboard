@@ -15,14 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scY-Ib-U2F">
-                                <rect key="frame" x="152" y="249" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="result exemplo 1"/>
-                                <connections>
-                                    <segue destination="vCv-N9-ovf" kind="show" id="BVT-0G-r6o"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jq9-TA-8Rg">
                                 <rect key="frame" x="151" y="331" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -372,17 +364,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do campeonato" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf9-FH-HYk">
-                                            <rect key="frame" x="20" y="24" width="374" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf9-FH-HYk">
+                                            <rect key="frame" x="20" y="24" width="374" height="41"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeT-S2-Uo9">
-                                            <rect key="frame" x="112.5" y="60.5" width="50" height="33"/>
+                                            <rect key="frame" x="120" y="81" width="55" height="33"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MOA-5Q-ZeJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOA-5Q-ZeJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
@@ -393,11 +385,11 @@
                                                 <bool key="isElement" value="YES"/>
                                             </accessibility>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="59M-e1-hcz"/>
                                                 <constraint firstAttribute="bottom" secondItem="MOA-5Q-ZeJ" secondAttribute="bottom" id="6qZ-01-7uL"/>
                                                 <constraint firstAttribute="trailing" secondItem="MOA-5Q-ZeJ" secondAttribute="trailing" id="KR7-p0-ufK"/>
                                                 <constraint firstItem="MOA-5Q-ZeJ" firstAttribute="leading" secondItem="XeT-S2-Uo9" secondAttribute="leading" id="U7d-XS-HpL"/>
-                                                <constraint firstAttribute="height" constant="33" id="ZKk-W4-2ck"/>
-                                                <constraint firstAttribute="width" constant="50" id="eNx-9v-afy"/>
+                                                <constraint firstAttribute="width" constant="55" id="aO4-xV-3zm"/>
                                                 <constraint firstItem="MOA-5Q-ZeJ" firstAttribute="top" secondItem="XeT-S2-Uo9" secondAttribute="top" id="vmz-7u-tTC"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -421,23 +413,23 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="USA" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIU-1r-bxP">
-                                            <rect key="frame" x="120.5" y="109.5" width="34" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIU-1r-bxP">
+                                            <rect key="frame" x="147.5" y="130" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo3-k7-La1">
-                                            <rect key="frame" x="260" y="109.5" width="34" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo3-k7-La1">
+                                            <rect key="frame" x="266.5" y="130" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-dA-IKA">
-                                            <rect key="frame" x="252" y="60.5" width="50" height="33"/>
+                                            <rect key="frame" x="239" y="81" width="55" height="33"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zpi-jp-5pK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
@@ -448,12 +440,12 @@
                                                 <bool key="isElement" value="YES"/>
                                             </accessibility>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="A8p-Kd-dQA"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zpi-jp-5pK" secondAttribute="bottom" id="BbJ-Na-0KP"/>
+                                                <constraint firstAttribute="height" constant="33" id="LTL-iZ-bDt"/>
                                                 <constraint firstItem="Zpi-jp-5pK" firstAttribute="leading" secondItem="iqh-dA-IKA" secondAttribute="leading" id="PUV-Ee-W7X"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zpi-jp-5pK" secondAttribute="trailing" id="ZH5-BH-22K"/>
                                                 <constraint firstItem="Zpi-jp-5pK" firstAttribute="top" secondItem="iqh-dA-IKA" secondAttribute="top" id="cRv-hY-pIG"/>
-                                                <constraint firstAttribute="width" constant="50" id="cUn-HL-L1n"/>
+                                                <constraint firstAttribute="width" constant="55" id="vU3-k3-oZ1"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -476,8 +468,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqx-uz-nna">
-                                            <rect key="frame" x="194.5" y="67" width="25.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqx-uz-nna">
+                                            <rect key="frame" x="207" y="97.5" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

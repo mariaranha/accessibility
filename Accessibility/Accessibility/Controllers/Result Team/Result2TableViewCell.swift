@@ -15,6 +15,8 @@ class Result2TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        title.isAccessibilityElement = true
+        title.accessibilityHint = "título"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
