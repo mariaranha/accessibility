@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var dayLabel: UILabel!
 
+    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     
     
     override func viewDidLoad() {
@@ -42,6 +43,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        loadJSONFile()
+        loadSportsOfTheDay(day: self.monthDay)
+        printSportsOfTheDay()
+        
+        self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        self.collectionViewLayout.minimumLineSpacing = 10
+        
+    }
+    
     deinit {
         let nc = NotificationCenter.default
 
@@ -49,37 +61,34 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc func fontChanged(_ notification: Notification) {
-        print("fontChanged")
         
         setCalendarStackHeight()
+
     }
     
     func setCalendarStackHeight(){
-        var userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        var size = userFontSize.pointSize
-                
-        if size <= 20 {
+        let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        let size = userFontSize.pointSize
+        print(size)
+        if size < 18 {
             self.calendarStackHeight.constant = 90
-        //    self.selectedImageTop.constant = 26
-        } else if size > 20 && size <= 30 {
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        } else if size > 18 && size <= 27 {
             self.calendarStackHeight.constant = 125
-       //     self.selectedImageTop.constant = 30
-        } else if size > 30 && size <= 40 {
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 25, bottom: 8, right: 25)
+        } else if size > 27 && size <= 40 {
             self.calendarStackHeight.constant = 160
-        //    self.selectedImageTop.constant = 32
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 40 {
             self.calendarStackHeight.constant = 250
-        //    self.selectedImageTop.constant = 34
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         }
         
-        self.collectionView.layoutIfNeeded()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        loadJSONFile()
-        loadSportsOfTheDay(day: self.monthDay)
-        printSportsOfTheDay()
+        DispatchQueue.main.async {
+            self.collectionView.collectionViewLayout.invalidateLayout()
+
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,7 +119,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as? CollectionViewCell {
-                           
+                
+//                collectionView.layer.shadowColor = UIColor.black.cgColor
+//                collectionView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//                collectionView.layer.shadowRadius = 2.0
+//                collectionView.layer.shadowOpacity = 0.5
+//                cell.contentView.layer.cornerRadius = 2.0
+//                cell.contentView.layer.borderWidth = 1.0
+//                cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//                cell.contentView.layer.masksToBounds = true
+//                collectionView.layer.shadowPath = UIBezierPath(roundedRect: collectionView.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
                            
                 return cell
             }
