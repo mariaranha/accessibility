@@ -13,7 +13,8 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var weekDayLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
-    
+    @IBOutlet weak var dayStack: UIStackView!
+        
     class var reuseIdentifier: String {
         return "CalendarCellReuseIdentifier"
     }
@@ -21,14 +22,17 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     func configureCell(weekDay: String, day: String) {
         self.weekDayLabel.text = weekDay
         self.dayLabel.text = day
+        
     }
     
     func selectDay(isSelected: Bool){
         if isSelected{
             self.selectedImage.isHidden = false
         } else {
-             self.selectedImage.isHidden = true
+            self.selectedImage.isHidden = true
         }
     }
+    
+
 
 }

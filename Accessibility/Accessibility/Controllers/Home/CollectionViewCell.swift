@@ -9,6 +9,7 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var sportImage: UIImageView!
     @IBOutlet weak var sportNameLabel: UILabel!
     
@@ -18,7 +19,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configureCell(sportImage: UIImage, sport: String) {
         self.sportImage.image = sportImage
-        self.sportNameLabel.text = sport
+        self.sportNameLabel.text = sport.capitalized
     }
     
 }
