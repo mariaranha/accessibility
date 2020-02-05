@@ -15,7 +15,9 @@ class JSONManager {
     
     public func loadJSONFile() -> [Discipline] {
         // Loading JSON file and building and building JSON array.
-        if let url = Bundle.main.url(forResource: "calendar", withExtension: "json") {
+        
+        let jsonFile = getJSONFile()
+        if let url = Bundle.main.url(forResource: jsonFile, withExtension: "json") {
             do {
                 let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
                 do {
@@ -70,5 +72,21 @@ class JSONManager {
         }
         
         return subcategories
+    }
+    
+    // MARK: - Localization
+    
+    private func getJSONFile() -> String {
+        if let locale = NSLocale.current.languageCode {
+            switch locale {
+            case "pt":
+                return "calendar-pt"
+            case "en":
+                return "calendar-en"
+            default:
+                return "calendar-en"
+            }
+        }
+        return "calendar-en"
     }
 }
