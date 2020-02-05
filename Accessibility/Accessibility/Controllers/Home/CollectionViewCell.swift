@@ -9,6 +9,7 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var sportImage: UIImageView!
     @IBOutlet weak var sportNameLabel: UILabel!
     

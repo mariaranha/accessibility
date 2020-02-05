@@ -28,12 +28,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var dayLabel: UILabel!
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.monthDay = getMonthDay()
+        json = jsonManager.loadJSONFile()
+        loadSportsOfTheDay(day: self.monthDay)
         
         setCalendarStackHeight()
         
@@ -76,20 +76,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.layoutIfNeeded()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        json = jsonManager.loadJSONFile()
-        loadSportsOfTheDay(day: self.monthDay)
-        printSportsOfTheDay()
-    }
-    
     // MARK: - Collection View functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == calendarCollectionView {
             return days.count
         } else {
-            return 5
+            return sportsOfTheDay.count
         }
     }
 
@@ -113,6 +106,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as? CollectionViewCell {
+                let sportName = sportsOfTheDay[indexPath.row]
+                let iconName = getIcon(sport: sportName)
+                cell.configureCell(sportImage: iconName, sport: sportName)
                            
                            
                 return cell
@@ -120,6 +116,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
         return UICollectionViewCell()
+    }
+    
+    private func getIcon(sport: String) -> UIImage {
+        
+        let defaultIcon: UIImage = UIImage(named: "soccer-icon")!
+        
+        if let icon = UIImage(named: "\(sport)-icon") {
+            return icon
+        }
+        
+        return defaultIcon
     }
     
     // MARK: - JSON Functions
