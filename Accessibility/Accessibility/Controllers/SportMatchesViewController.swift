@@ -17,6 +17,10 @@ class SportMatchesViewController: UIViewController {
     
     //Card View Model
     var cardsViewModel: [CardView.ViewModel] = []
+    var cardsDynamicViewModel: [CardViewDynamic.ViewModel] = []
+    
+    //Large fonte
+    var isLargeFont: Bool = false
     
     //Sport Matches Presenter
     private let presenter = SportMatchesPresenter()
@@ -26,16 +30,27 @@ class SportMatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Notification for change of font size
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        cardsViewModel = presenter.formatCards()
-        matchesTableView.reloadData()
+        //Check font
+        checkFontSize()
         
+        cardsDynamicViewModel = presenter.formatCardsDynamic()
+        cardsViewModel = presenter.formatCards()
+        
+        let nibDynamic = UINib.init(nibName: "CardViewDynamic", bundle: nil)
+        self.matchesTableView.register(nibDynamic, forCellReuseIdentifier: "cardViewDynamic")
+    
         let nib = UINib.init(nibName: "CardView", bundle: nil)
         self.matchesTableView.register(nib, forCellReuseIdentifier: "cardView")
+        
+        matchesTableView.reloadData()
         
         emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
         
@@ -57,23 +72,62 @@ class SportMatchesViewController: UIViewController {
         //Navigatin Bar Title
         self.title = sportTitle
     }
+    
+    fileprivate func checkFontSize() {
+        let textSize = traitCollection.preferredContentSizeCategory
+        let isAccessibilityCategory = traitCollection.preferredContentSizeCategory.isAccessibilityCategory
+        
+        //Change card view - Text to large
+        if isAccessibilityCategory && textSize != .accessibilityMedium {
+            isLargeFont = true
+            
+        } else {
+            isLargeFont = false
+            
+        }
+    }
+    
+    @objc func fontChanged(_ notification: Notification) {
+        checkFontSize()
+        matchesTableView.reloadData()
+    }
+    
+    //Remove notification for change of font
+    deinit {
+    let nc = NotificationCenter.default
+
+      nc.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
 }
 
 
 extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return matchTitle.count
-        return cardsViewModel.count
+        if isLargeFont {
+            return cardsDynamicViewModel.count
+        } else {
+            return cardsViewModel.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = matchesTableView.dequeueReusableCell(withIdentifier: "cardCell") as? CardTableViewCell else { return UITableViewCell() }
-
-        let viewModel = cardsViewModel[indexPath.row]
-        
-        cell.configure(with: viewModel)
-
-        return cell
+        if isLargeFont {
+            guard let cell = matchesTableView.dequeueReusableCell(withIdentifier: "cardCellDynamic") as? CardTableViewCell else { return UITableViewCell() }
+            let viewModel = cardsDynamicViewModel[indexPath.row]
+            cell.configureDynamic(with: viewModel)
+            
+            return cell
+        } else {
+            guard let cell = matchesTableView.dequeueReusableCell(withIdentifier: "cardCell") as? CardTableViewCell else { return UITableViewCell() }
+            let viewModel = cardsViewModel[indexPath.row]
+            cell.configure(with: viewModel)
+            return cell
+        }
     }
+    
     
 }

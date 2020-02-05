@@ -49,8 +49,32 @@ class SportMatchesPresenter {
                                        secondCountryName: "PAK",
                                        day: "25",
                                        mounth: "JUN",
-                                       time: "14:30",
+                                       time: "12:30PM",
                                        cornerImage: cornerImages[1],
+                                       firstCountryFlag: UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
+                                       secondCountryFlag: UIImage(named: "pakistan-flag-xl") ?? emptyFlag),
+                    ]
+        
+        return array
+    }
+    
+    func formatCardsDynamic() -> [CardViewDynamic.ViewModel] {
+        let emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
+        
+        let array = [CardViewDynamic.ViewModel(title: "Feminino",
+                                       subtitle: "Peso Mosca (48-51kg) - Eliminatórias",
+                                       numberOfPoints: "–",
+                                       firstCountryName: "BRA",
+                                       secondCountryName: "CHN",
+                                       date: "24 JUN 12:40",
+                                       firstCountryFlag: UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                                       secondCountryFlag: UIImage(named: "china-flag-xl") ?? emptyFlag),
+                     CardViewDynamic.ViewModel(title: "Masculino",
+                                       subtitle: "Peso Galo (56kg) - Quartas de final",
+                                       numberOfPoints: "20",
+                                       firstCountryName: "USA",
+                                       secondCountryName: "PAK",
+                                       date: "25 JUN 12:30PM",
                                        firstCountryFlag: UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
                                        secondCountryFlag: UIImage(named: "pakistan-flag-xl") ?? emptyFlag),
                     ]

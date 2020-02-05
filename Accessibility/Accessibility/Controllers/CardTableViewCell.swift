@@ -11,13 +11,21 @@ import Foundation
 
 class CardTableViewCell: UITableViewCell {
     
-    //Card Labels
     @IBOutlet weak var cardView: CardView?
+    
+    @IBOutlet weak var cardViewDynamic: CardViewDynamic!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cardView?.contentView.layer.cornerRadius = 8
+        if cardView?.contentView != nil {
+            cardView?.contentView.layer.cornerRadius = 8
+        }
+        
+        if cardViewDynamic?.contentView != nil {
+            cardViewDynamic?.contentView.layer.cornerRadius = 8
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,5 +36,9 @@ class CardTableViewCell: UITableViewCell {
 
     func configure(with viewModel: CardView.ViewModel) {
         cardView?.configure(with: viewModel)
+    }
+    
+    func configureDynamic(with viewModel: CardViewDynamic.ViewModel) {
+        cardViewDynamic?.configure(with: viewModel)
     }
 }

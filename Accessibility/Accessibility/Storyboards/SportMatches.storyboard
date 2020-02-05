@@ -19,15 +19,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" rowHeight="200" id="Bac-7j-vdP" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="Bac-7j-vdP" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bac-7j-vdP" id="R3W-Om-Yrd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-gL-R7y" customClass="CardView" customModule="Accessibility" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="382" height="184"/>
+                                                    <rect key="frame" x="16" y="8" width="382" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -62,6 +62,52 @@
                                         <connections>
                                             <outlet property="cardView" destination="8p6-gL-R7y" id="Yl2-Vn-4h1"/>
                                             <outlet property="contentView" destination="R3W-Om-Yrd" id="eP8-10-BRH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCellDynamic" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCellDynamic" id="xYR-o4-aXe" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xYR-o4-aXe" id="SXT-W5-snP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-r2-P8q" customClass="CardViewDynamic" customModule="Accessibility" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="382" height="0.0"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorIB">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Nn-r2-P8q" firstAttribute="top" secondItem="SXT-W5-snP" secondAttribute="top" constant="8" id="2H5-If-gH2"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Nn-r2-P8q" secondAttribute="trailing" constant="16" id="UdY-JZ-rdu"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Nn-r2-P8q" secondAttribute="bottom" constant="8" id="ayo-zg-OPM"/>
+                                                <constraint firstItem="0Nn-r2-P8q" firstAttribute="leading" secondItem="SXT-W5-snP" secondAttribute="leading" constant="16" id="yJC-t4-JYB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="0Nn-r2-P8q" id="zZB-hM-uxv"/>
+                                            <outlet property="cardViewDynamic" destination="0Nn-r2-P8q" id="sQP-78-kz4"/>
+                                            <outlet property="contentView" destination="SXT-W5-snP" id="X70-Nx-faz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
