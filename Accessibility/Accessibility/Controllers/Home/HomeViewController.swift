@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let days = ["22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
                 "01", "02", "03", "04", "05", "06", "07", "08", "09"]
     
-    var monthDay: Int!
+    var selectedDay: Int!
     var json: [Discipline] = []
     var sportsOfTheDay: [String] = []
     var sportsNumber: Int!
@@ -31,10 +31,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.monthDay = getMonthDay()
         json = jsonManager.loadJSONFile()
-        sportsOfTheDay = loadSportsOfTheDay(day: self.monthDay)
-        self.sportsNumber = sportsOfTheDay.count
+        setSportsOfTheDay(day: 22)
         setCalendarStackHeight()
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
@@ -129,6 +127,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == calendarCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
                 cell.selectDay(isSelected: true)
+                
+                let tappedDay = Int(cell.dayLabel.text!)!
+                setSportsOfTheDay(day: tappedDay)
+                self.collectionView.reloadData()
+                
                 var month: String!
                 var day = Int(cell.dayLabel.text!)!
                 if day < 10 {
@@ -195,8 +198,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return sports
     }
     
-    // MARK: - Months of the day
+    // MARK: - Setting sports of the day
     
+    private func setSportsOfTheDay(day: Int) {
+        
+        self.selectedDay = day
+        sportsOfTheDay = loadSportsOfTheDay(day: self.selectedDay)
+        self.sportsNumber = sportsOfTheDay.count
+    }
+    
+    
+    
+    /*
+     // This function will be used when we
+     // reach the olympic games
     private func getMonthDay() -> Int {
         // Return the user current month day
         
@@ -206,5 +221,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let monthDay = components.day
         return monthDay ?? 32
     }
+     */
 }
 
