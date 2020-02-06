@@ -40,6 +40,7 @@ class SportMatchesViewController: UIViewController {
         
         //Check font
         checkFontSize()
+        matchesTableView.reloadData()
         
         cardsDynamicViewModel = presenter.formatCardsDynamic()
         cardsViewModel = presenter.formatCards()
@@ -89,7 +90,7 @@ class SportMatchesViewController: UIViewController {
     
     @objc func fontChanged(_ notification: Notification) {
         checkFontSize()
-        matchesTableView.reloadData()
+        matchesTableView.setNeedsLayout()
     }
     
     //Remove notification for change of font
