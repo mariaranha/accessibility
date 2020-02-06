@@ -157,6 +157,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //                let sportName = sportsOfTheDay[indexPath.row]
 //                let iconName = getIcon(sport: sportName)
 //                cell.configureCell(sportImage: iconName, sport: sportName)
+                
+                // Configure the cell
+                cell.layer.borderWidth = 1
+                cell.layer.borderColor = UIColor.clear.cgColor
+                cell.layer.shadowColor = UIColor.black.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+                cell.layer.shadowRadius = 8.0
+                cell.layer.shadowOpacity = 0.2
+                cell.layer.masksToBounds = false
+                
                 return cell
             }
         }
