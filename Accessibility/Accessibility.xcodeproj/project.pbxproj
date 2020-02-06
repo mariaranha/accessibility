@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F1BA0F523EADD01005E33E8 /* calendar-pt.json */; };
 		0B2529D823E4506400E6D584 /* SportMatches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529D723E4506400E6D584 /* SportMatches.storyboard */; };
 		0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */; };
 		0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */; };
@@ -20,6 +19,7 @@
 		0B252A0023EA370E00E6D584 /* CardViewDynamic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */; };
 		0B252A0223EAD8C800E6D584 /* CardViewDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */; };
 		0B252A0423EAFE7800E6D584 /* OlderCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B252A0323EAFE7800E6D584 /* OlderCard.xib */; };
+		2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F1BA0F523EADD01005E33E8 /* calendar-pt.json */; };
 		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
 		2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar-en.json */; };
@@ -52,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F1BA0F523EADD01005E33E8 /* calendar-pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "calendar-pt.json"; sourceTree = "<group>"; };
 		0B2529D723E4506400E6D584 /* SportMatches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SportMatches.storyboard; sourceTree = "<group>"; };
 		0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMatchesViewController.swift; sourceTree = "<group>"; };
 		0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardTableViewCell.swift; path = Accessibility/Controllers/CardTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -65,6 +64,7 @@
 		0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewDynamic.xib; sourceTree = "<group>"; };
 		0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDynamic.swift; sourceTree = "<group>"; };
 		0B252A0323EAFE7800E6D584 /* OlderCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OlderCard.xib; sourceTree = "<group>"; };
+		2F1BA0F523EADD01005E33E8 /* calendar-pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "calendar-pt.json"; sourceTree = "<group>"; };
 		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
 		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 				2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */,
 				9CA4C17B23E31CE30033BAB5 /* Main.storyboard in Resources */,
 				2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */,
-				2FB7EC6823E3382700A11887 /* calendar.json in Resources */,
+				2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */,
 				0B252A0023EA370E00E6D584 /* CardViewDynamic.xib in Resources */,
 				0B2529F123E8EE3200E6D584 /* CardView.xib in Resources */,
 			);
@@ -570,7 +570,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FH5Q2A622;
-				DEVELOPMENT_TEAM = FKFGBBGDU2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -589,7 +588,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FH5Q2A622;
-				DEVELOPMENT_TEAM = FKFGBBGDU2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
