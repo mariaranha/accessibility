@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var monthDay: Int!
     let weekDays = ["S", "T", "Q", "Q", "S", "S", "D"]
     let days = ["22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
                 "01", "02", "03", "04", "05", "06", "07", "08", "09"]
@@ -19,6 +20,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var sportsOfTheDay: [String] = []
     var sportsNumber: Int!
     let jsonManager = JSONManager()
+    var disciplinesOfTheDay: [Discipline] = []
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -28,14 +30,53 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
+    
+    struct JSON: Decodable {
+        let model: [Discipline]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        json = jsonManager.loadJSONFile()
-        setSportsOfTheDay(day: 22)
+        self.monthDay = getMonthDay()
+        
         setCalendarStackHeight()
+        
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        //load card infos
+        loadJSONFile()
+        loadSportsOfTheDay(day: self.monthDay)
+        printSportsOfTheDay()
+        
+        self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        self.collectionViewLayout.minimumLineSpacing = 10
+        
+    }
+    
+    private func printSportsOfTheDay() {
+        
+        // Removing duplicated sports
+        
+        let unique = Array(Set(self.sportsOfTheDay)).sorted()
+        
+        for sport in unique {
+            print(sport)
+        }
+    }
+    
+    private func getMonthDay() -> Int {
+        // Return the user current month day
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: date)
+        let monthDay = components.day
+        return monthDay ?? 32
     }
     
     deinit {
@@ -45,30 +86,34 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc func fontChanged(_ notification: Notification) {
-        print("fontChanged")
         
         setCalendarStackHeight()
+
     }
     
     func setCalendarStackHeight(){
-        var userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        var size = userFontSize.pointSize
-                
-        if size <= 20 {
+        let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        let size = userFontSize.pointSize
+        print(size)
+        if size < 18 {
             self.calendarStackHeight.constant = 90
-        //    self.selectedImageTop.constant = 26
-        } else if size > 20 && size <= 30 {
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        } else if size > 18 && size <= 27 {
             self.calendarStackHeight.constant = 125
-       //     self.selectedImageTop.constant = 30
-        } else if size > 30 && size <= 40 {
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 25, bottom: 8, right: 25)
+        } else if size > 27 && size <= 40 {
             self.calendarStackHeight.constant = 160
-        //    self.selectedImageTop.constant = 32
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 40 {
             self.calendarStackHeight.constant = 250
-        //    self.selectedImageTop.constant = 34
+            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         }
         
-        self.collectionView.layoutIfNeeded()
+        DispatchQueue.main.async {
+            self.collectionView.collectionViewLayout.invalidateLayout()
+
+        }
+        
     }
     
     // MARK: - Collection View
@@ -76,13 +121,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == calendarCollectionView {
-            // Returning calendar views
-            
             return days.count
         } else {
-            // Returning the sports views
-            
-            return sportsNumber
+            return 5
         }
     }
 
@@ -113,9 +154,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CollectionViewCell {
-                let sportName = sportsOfTheDay[indexPath.row]
-                let iconName = getIcon(sport: sportName)
-                cell.configureCell(sportImage: iconName, sport: sportName)
+//                let sportName = sportsOfTheDay[indexPath.row]
+//                let iconName = getIcon(sport: sportName)
+//                cell.configureCell(sportImage: iconName, sport: sportName)
                 return cell
             }
         }
@@ -127,10 +168,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == calendarCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
                 cell.selectDay(isSelected: true)
-                
-                let tappedDay = Int(cell.dayLabel.text!)!
-                setSportsOfTheDay(day: tappedDay)
-                self.collectionView.reloadData()
                 
                 var month: String!
                 var day = Int(cell.dayLabel.text!)!
@@ -177,50 +214,50 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: - JSON Functions
     
-    private func loadSportsOfTheDay(day: Int) -> [String] {
-        // Loads all sports of the day
-        
-        var sports: [String] = []
+    private func loadJSONFile() {
+        // Loading JSON file and building and building JSON array.
+        if let url = Bundle.main.url(forResource: "calendar", withExtension: "json") {
+            do {
+                let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
+                do {
+                    if let jsonResult = try JSONSerialization.jsonObject(with: jsonData,
+                                        options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSDictionary {
+                        if let disciplinesArray = jsonResult.value(forKey: "discipline") as? NSArray {
+                            for (_, element) in disciplinesArray.enumerated() {
+                                if let element = element as? NSDictionary {
+                                    
+                                    let discipline = Discipline(json: element as! [String : Any] )
+                                    self.json.append(discipline!)
+                                }
+                            }
+                        }
+                    }
+                } catch let error as NSError {
+                    print("Error: \(error)")
+                }
+            } catch let error as NSError {
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    private func loadSportsOfTheDay(day: Int) {
         for discipline in self.json {
             for disciplineDay in discipline.normalDates {
                 if disciplineDay == day {
-                    sports.append(discipline.sport)
+                    self.disciplinesOfTheDay.append(discipline)
+                    self.sportsOfTheDay.append(discipline.sport)
                 }
             }
+            
             for disciplineDay in discipline.medalDates {
                 if disciplineDay  == day {
-                    sports.append(discipline.sport)
+                    self.disciplinesOfTheDay.append(discipline)
+                    self.sportsOfTheDay.append(discipline.sport)
                 }
             }
         }
-        
-        sports = Array(Set(sports)).sorted() // Removing duplicated sports
-        return sports
     }
-    
-    // MARK: - Setting sports of the day
-    
-    private func setSportsOfTheDay(day: Int) {
-        
-        self.selectedDay = day
-        sportsOfTheDay = loadSportsOfTheDay(day: self.selectedDay)
-        self.sportsNumber = sportsOfTheDay.count
-    }
-    
-    
-    
-    /*
-     // This function will be used when we
-     // reach the olympic games
-    private func getMonthDay() -> Int {
-        // Return the user current month day
-        
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: date)
-        let monthDay = components.day
-        return monthDay ?? 32
-    }
-     */
+
 }
 
