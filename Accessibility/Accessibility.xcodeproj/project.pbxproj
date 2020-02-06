@@ -7,7 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0FEE4123EC35ED00F3241A /* Result2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */; };
+		2F0FEE4323EC360800F3241A /* Card2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */; };
+		2F0FEE4523EC362A00F3241A /* Result2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */; };
+		2F0FEE4723EC365300F3241A /* RankingTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */; };
 		2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F1BA0F523EADD01005E33E8 /* calendar-pt.json */; };
+		0B2529D823E4506400E6D584 /* SportMatches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529D723E4506400E6D584 /* SportMatches.storyboard */; };
+		0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */; };
+		0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */; };
+		0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529DD23E480C800E6D584 /* Auxiliary.swift */; };
+		0B2529E023E84D9300E6D584 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529DF23E84D9200E6D584 /* Profile.storyboard */; };
+		0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */; };
+		0B2529F123E8EE3200E6D584 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529F023E8EE3200E6D584 /* CardView.xib */; };
+		0B2529F323E8EEC000E6D584 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529F223E8EEC000E6D584 /* CardView.swift */; };
+		0B2529F623E8F4D900E6D584 /* SportMatchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */; };
+		0B252A0023EA370E00E6D584 /* CardViewDynamic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */; };
+		0B252A0223EAD8C800E6D584 /* CardViewDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */; };
+		0B252A0423EAFE7800E6D584 /* OlderCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B252A0323EAFE7800E6D584 /* OlderCard.xib */; };
 		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
 		2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar-en.json */; };
@@ -40,7 +56,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result2TableViewController.swift; sourceTree = "<group>"; };
+		2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2TableViewCell.swift; sourceTree = "<group>"; };
+		2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result2TableViewCell.swift; sourceTree = "<group>"; };
+		2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTeamTableViewController.swift; sourceTree = "<group>"; };
 		2F1BA0F523EADD01005E33E8 /* calendar-pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "calendar-pt.json"; sourceTree = "<group>"; };
+		0B2529D723E4506400E6D584 /* SportMatches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SportMatches.storyboard; sourceTree = "<group>"; };
+		0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMatchesViewController.swift; sourceTree = "<group>"; };
+		0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardTableViewCell.swift; path = Accessibility/Controllers/CardTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		0B2529DD23E480C800E6D584 /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Auxiliary.swift; path = Accessibility/Controllers/Auxiliary.swift; sourceTree = SOURCE_ROOT; };
+		0B2529DF23E84D9200E6D584 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModeViewController.swift; sourceTree = "<group>"; };
+		0B2529F023E8EE3200E6D584 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		0B2529F223E8EEC000E6D584 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMatchesPresenter.swift; sourceTree = "<group>"; };
+		0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewDynamic.xib; sourceTree = "<group>"; };
+		0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDynamic.swift; sourceTree = "<group>"; };
+		0B252A0323EAFE7800E6D584 /* OlderCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OlderCard.xib; sourceTree = "<group>"; };
 		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
 		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
@@ -84,6 +116,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2529F423E8F4C000E6D584 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2F0FEE3F23EC35B600F3241A /* Result Team */ = {
+			isa = PBXGroup;
+			children = (
+				2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */,
+				2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */,
+				2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */,
+				2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */,
+			);
+			path = "Result Team";
+			sourceTree = "<group>";
+		};
 		2F40FB9523E33AF500A1DACB /* AccessibilityTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +189,7 @@
 				9CA4C18923E31D050033BAB5 /* Models */,
 				9CA4C18823E31CFA0033BAB5 /* Views */,
 				9CA4C18723E31CF30033BAB5 /* Controllers */,
+				0B2529F423E8F4C000E6D584 /* Presenter */,
 				9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */,
 				9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */,
 				9CA4C17C23E31CE50033BAB5 /* Assets.xcassets */,
@@ -150,9 +202,12 @@
 		9CA4C18723E31CF30033BAB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F0FEE3F23EC35B600F3241A /* Result Team */,
 				2FD82A7C23E8453800A4CEA9 /* All Sports */,
 				9CDA0EDC23E4639D00749D19 /* Home */,
 				9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */,
+				0B2529D923E450B000E6D584 /* SportMatchesViewController.swift */,
+				0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +218,13 @@
 				9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */,
 				2FD82A8123E8486300A4CEA9 /* AllSportsTableViewCell.swift */,
 				2FD82A8523E8854800A4CEA9 /* SubcategoriesTableViewCell.swift */,
+				0B2529DB23E45B2F00E6D584 /* CardTableViewCell.swift */,
+				0B2529DD23E480C800E6D584 /* Auxiliary.swift */,
+				0B2529F023E8EE3200E6D584 /* CardView.xib */,
+				0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */,
+				0B252A0323EAFE7800E6D584 /* OlderCard.xib */,
+				0B2529F223E8EEC000E6D584 /* CardView.swift */,
+				0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				9CA4C17923E31CE30033BAB5 /* Main.storyboard */,
+				0B2529D723E4506400E6D584 /* SportMatches.storyboard */,
+				0B2529DF23E84D9200E6D584 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -282,11 +346,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2529E023E84D9300E6D584 /* Profile.storyboard in Resources */,
+				0B2529D823E4506400E6D584 /* SportMatches.storyboard in Resources */,
 				9CA4C18023E31CE50033BAB5 /* LaunchScreen.storyboard in Resources */,
+				0B252A0423EAFE7800E6D584 /* OlderCard.xib in Resources */,
 				9CA4C17D23E31CE50033BAB5 /* Assets.xcassets in Resources */,
 				2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */,
 				9CA4C17B23E31CE30033BAB5 /* Main.storyboard in Resources */,
 				2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */,
+				2FB7EC6823E3382700A11887 /* calendar.json in Resources */,
+				0B252A0023EA370E00E6D584 /* CardViewDynamic.xib in Resources */,
+				0B2529F123E8EE3200E6D584 /* CardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,16 +379,27 @@
 				2FD82A8223E8486300A4CEA9 /* AllSportsTableViewCell.swift in Sources */,
 				2FC0931D23E4538100F7881A /* Discipline.swift in Sources */,
 				2FD82A7B23E83EB200A4CEA9 /* JSONManager.swift in Sources */,
+				2F0FEE4323EC360800F3241A /* Card2TableViewCell.swift in Sources */,
+				2F0FEE4723EC365300F3241A /* RankingTeamTableViewController.swift in Sources */,
 				9CDA0EE123E4742A00749D19 /* CalendarCollectionViewCell.swift in Sources */,
 				2FD82A8023E8482500A4CEA9 /* AllSportsTableViewController.swift in Sources */,
 				9C52CF8223E9C15E00A3853E /* UIViewExtensions.swift in Sources */,
 				9CDA0EDE23E463C900749D19 /* CollectionViewCell.swift in Sources */,
 				9CA4C17823E31CE30033BAB5 /* HomeViewController.swift in Sources */,
+				0B2529F323E8EEC000E6D584 /* CardView.swift in Sources */,
+				0B2529DE23E480C800E6D584 /* Auxiliary.swift in Sources */,
+				0B2529F623E8F4D900E6D584 /* SportMatchesPresenter.swift in Sources */,
+				0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */,
+				0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */,
+				2F0FEE4523EC362A00F3241A /* Result2TableViewCell.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
 				2FD82A8623E8854800A4CEA9 /* SubcategoriesTableViewCell.swift in Sources */,
+				2F0FEE4123EC35ED00F3241A /* Result2TableViewController.swift in Sources */,
 				9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */,
+				0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */,
 				9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */,
 				2FD82A8423E85A7500A4CEA9 /* DisciplinesTableViewController.swift in Sources */,
+				0B252A0223EAD8C800E6D584 /* CardViewDynamic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +594,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = FKFGBBGDU2;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,6 +614,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = FKFGBBGDU2;
+				DEVELOPMENT_TEAM = VZ4Y7Q4FJ2;
 				INFOPLIST_FILE = Accessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

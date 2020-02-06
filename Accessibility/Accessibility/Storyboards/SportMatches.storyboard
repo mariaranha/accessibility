@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Esporte-->
+        <scene sceneID="Xgb-f5-5WP">
+            <objects>
+                <viewController storyboardIdentifier="sportMatches" id="fIU-R2-zyJ" customClass="SportMatchesViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="11v-eh-O8L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4A7-Hy-0sz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="Bac-7j-vdP" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bac-7j-vdP" id="R3W-Om-Yrd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-gL-R7y" customClass="CardView" customModule="Accessibility" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="382" height="0.0"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorIB">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8p6-gL-R7y" firstAttribute="top" secondItem="R3W-Om-Yrd" secondAttribute="top" constant="8" id="cIY-xv-HaZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="8p6-gL-R7y" secondAttribute="bottom" constant="8" id="eLn-b0-Ixw"/>
+                                                <constraint firstAttribute="trailing" secondItem="8p6-gL-R7y" secondAttribute="trailing" constant="16" id="hOM-TD-0rx"/>
+                                                <constraint firstItem="8p6-gL-R7y" firstAttribute="leading" secondItem="R3W-Om-Yrd" secondAttribute="leading" constant="16" id="oA0-gs-Ie5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="8p6-gL-R7y" id="Yl2-Vn-4h1"/>
+                                            <outlet property="contentView" destination="R3W-Om-Yrd" id="eP8-10-BRH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCellDynamic" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCellDynamic" id="xYR-o4-aXe" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xYR-o4-aXe" id="SXT-W5-snP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-r2-P8q" customClass="CardViewDynamic" customModule="Accessibility" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="382" height="0.0"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorIB">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Nn-r2-P8q" firstAttribute="top" secondItem="SXT-W5-snP" secondAttribute="top" constant="8" id="2H5-If-gH2"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Nn-r2-P8q" secondAttribute="trailing" constant="16" id="UdY-JZ-rdu"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Nn-r2-P8q" secondAttribute="bottom" constant="8" id="ayo-zg-OPM"/>
+                                                <constraint firstItem="0Nn-r2-P8q" firstAttribute="leading" secondItem="SXT-W5-snP" secondAttribute="leading" constant="16" id="yJC-t4-JYB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="0Nn-r2-P8q" id="zZB-hM-uxv"/>
+                                            <outlet property="cardViewDynamic" destination="0Nn-r2-P8q" id="sQP-78-kz4"/>
+                                            <outlet property="contentView" destination="SXT-W5-snP" id="X70-Nx-faz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fIU-R2-zyJ" id="xxD-gt-HCU"/>
+                                    <outlet property="delegate" destination="fIU-R2-zyJ" id="ATH-OA-Ykp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4A7-Hy-0sz" firstAttribute="top" secondItem="11v-eh-O8L" secondAttribute="top" id="FFf-hK-iI0"/>
+                            <constraint firstItem="HgF-3l-KDv" firstAttribute="bottom" secondItem="4A7-Hy-0sz" secondAttribute="bottom" id="fsA-im-5Pk"/>
+                            <constraint firstItem="4A7-Hy-0sz" firstAttribute="leading" secondItem="HgF-3l-KDv" secondAttribute="leading" id="oVE-bV-TFs"/>
+                            <constraint firstItem="HgF-3l-KDv" firstAttribute="trailing" secondItem="4A7-Hy-0sz" secondAttribute="trailing" id="soC-EU-pTd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HgF-3l-KDv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Esporte" largeTitleDisplayMode="always" id="fxy-dp-PD4">
+                        <barButtonItem key="backBarButtonItem" title="Palpites" id="M33-JU-giJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="matchesTableView" destination="4A7-Hy-0sz" id="pwm-hJ-QKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQG-T1-tie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139.1304347826087" y="-257.14285714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tw6-zf-m5F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xs3-3R-3qb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jAQ-gA-D5g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fIU-R2-zyJ" kind="relationship" relationship="rootViewController" id="Yre-Vg-MP9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6l-Eg-FWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228.98550724637684" y="-257.14285714285711"/>
+        </scene>
+    </scenes>
+</document>
