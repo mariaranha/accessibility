@@ -6,21 +6,25 @@ final class CardView: UIView {
     @IBOutlet var contentView: UIView!
     
     //Card Labels
-    @IBOutlet private weak var titleLabel: UILabel?
-    @IBOutlet private weak var subtitleLabel: UILabel?
-    @IBOutlet private weak var pointsLabel: UILabel?
-    @IBOutlet private weak var numberOfPointsLabel: UILabel?
-    @IBOutlet private weak var firstCountryLabel: UILabel?
-    @IBOutlet private weak var secondCountryLabel: UILabel?
-    @IBOutlet private weak var dayLabel: UILabel?
-    @IBOutlet private weak var monthLabel: UILabel?
-    @IBOutlet private weak var timeLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var subtitleLabel: UILabel?
+    @IBOutlet weak var pointsLabel: UILabel?
+    @IBOutlet weak var numberOfPointsLabel: UILabel?
+    @IBOutlet weak var firstCountryLabel: UILabel?
+    @IBOutlet weak var secondCountryLabel: UILabel?
+    @IBOutlet weak var dayLabel: UILabel?
+    @IBOutlet weak var monthLabel: UILabel?
+    @IBOutlet weak var timeLabel: UILabel?
     
     //Card Images
-    @IBOutlet private weak var ringImage: UIImageView?
-    @IBOutlet private weak var cornerImage: UIImageView?
-    @IBOutlet private weak var firstCountryImage: UIImageView?
-    @IBOutlet private weak var secondCountryImage: UIImageView?
+    @IBOutlet weak var ringImage: UIImageView?
+    @IBOutlet weak var cornerImage: UIImageView?
+    @IBOutlet weak var firstCountryImage: UIImageView?
+    @IBOutlet weak var secondCountryImage: UIImageView?
+    
+    //Button
+    @IBOutlet weak var firstCountryButton: UIButton!
+    @IBOutlet weak var secondCountryButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

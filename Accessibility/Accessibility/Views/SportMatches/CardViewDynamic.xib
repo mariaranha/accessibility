@@ -11,10 +11,12 @@
             <connections>
                 <outlet property="contentView" destination="llG-yj-4uh" id="5HK-Lk-1oS"/>
                 <outlet property="dateLabel" destination="wzc-Nv-BDi" id="g7M-XV-M1K"/>
+                <outlet property="firstCountryButton" destination="e0y-Vz-llG" id="0S5-KR-gPw"/>
                 <outlet property="firstCountryImage" destination="1Oi-MJ-vnp" id="OCE-p3-SdO"/>
                 <outlet property="firstCountryLabel" destination="GuJ-Na-VH1" id="vxB-Rj-MuT"/>
                 <outlet property="numberOfPointsLabel" destination="r3G-nQ-ZVa" id="aFm-bO-fJD"/>
                 <outlet property="pointsLabel" destination="EQl-VI-Jxm" id="p1X-fm-Gqn"/>
+                <outlet property="secondCountryButton" destination="3Ed-co-XzB" id="ZB6-Fg-eB3"/>
                 <outlet property="secondCountryImage" destination="44z-dP-nem" id="DoJ-Kr-brM"/>
                 <outlet property="secondCountryLabel" destination="9sE-Bd-XiN" id="pVo-F6-MM2"/>
                 <outlet property="subtitleLabel" destination="rSG-Me-qa0" id="VtM-yu-bvc"/>
@@ -194,15 +196,29 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-Vz-llG">
+                    <rect key="frame" x="41.5" y="104.5" width="76" height="75.5"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-co-XzB">
+                    <rect key="frame" x="296.5" y="104.5" width="76" height="75.5"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AcM-zA-Hib" firstAttribute="top" secondItem="llG-yj-4uh" secondAttribute="top" constant="16" id="6HT-Qx-Bem"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="top" secondItem="R7d-l3-BhP" secondAttribute="top" constant="-8" id="Biz-xx-xrm"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="leading" secondItem="R7d-l3-BhP" secondAttribute="leading" constant="-8" id="Fmr-lr-Cqd"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="bottom" secondItem="9sE-Bd-XiN" secondAttribute="bottom" constant="8" id="VXS-iO-UiH"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="trailing" secondItem="AcM-zA-Hib" secondAttribute="trailing" constant="16" id="ano-Q9-dsg"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="leading" secondItem="byT-KC-jRT" secondAttribute="leading" constant="-8" id="aun-09-bjJ"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="a9k-8a-voM" secondAttribute="bottom" constant="16" id="g58-PP-3N8"/>
                 <constraint firstItem="AcM-zA-Hib" firstAttribute="leading" secondItem="A2L-yn-BhM" secondAttribute="leading" constant="16" id="ifW-Ir-oqw"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="bottom" secondItem="GuJ-Na-VH1" secondAttribute="bottom" constant="8" id="iuu-WQ-dn0"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="trailing" secondItem="R7d-l3-BhP" secondAttribute="trailing" constant="8" id="kPJ-25-59L"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="trailing" secondItem="byT-KC-jRT" secondAttribute="trailing" constant="8" id="lWU-oI-jLJ"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="AcM-zA-Hib" secondAttribute="bottom" constant="16" id="plU-ht-jSG"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="yCo-XE-DNa" secondAttribute="bottom" constant="16" id="vKx-Gj-NMN"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="top" secondItem="byT-KC-jRT" secondAttribute="top" constant="-8" id="zER-wy-dZK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="A2L-yn-BhM"/>

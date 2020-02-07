@@ -14,17 +14,21 @@ final class CardViewDynamic: UIView {
     @IBOutlet var contentView: UIView!
     
     //Card Labels
-    @IBOutlet private weak var titleLabel: UILabel?
-    @IBOutlet private weak var subtitleLabel: UILabel?
-    @IBOutlet private weak var pointsLabel: UILabel?
-    @IBOutlet private weak var numberOfPointsLabel: UILabel?
-    @IBOutlet private weak var firstCountryLabel: UILabel?
-    @IBOutlet private weak var secondCountryLabel: UILabel?
-    @IBOutlet private weak var dateLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var subtitleLabel: UILabel?
+    @IBOutlet weak var pointsLabel: UILabel?
+    @IBOutlet weak var numberOfPointsLabel: UILabel?
+    @IBOutlet weak var firstCountryLabel: UILabel?
+    @IBOutlet weak var secondCountryLabel: UILabel?
+    @IBOutlet weak var dateLabel: UILabel?
     
     //Card images
-    @IBOutlet private weak var firstCountryImage: UIImageView?
-    @IBOutlet private weak var secondCountryImage: UIImageView?
+    @IBOutlet weak var firstCountryImage: UIImageView?
+    @IBOutlet weak var secondCountryImage: UIImageView?
+    
+    //Buttons
+    @IBOutlet weak var firstCountryButton: UIButton!
+    @IBOutlet weak var secondCountryButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +50,7 @@ final class CardViewDynamic: UIView {
     func configure(with viewModel: ViewModel) {
         titleLabel?.text = viewModel.title
         subtitleLabel?.text = viewModel.subtitle
+        subtitleLabel?.sizeToFit()
         numberOfPointsLabel?.text = viewModel.numberOfPoints
         firstCountryLabel?.text = viewModel.firstCountryName
         secondCountryLabel?.text = viewModel.secondCountryName
@@ -53,6 +58,8 @@ final class CardViewDynamic: UIView {
         
         firstCountryImage?.image = viewModel.firstCountryFlag
         secondCountryImage?.image = viewModel.secondCountryFlag
+        
+        layoutIfNeeded()
     }
 }
 
