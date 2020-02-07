@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    @IBOutlet weak var dayStackView: UIStackView!
     
     @IBOutlet weak var calendarStackHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -100,7 +101,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setCalendarStackHeight(){
         let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         let size = userFontSize.pointSize
-        print(size)
         if size < 18 {
             self.calendarStackHeight.constant = 90
         } else if size > 18 && size <= 27 {
@@ -108,7 +108,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else if size > 27 && size <= 40 {
             self.calendarStackHeight.constant = 160
         } else if size > 40 {
-            self.calendarStackHeight.constant = 250
+            self.calendarStackHeight.constant = 210
+            
         }
         
         DispatchQueue.main.async {
@@ -134,6 +135,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == calendarCollectionView {
             // Setting calendar cells
             
+            let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+            let size = userFontSize.pointSize
+            
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CalendarCollectionViewCell {
                 let day = days[indexPath.row]
@@ -146,6 +150,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     
                 } else {
                     cell.selectDay(isSelected: false)
+                }
+                
+                if size > 40{
+                    cell.dayStack.spacing = 0
+                    cell.selectedImage.image?.size
                 }
                 
                 return cell
@@ -263,14 +272,29 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.sportsNumber = sportsOfTheDay.count
     }
 
-
 }
-
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        // if collectionView == collectionView{
-            return CGSize(width: 140, height: 140)
-       // }
+        let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        let size = userFontSize.pointSize
+        var cellWidth: CGFloat?
+        
+        print(size)
+        
+        if size < 21 {
+            cellWidth = (self.view.frame.width / 3)
+            return CGSize(width: cellWidth! - 10, height: cellWidth! + 20)
+        }else if size >= 21 && size < 33{
+            cellWidth = (self.view.frame.width / 2)
+            return CGSize(width: cellWidth! - 15, height: cellWidth! + 15)
+        } else if size == 33{
+            cellWidth = (self.view.frame.width / 2)
+            return CGSize(width: cellWidth! - 10, height: cellWidth! + 35)
+        } else {
+            cellWidth = self.view.frame.width
+            return CGSize(width: cellWidth! - 50, height: cellWidth! - 50)
+        }
     }
 }
