@@ -1,11 +1,3 @@
-//
-//  CardViewDynamic.swift
-//  Accessibility
-//
-//  Created by Julia Conti Mestre on 05/02/20.
-//  Copyright © 2020 Marina Miranda Aranha. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -26,6 +18,10 @@ final class CardViewDynamic: UIView {
     @IBOutlet weak var firstCountryImage: UIImageView?
     @IBOutlet weak var secondCountryImage: UIImageView?
     
+    //Flag view constraits
+    @IBOutlet weak var firstCountryWidth: NSLayoutConstraint!
+    @IBOutlet weak var secondCountryWidth: NSLayoutConstraint!
+    
     //Buttons
     @IBOutlet weak var firstCountryButton: UIButton!
     @IBOutlet weak var secondCountryButton: UIButton!
@@ -33,6 +29,7 @@ final class CardViewDynamic: UIView {
     //Bet variables
     var isFirstCountrySelected: Bool = false
     var isSecondCountrySelected: Bool = false
+    let widthMultiplier: CGFloat = 1.8
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,16 +49,22 @@ final class CardViewDynamic: UIView {
     }
     
     @IBAction func firstCountrySelected(_ sender: UIButton) {
+        let firstFlagWidth = firstCountryWidth.constant
+        let secondFlagWidth = secondCountryWidth.constant
         
         if isFirstCountrySelected == false && isSecondCountrySelected == false {
             isFirstCountrySelected = !isFirstCountrySelected
             secondCountryButton.backgroundColor = .white
             secondCountryButton.alpha = 0.6
             
+            firstCountryWidth.constant = firstFlagWidth * widthMultiplier
+            
         } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
             isFirstCountrySelected = !isFirstCountrySelected
             secondCountryButton.backgroundColor = .clear
             secondCountryButton.alpha = 1.0
+            
+            firstCountryWidth.constant = firstFlagWidth / widthMultiplier
             
         } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
             isFirstCountrySelected = !isFirstCountrySelected
@@ -71,21 +74,30 @@ final class CardViewDynamic: UIView {
             
             secondCountryButton.backgroundColor = .white
             secondCountryButton.alpha = 0.6
+            
+            firstCountryWidth.constant = firstFlagWidth * widthMultiplier
+            secondCountryWidth.constant = secondFlagWidth / widthMultiplier
         }
     }
     
     
     @IBAction func secondCountrySelected(_ sender: UIButton) {
+        let firstFlagWidth = firstCountryWidth.constant
+        let secondFlagWidth = secondCountryWidth.constant
         
         if isFirstCountrySelected == false && isSecondCountrySelected == false {
             isSecondCountrySelected = !isSecondCountrySelected
             firstCountryButton.backgroundColor = .white
             firstCountryButton.alpha = 0.6
             
+            secondCountryWidth.constant = secondFlagWidth * widthMultiplier
+            
         } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
             isSecondCountrySelected = !isSecondCountrySelected
             firstCountryButton.backgroundColor = .clear
             firstCountryButton.alpha = 1.0
+            
+            secondCountryWidth.constant = secondFlagWidth / widthMultiplier
             
         } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
             isSecondCountrySelected = !isSecondCountrySelected
@@ -95,12 +107,16 @@ final class CardViewDynamic: UIView {
             
             firstCountryButton.backgroundColor = .white
             firstCountryButton.alpha = 0.6
+            
+            firstCountryWidth.constant = firstFlagWidth / widthMultiplier
+            secondCountryWidth.constant = secondFlagWidth * widthMultiplier
         }
     }
     
     
     func configure(with viewModel: ViewModel) {
         titleLabel?.text = viewModel.title
+        titleLabel?.sizeToFit()
         subtitleLabel?.text = viewModel.subtitle
         subtitleLabel?.sizeToFit()
         numberOfPointsLabel?.text = viewModel.numberOfPoints

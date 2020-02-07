@@ -72,8 +72,8 @@ extension CardTableViewCell {
             cardAccesInfo = NSLocalizedString("Partida encerrada \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Você fez \(points ?? "") pontos", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países, pontuação")
             firstButton?.isAccessibilityElement = false
             secondButton?.isAccessibilityElement = false
-            firstButton?.isUserInteractionEnabled = false
-            secondButton?.isUserInteractionEnabled = false
+//            firstButton?.isUserInteractionEnabled = false
+//            secondButton?.isUserInteractionEnabled = false
         } else {
             if firstCountry != "???" {
                 cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Selecione um país para palpitar", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")

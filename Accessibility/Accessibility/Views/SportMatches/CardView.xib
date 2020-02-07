@@ -15,7 +15,7 @@
                 <outlet property="firstCountryButton" destination="Nxv-t7-Qxh" id="myT-Kb-r1r"/>
                 <outlet property="firstCountryImage" destination="Tkb-t7-lHA" id="9Lk-5z-cRh"/>
                 <outlet property="firstCountryLabel" destination="38m-Xp-kaZ" id="XIE-nu-kkg"/>
-                <outlet property="firstCountryView" destination="0Os-7S-LOC" id="CqH-Fc-1d3"/>
+                <outlet property="firstCountryWidth" destination="uhT-E5-XBV" id="AsV-RK-mgg"/>
                 <outlet property="monthLabel" destination="CZv-ul-Gqo" id="WDr-0W-5ab"/>
                 <outlet property="numberOfPointsLabel" destination="wP2-ar-vPc" id="kEn-hq-Gej"/>
                 <outlet property="pointsLabel" destination="aEd-je-v0o" id="uHn-Rm-Q4Z"/>
@@ -23,7 +23,7 @@
                 <outlet property="secondCountryButton" destination="W4l-jc-MJM" id="GeL-7z-Btk"/>
                 <outlet property="secondCountryImage" destination="xQL-w2-Re0" id="j26-g6-wmL"/>
                 <outlet property="secondCountryLabel" destination="Uul-dl-bha" id="hIh-KV-NHw"/>
-                <outlet property="secondCountryView" destination="0um-vn-skH" id="cd6-hA-cRK"/>
+                <outlet property="secondCountryWidth" destination="xkf-do-dLP" id="ahU-p0-lAI"/>
                 <outlet property="subtitleLabel" destination="Rdt-34-lPj" id="C2z-Tw-ykx"/>
                 <outlet property="timeLabel" destination="dqE-QB-8UP" id="XeU-Bl-CaY"/>
                 <outlet property="titleLabel" destination="BqG-0e-dE9" id="s9C-8N-a4S"/>
@@ -132,7 +132,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="4Oo-oD-hMf"/>
+                        <constraint firstAttribute="width" secondItem="0Os-7S-LOC" secondAttribute="height" multiplier="50:33" id="1hR-Kl-fll"/>
                         <constraint firstItem="Tkb-t7-lHA" firstAttribute="width" secondItem="0Os-7S-LOC" secondAttribute="width" id="CCf-4i-1aq"/>
                         <constraint firstItem="Tkb-t7-lHA" firstAttribute="centerY" secondItem="0Os-7S-LOC" secondAttribute="centerY" id="cZM-sB-hz2"/>
                         <constraint firstItem="Tkb-t7-lHA" firstAttribute="height" secondItem="0Os-7S-LOC" secondAttribute="height" id="e0E-OG-71e"/>
@@ -176,8 +176,8 @@
                     <constraints>
                         <constraint firstItem="xQL-w2-Re0" firstAttribute="centerX" secondItem="0um-vn-skH" secondAttribute="centerX" id="Ak1-bk-asy"/>
                         <constraint firstItem="xQL-w2-Re0" firstAttribute="centerY" secondItem="0um-vn-skH" secondAttribute="centerY" id="BLj-hi-Wum"/>
-                        <constraint firstAttribute="height" constant="33" id="NS1-ba-tTr"/>
                         <constraint firstItem="xQL-w2-Re0" firstAttribute="height" secondItem="0um-vn-skH" secondAttribute="height" id="Vi6-xt-D6J"/>
+                        <constraint firstAttribute="width" secondItem="0um-vn-skH" secondAttribute="height" multiplier="50:33" id="ek4-ep-ObO"/>
                         <constraint firstItem="xQL-w2-Re0" firstAttribute="width" secondItem="0um-vn-skH" secondAttribute="width" id="nBa-hC-mJb"/>
                         <constraint firstAttribute="width" constant="50" id="xkf-do-dLP"/>
                     </constraints>

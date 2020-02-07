@@ -19,10 +19,12 @@ final class CardView: UIView {
     //Card Images
     @IBOutlet weak var ringImage: UIImageView?
     @IBOutlet weak var cornerImage: UIImageView?
-    @IBOutlet weak var firstCountryView: UIView!
     @IBOutlet weak var firstCountryImage: UIImageView?
-    @IBOutlet weak var secondCountryView: UIView!
     @IBOutlet weak var secondCountryImage: UIImageView?
+    
+    //Flag view constraits
+    @IBOutlet weak var firstCountryWidth: NSLayoutConstraint!
+    @IBOutlet weak var secondCountryWidth: NSLayoutConstraint!
     
     //Button
     @IBOutlet weak var firstCountryButton: UIButton!
@@ -31,6 +33,7 @@ final class CardView: UIView {
     //Bet variables
     var isFirstCountrySelected: Bool = false
     var isSecondCountrySelected: Bool = false
+    let widthMultiplier: CGFloat = 1.8
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,16 +54,22 @@ final class CardView: UIView {
     
     
     @IBAction func firstCountrySelected(_ sender: UIButton) {
+        let firstFlagWidth = firstCountryWidth.constant
+        let secondFlagWidth = secondCountryWidth.constant
         
         if isFirstCountrySelected == false && isSecondCountrySelected == false {
             isFirstCountrySelected = !isFirstCountrySelected
             secondCountryButton.backgroundColor = .white
             secondCountryButton.alpha = 0.6
             
+            firstCountryWidth.constant = firstFlagWidth * widthMultiplier
+            
         } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
             isFirstCountrySelected = !isFirstCountrySelected
             secondCountryButton.backgroundColor = .clear
             secondCountryButton.alpha = 1.0
+            
+            firstCountryWidth.constant = firstFlagWidth / widthMultiplier
             
         } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
             isFirstCountrySelected = !isFirstCountrySelected
@@ -70,22 +79,31 @@ final class CardView: UIView {
             
             secondCountryButton.backgroundColor = .white
             secondCountryButton.alpha = 0.6
+            
+            firstCountryWidth.constant = firstFlagWidth * widthMultiplier
+            secondCountryWidth.constant = secondFlagWidth / widthMultiplier
         }
     
     }
     
     
     @IBAction func secondCountrySelected(_ sender: UIButton) {
+        let firstFlagWidth = firstCountryWidth.constant
+        let secondFlagWidth = secondCountryWidth.constant
         
         if isFirstCountrySelected == false && isSecondCountrySelected == false {
             isSecondCountrySelected = !isSecondCountrySelected
             firstCountryButton.backgroundColor = .white
             firstCountryButton.alpha = 0.6
             
+            secondCountryWidth.constant = secondFlagWidth * widthMultiplier
+            
         } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
             isSecondCountrySelected = !isSecondCountrySelected
             firstCountryButton.backgroundColor = .clear
             firstCountryButton.alpha = 1.0
+            
+            secondCountryWidth.constant = secondFlagWidth / widthMultiplier
             
         } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
             isSecondCountrySelected = !isSecondCountrySelected
@@ -95,6 +113,9 @@ final class CardView: UIView {
             
             firstCountryButton.backgroundColor = .white
             firstCountryButton.alpha = 0.6
+            
+            firstCountryWidth.constant = firstFlagWidth / widthMultiplier
+            secondCountryWidth.constant = secondFlagWidth * widthMultiplier
         }
     }
     
