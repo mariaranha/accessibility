@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol JSONObject {
+    var jsonObject: [Discipline] {get set}
+}
+
 class JSONManager {
     
     private var json: [Discipline] = []
@@ -56,18 +60,18 @@ class JSONManager {
         return sports
     }
     
-    public func getSubcategories(sport: String ) -> [String] {
+    public func getSubcategories(sport: String ) -> [Discipline] {
         // Returns a array of subcategories based on the
         // given sport parameter
         
-        var subcategories: [String] = []
+        var subcategories: [Discipline] = []
         
         if (self.json.count == 0) {
             self.json = loadJSONFile()
         }
         for element in json {
             if (element.sport == sport) {
-                subcategories.append(element.name)
+                subcategories.append(element)
             }
         }
         

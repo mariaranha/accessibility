@@ -17,7 +17,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var selectedDay: Int!
     var json: [Discipline] = []
-    var sportsOfTheDay: [String] = []
+    var selectedSport: String!
+    var sportsOfTheDayDisplayNames: [String] = []
+    var sportsOfTheDay: [Discipline] = []
     var sportsNumber: Int!
     let jsonManager = JSONManager()
     var disciplinesOfTheDay: [Discipline] = []
@@ -25,6 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    @IBOutlet weak var dayStackView: UIStackView!
     
     @IBOutlet weak var calendarStackHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,7 +41,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.monthDay = getMonthDay()
+        
+        json = jsonManager.loadJSONFile()
+        setSportsOfTheDay(day: 22)
+        //load card infos
         
         setCalendarStackHeight()
         
@@ -49,10 +55,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
-        //load card infos
-        loadJSONFile()
-        loadSportsOfTheDay(day: self.monthDay)
-        printSportsOfTheDay()
+        self.monthDay = getMonthDay()
         
         self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
@@ -63,15 +66,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // Removing duplicated sports
         
-        let unique = Array(Set(self.sportsOfTheDay)).sorted()
+        let unique = Array(Set(self.sportsOfTheDayDisplayNames)).sorted()
         
         for sport in unique {
             print(sport)
         }
     }
     
+     // This function will be used when we
+     // reach the olympic games
     private func getMonthDay() -> Int {
         // Return the user current month day
+        
         let date = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: date)
@@ -94,19 +100,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setCalendarStackHeight(){
         let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         let size = userFontSize.pointSize
-        print(size)
         if size < 18 {
             self.calendarStackHeight.constant = 90
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 18 && size <= 27 {
             self.calendarStackHeight.constant = 125
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 25, bottom: 8, right: 25)
         } else if size > 27 && size <= 40 {
             self.calendarStackHeight.constant = 160
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 40 {
-            self.calendarStackHeight.constant = 250
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+            self.calendarStackHeight.constant = 210
+            
         }
         
         DispatchQueue.main.async {
@@ -123,7 +125,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == calendarCollectionView {
             return days.count
         } else {
-            return 5
+            return sportsNumber
         }
     }
 
@@ -131,6 +133,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if collectionView == calendarCollectionView {
             // Setting calendar cells
+            
+            let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+            let size = userFontSize.pointSize
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CalendarCollectionViewCell {
@@ -146,6 +151,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     cell.selectDay(isSelected: false)
                 }
                 
+                if size > 40{
+                    cell.dayStack.spacing = 0
+                    cell.selectedImage.image?.size
+                }
+                
                 return cell
             }
             
@@ -154,18 +164,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CollectionViewCell {
-//                let sportName = sportsOfTheDay[indexPath.row]
-//                let iconName = getIcon(sport: sportName)
-//                cell.configureCell(sportImage: iconName, sport: sportName)
+                let sportName = sportsOfTheDayDisplayNames[indexPath.row]
+                let iconName = getIcon(sport: sportName)
+                cell.configureCell(sportImage: iconName, sport: sportName)
+                
                 
                 // Configure the cell
-                cell.layer.borderWidth = 1
-                cell.layer.borderColor = UIColor.clear.cgColor
-                cell.layer.shadowColor = UIColor.black.cgColor
-                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-                cell.layer.shadowRadius = 8.0
-                cell.layer.shadowOpacity = 0.2
-                cell.layer.masksToBounds = false
+//                cell.layer.borderWidth = 1
+//                cell.layer.borderColor = UIColor.clear.cgColor
+//                cell.layer.shadowColor = UIColor.black.cgColor
+//                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//                cell.layer.shadowRadius = 8.0
+//                cell.layer.shadowOpacity = 0.2
+//                cell.layer.masksToBounds = false
+//                (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 100, height: 100)
                 
                 return cell
             }
@@ -179,6 +191,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
                 cell.selectDay(isSelected: true)
                 
+                let tappedDay = Int(cell.dayLabel.text!)!
+                setSportsOfTheDay(day: tappedDay)
+                self.collectionView.reloadData()
+                
                 var month: String!
                 var day = Int(cell.dayLabel.text!)!
                 if day < 10 {
@@ -191,7 +207,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         } else {
             
-            
+            // Getting selected sport name to populate the next view
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                self.selectedSport = cell.sportNameLabel.text
+                performSegue(withIdentifier: "goToCards", sender: nil)
+            }
             
         }
         
@@ -206,6 +226,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
     }
+    
 
     
     // MARK: - Loading icons
@@ -224,50 +245,94 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: - JSON Functions
     
-    private func loadJSONFile() {
-        // Loading JSON file and building and building JSON array.
-        if let url = Bundle.main.url(forResource: "calendar", withExtension: "json") {
-            do {
-                let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
-                do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: jsonData,
-                                        options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSDictionary {
-                        if let disciplinesArray = jsonResult.value(forKey: "discipline") as? NSArray {
-                            for (_, element) in disciplinesArray.enumerated() {
-                                if let element = element as? NSDictionary {
-                                    
-                                    let discipline = Discipline(json: element as! [String : Any] )
-                                    self.json.append(discipline!)
-                                }
-                            }
-                        }
-                    }
-                } catch let error as NSError {
-                    print("Error: \(error)")
+    private func loadSportsOfTheDay(day: Int) -> [Discipline] {
+        // Loads all sports of the day
+        
+        var sports: [Discipline] = []
+        for discipline in self.json {
+            for disciplineDay in discipline.normalDates {
+                if disciplineDay == day {
+                    sports.append(discipline)
                 }
-            } catch let error as NSError {
-                print("Error: \(error)")
+            }
+            for disciplineDay in discipline.medalDates {
+                if disciplineDay  == day {
+                    sports.append(discipline)
+                }
+            }
+        }
+        
+        return sports
+    }
+    
+    private func getSportsDisplayArray(sportsOfTheDay: [Discipline]) -> [String] {
+        var sports: [String] = []
+        
+        for discilpine in sportsOfTheDay {
+            sports.append(discilpine.sport)
+        }
+        
+        return sports
+    }
+
+    // MARK: - Setting sports of the day
+    
+    private func setSportsOfTheDay(day: Int) {
+
+        self.selectedDay = day
+        self.sportsOfTheDay = loadSportsOfTheDay(day: day)
+        self.sportsOfTheDayDisplayNames = getSportsDisplayArray(sportsOfTheDay: self.sportsOfTheDay)
+        self.sportsNumber = sportsOfTheDayDisplayNames.count
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToCards") {
+            if let nextVC = segue.destination as? SportMatchesViewController {
+                nextVC.sportsOfTheDay = getSelectedSportOnly(sportsOfTheDay: self.sportsOfTheDay, selectedSport: self.selectedSport)
+                nextVC.sportTitle = self.selectedSport ?? ""
+                nextVC.matchDay = self.selectedDay
             }
         }
     }
     
-    private func loadSportsOfTheDay(day: Int) {
-        for discipline in self.json {
-            for disciplineDay in discipline.normalDates {
-                if disciplineDay == day {
-                    self.disciplinesOfTheDay.append(discipline)
-                    self.sportsOfTheDay.append(discipline.sport)
-                }
-            }
-            
-            for disciplineDay in discipline.medalDates {
-                if disciplineDay  == day {
-                    self.disciplinesOfTheDay.append(discipline)
-                    self.sportsOfTheDay.append(discipline.sport)
-                }
+    private func getSelectedSportOnly(sportsOfTheDay: [Discipline], selectedSport: String) -> [Discipline] {
+        
+        var selectedSportArray: [Discipline] = []
+        
+        for element in sportsOfTheDay {
+            if (element.sport.capitalized == selectedSport) {
+                selectedSportArray.append(element)
             }
         }
+        
+        return selectedSportArray
     }
 
 }
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       // if collectionView == collectionView{
+        let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        let size = userFontSize.pointSize
+        var cellWidth: CGFloat?
+        
+        print(size)
+        
+        if size < 21 {
+            cellWidth = (self.view.frame.width / 3)
+            return CGSize(width: cellWidth! - 10, height: cellWidth! + 20)
+        }else if size >= 21 && size < 33{
+            cellWidth = (self.view.frame.width / 2)
+            return CGSize(width: cellWidth! - 15, height: cellWidth! + 15)
+        } else if size == 33{
+            cellWidth = (self.view.frame.width / 2)
+            return CGSize(width: cellWidth! - 10, height: cellWidth! + 35)
+        } else {
+            cellWidth = self.view.frame.width
+            return CGSize(width: cellWidth! - 50, height: cellWidth! - 50)
+        }
+    }
+}
