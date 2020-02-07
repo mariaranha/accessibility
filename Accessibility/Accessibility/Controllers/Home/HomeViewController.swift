@@ -17,7 +17,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var selectedDay: Int!
     var json: [Discipline] = []
-    var sportsOfTheDay: [String] = []
+    var selectedSport: String!
+    var sportsOfTheDayDisplayNames: [String] = []
+    var sportsOfTheDay: [Discipline] = []
     var sportsNumber: Int!
     let jsonManager = JSONManager()
     var disciplinesOfTheDay: [Discipline] = []
@@ -41,6 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         json = jsonManager.loadJSONFile()
         setSportsOfTheDay(day: 22)
+        //load card infos
         
         setCalendarStackHeight()
         
@@ -53,11 +56,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         self.monthDay = getMonthDay()
         
-        //load card infos
-        jsonManager.loadJSONFile()
-        self.sportsOfTheDay = loadSportsOfTheDay(day: self.monthDay)
-        printSportsOfTheDay()
-        
         self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
         
@@ -67,7 +65,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // Removing duplicated sports
         
-        let unique = Array(Set(self.sportsOfTheDay)).sorted()
+        let unique = Array(Set(self.sportsOfTheDayDisplayNames)).sorted()
         
         for sport in unique {
             print(sport)
@@ -161,7 +159,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CollectionViewCell {
-                let sportName = sportsOfTheDay[indexPath.row]
+                let sportName = sportsOfTheDayDisplayNames[indexPath.row]
                 let iconName = getIcon(sport: sportName)
                 cell.configureCell(sportImage: iconName, sport: sportName)
                 
@@ -203,7 +201,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         } else {
             
-            
+            // Getting selected sport name to populate the next view
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                self.selectedSport = cell.sportNameLabel.text
+                performSegue(withIdentifier: "goToCards", sender: nil)
+            }
             
         }
         
@@ -236,24 +238,33 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: - JSON Functions
     
-    private func loadSportsOfTheDay(day: Int) -> [String] {
+    private func loadSportsOfTheDay(day: Int) -> [Discipline] {
         // Loads all sports of the day
         
-        var sports: [String] = []
+        var sports: [Discipline] = []
         for discipline in self.json {
             for disciplineDay in discipline.normalDates {
                 if disciplineDay == day {
-                    sports.append(discipline.sport)
+                    sports.append(discipline)
                 }
             }
             for disciplineDay in discipline.medalDates {
                 if disciplineDay  == day {
-                    sports.append(discipline.sport)
+                    sports.append(discipline)
                 }
             }
         }
-
-        sports = Array(Set(sports)).sorted() // Removing duplicated sports
+        
+        return sports
+    }
+    
+    private func getSportsDisplayArray(sportsOfTheDay: [Discipline]) -> [String] {
+        var sports: [String] = []
+        
+        for discilpine in sportsOfTheDay {
+            sports.append(discilpine.sport)
+        }
+        
         return sports
     }
 
@@ -262,10 +273,34 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     private func setSportsOfTheDay(day: Int) {
 
         self.selectedDay = day
-        sportsOfTheDay = loadSportsOfTheDay(day: self.selectedDay)
-        self.sportsNumber = sportsOfTheDay.count
+        self.sportsOfTheDay = loadSportsOfTheDay(day: day)
+        self.sportsOfTheDayDisplayNames = getSportsDisplayArray(sportsOfTheDay: self.sportsOfTheDay)
+        self.sportsNumber = sportsOfTheDayDisplayNames.count
     }
-
-
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToCards") {
+            if let nextVC = segue.destination as? SportMatchesViewController {
+                nextVC.sportsOfTheDay = getSelectedSportOnly(sportsOfTheDay: self.sportsOfTheDay, selectedSport: self.selectedSport)
+                nextVC.sportTitle = self.selectedSport ?? ""
+                nextVC.matchDay = self.selectedDay
+            }
+        }
+    }
+    
+    private func getSelectedSportOnly(sportsOfTheDay: [Discipline], selectedSport: String) -> [Discipline] {
+        
+        var selectedSportArray: [Discipline] = []
+        
+        for element in sportsOfTheDay {
+            if (element.sport.capitalized == selectedSport) {
+                selectedSportArray.append(element)
+            }
+        }
+        
+        return selectedSportArray
+    }
 }
 

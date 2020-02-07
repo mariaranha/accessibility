@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol JSONObject {
+    var jsonObject: [Discipline] {get set}
+}
+
 class JSONManager {
     
     private var json: [Discipline] = []

@@ -12,6 +12,9 @@ class SportMatchesViewController: UIViewController {
     
     @IBOutlet weak var matchesTableView: UITableView!
     
+    // Json
+    var sportsOfTheDay: [Discipline]!
+    var matchDay: Int!
     //Navigation bar title - CHANGE
     var sportTitle: String = "Boxe"
     
@@ -29,7 +32,6 @@ class SportMatchesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Notification for change of font size
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
@@ -46,8 +48,30 @@ class SportMatchesViewController: UIViewController {
         checkFontSize()
         matchesTableView.reloadData()
         
-        cardsDynamicViewModel = presenter.formatCardsDynamic()
-        cardsViewModel = presenter.formatCards()
+        let sportsNumber: Int = sportsOfTheDay.count
+
+        let date = "\(String(self.matchDay)) JUN 12:30"
+        for i in 0...sportsNumber-1 {
+        
+            cardsDynamicViewModel = presenter.formatCardsDynamic(title: sportsOfTheDay[i].name,
+                                                                 subtitle: sportsOfTheDay[i].sport,
+                                                                 numberOfPoints: "-",
+                                                                 firstCountryName: "BRA",
+                                                                 secondCountryName: "CHN",
+                                                                 date: date,
+                                                                 viewModelArray: cardsDynamicViewModel)
+            
+            cardsViewModel = presenter.formatCards(title: sportsOfTheDay[i].name,
+                                                   subtitle: sportsOfTheDay[i].sport,
+                                                   numberOfPoints: "-",
+                                                   firstCountryName: "BRA",
+                                                   secondCountryName: "USA",
+                                                   day: String(self.matchDay),
+                                                   mounth: "JUN",
+                                                   time: "12:00",
+                                                   index: sportsNumber,
+                                                   viewModelArray: cardsViewModel)
+        }
         
         let nibDynamic = UINib.init(nibName: "CardViewDynamic", bundle: nil)
         self.matchesTableView.register(nibDynamic, forCellReuseIdentifier: "cardViewDynamic")
@@ -133,6 +157,4 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
             return cell
         }
     }
-    
-    
 }
