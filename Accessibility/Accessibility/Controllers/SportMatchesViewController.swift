@@ -14,7 +14,9 @@ class SportMatchesViewController: UIViewController {
     
     // Json
     var sportsOfTheDay: [Discipline]!
+    var discipline: Discipline!
     var matchDay: Int!
+    var dayOnly: Bool = true
     //Navigation bar title - CHANGE
     var sportTitle: String = "Boxe"
     
@@ -48,30 +50,67 @@ class SportMatchesViewController: UIViewController {
         checkFontSize()
         matchesTableView.reloadData()
         
-        let sportsNumber: Int = sportsOfTheDay.count
-
-        let date = "\(String(self.matchDay)) JUN 12:30"
-        for i in 0...sportsNumber-1 {
+       
+        var date = "\(String(self.matchDay)) \(returnMounth(day: self.matchDay)) 12:30"
         
-            cardsDynamicViewModel = presenter.formatCardsDynamic(title: sportsOfTheDay[i].name,
-                                                                 subtitle: sportsOfTheDay[i].sport,
-                                                                 numberOfPoints: "-",
-                                                                 firstCountryName: "BRA",
-                                                                 secondCountryName: "CHN",
-                                                                 date: date,
-                                                                 viewModelArray: cardsDynamicViewModel)
+        if dayOnly {
             
-            cardsViewModel = presenter.formatCards(title: sportsOfTheDay[i].name,
-                                                   subtitle: sportsOfTheDay[i].sport,
-                                                   numberOfPoints: "-",
-                                                   firstCountryName: "BRA",
-                                                   secondCountryName: "USA",
-                                                   day: String(self.matchDay),
-                                                   mounth: "JUN",
-                                                   time: "12:00",
-                                                   index: sportsNumber,
-                                                   viewModelArray: cardsViewModel)
+             let sportsNumber: Int = sportsOfTheDay.count
+            
+            for i in 0...sportsNumber-1 {
+            
+                cardsDynamicViewModel = presenter.formatCardsDynamic(title: sportsOfTheDay[i].name,
+                                                                     subtitle: sportsOfTheDay[i].sport,
+                                                                     numberOfPoints: "-",
+                                                                     firstCountryName: "BRA",
+                                                                     secondCountryName: "CHN",
+                                                                     date: date,
+                                                                     viewModelArray: cardsDynamicViewModel)
+                
+                cardsViewModel = presenter.formatCards(title: sportsOfTheDay[i].name,
+                                                       subtitle: sportsOfTheDay[i].sport,
+                                                       numberOfPoints: "-",
+                                                       firstCountryName: "BRA",
+                                                       secondCountryName: "USA",
+                                                       day: String(self.matchDay),
+                                                       mounth: returnMounth(day: self.matchDay),
+                                                       time: "12:00",
+                                                       index: sportsNumber,
+                                                       viewModelArray: cardsViewModel)
+            }
+            
+        } else {
+            
+            for day in self.discipline.allDates {
+                    
+                    date = "\(String(day)) \(returnMounth(day: day)) 12:30"
+                    
+                cardsDynamicViewModel = presenter.formatCardsDynamic(title: self.discipline.name,
+                                                                         subtitle: self.discipline.sport,
+                                                                         numberOfPoints: "-",
+                                                                         firstCountryName: "BRA",
+                                                                         secondCountryName: "CHN",
+                                                                         date: date,
+                                                                         viewModelArray: cardsDynamicViewModel)
+                    
+                    cardsViewModel = presenter.formatCards(title: self.discipline.name,
+                                                           subtitle: self.discipline.sport,
+                                                           numberOfPoints: "-",
+                                                           firstCountryName: "BRA",
+                                                           secondCountryName: "USA",
+                                                           day: String(day),
+                                                           mounth: returnMounth(day: day),
+                                                           time: "12:00",
+                                                           index: 1,
+                                                           viewModelArray: cardsViewModel)
+                    
+                    
+                }
+            
         }
+        
+        
+        
         
         let nibDynamic = UINib.init(nibName: "CardViewDynamic", bundle: nil)
         self.matchesTableView.register(nibDynamic, forCellReuseIdentifier: "cardViewDynamic")
@@ -126,6 +165,15 @@ class SportMatchesViewController: UIViewController {
     let nc = NotificationCenter.default
 
       nc.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    private func returnMounth(day: Int) -> String {
+        let august: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        if (august.contains(day)) {
+            return "AUG"
+        } else {
+            return "JUN"
+        }
     }
 }
 
