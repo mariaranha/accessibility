@@ -18,6 +18,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(sportImage: UIImage, sport: String) {
+        
         self.sportImage.image = sportImage
         self.sportNameLabel.text = sport.capitalized
     }
