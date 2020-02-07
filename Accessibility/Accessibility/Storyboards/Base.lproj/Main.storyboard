@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -209,7 +209,6 @@
                                         <connections>
                                             <outlet property="sportImage" destination="nWM-jW-PHb" id="ZR8-KG-Ey2"/>
                                             <outlet property="sportNameLabel" destination="fGB-S1-ADf" id="1I6-gW-QuW"/>
-                                            <segue destination="Tv0-xl-M3u" kind="show" id="1W6-vP-WTh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -238,6 +237,7 @@
                         <outlet property="collectionView" destination="HEI-AE-3a6" id="TRH-CB-2Gz"/>
                         <outlet property="collectionViewLayout" destination="96k-Ll-yFV" id="gFi-h8-pX9"/>
                         <outlet property="dayLabel" destination="c1T-mB-L3h" id="2m1-6y-l1j"/>
+                        <segue destination="Tv0-xl-M3u" kind="show" identifier="goToCards" id="atO-4Q-ymz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6x-VK-buq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -399,7 +399,6 @@
                                 <connections>
                                     <outlet property="subcategoryName" destination="yI6-Xy-LMU" id="sUG-9e-WyE"/>
                                     <outlet property="subcategoryView" destination="Fjl-k7-PGg" id="Hst-o8-Zi8"/>
-                                    <segue destination="IZM-QH-EII" kind="show" id="VZh-bf-bdq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -409,6 +408,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Subcategorias" id="qUd-JG-104"/>
+                    <connections>
+                        <segue destination="Tv0-xl-M3u" kind="show" identifier="subcategoriesToCards" id="psD-1y-PSj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgZ-GO-bc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -671,4 +673,7 @@
         <image name="selected" width="35" height="35"/>
         <image name="soccer-icon" width="50" height="64.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="atO-4Q-ymz"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@ class Discipline: Decodable {
     var normalDates: [Int]
     var medalDates: [Int]
     var is1v1: Bool
+    var allDates: [Int]
     
     // Standart initializer
     init(name: String, sport: String, normalDates: [Int], medalDates: [Int], is1v1: Bool) {
@@ -22,6 +23,7 @@ class Discipline: Decodable {
         self.normalDates = normalDates
         self.medalDates = medalDates
         self.is1v1 = is1v1
+        self.allDates = (normalDates + medalDates)
     }
     
     // JSON initializer
@@ -32,5 +34,6 @@ class Discipline: Decodable {
         self.normalDates = json["normal"] as? [Int] ?? []
         self.medalDates = json["medal"] as? [Int] ?? []
         self.is1v1 = json["is1v1"] as? Bool ?? true
+        self.allDates = (normalDates + medalDates)
     }
 }
