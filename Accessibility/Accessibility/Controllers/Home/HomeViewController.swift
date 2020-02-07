@@ -58,7 +58,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.sportsOfTheDay = loadSportsOfTheDay(day: self.monthDay)
         printSportsOfTheDay()
         
-        self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
         
     }
@@ -104,16 +103,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         print(size)
         if size < 18 {
             self.calendarStackHeight.constant = 90
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 18 && size <= 27 {
             self.calendarStackHeight.constant = 125
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 25, bottom: 8, right: 25)
         } else if size > 27 && size <= 40 {
             self.calendarStackHeight.constant = 160
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         } else if size > 40 {
             self.calendarStackHeight.constant = 250
-            self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         }
         
         DispatchQueue.main.async {
@@ -167,13 +162,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 
                 // Configure the cell
-                cell.layer.borderWidth = 1
-                cell.layer.borderColor = UIColor.clear.cgColor
-                cell.layer.shadowColor = UIColor.black.cgColor
-                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-                cell.layer.shadowRadius = 8.0
-                cell.layer.shadowOpacity = 0.2
-                cell.layer.masksToBounds = false
+//                cell.layer.borderWidth = 1
+//                cell.layer.borderColor = UIColor.clear.cgColor
+//                cell.layer.shadowColor = UIColor.black.cgColor
+//                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//                cell.layer.shadowRadius = 8.0
+//                cell.layer.shadowOpacity = 0.2
+//                cell.layer.masksToBounds = false
+//                (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 100, height: 100)
                 
                 return cell
             }
@@ -218,6 +214,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
     }
+    
 
     
     // MARK: - Loading icons
@@ -269,3 +266,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
 }
 
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       // if collectionView == collectionView{
+            return CGSize(width: 140, height: 140)
+       // }
+    }
+}

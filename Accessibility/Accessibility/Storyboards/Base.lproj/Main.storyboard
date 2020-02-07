@@ -163,28 +163,28 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-AE-3a6">
                                 <rect key="frame" x="0.0" y="186" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0hT-mM-KaA">
-                                    <size key="itemSize" width="129" height="142"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="96k-Ll-yFV">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Accessibility" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="129" height="142"/>
+                                        <rect key="frame" x="8" y="8" width="132" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4N8-5g-n7l">
-                                            <rect key="frame" x="0.0" y="0.0" width="129" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="132" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Xe-m5-8b8">
-                                                    <rect key="frame" x="14" y="26" width="101" height="91"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QeG-xL-OoE">
+                                                    <rect key="frame" x="30" y="25" width="72" height="90"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grupo 77" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fv7-iR-UOU">
-                                                            <rect key="frame" x="25.5" y="0.0" width="50.5" height="65.5"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="soccer-icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWM-jW-PHb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="64.5"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arco e flecha" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
-                                                            <rect key="frame" x="0.0" y="70.5" width="101" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Atletismo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
+                                                            <rect key="frame" x="0.0" y="69.5" width="72" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -194,52 +194,21 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="5Xe-m5-8b8" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="14" id="K0c-gR-r9f"/>
-                                                <constraint firstAttribute="bottom" secondItem="5Xe-m5-8b8" secondAttribute="bottom" constant="25" id="N64-i8-cHM"/>
-                                                <constraint firstItem="5Xe-m5-8b8" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="26" id="Ue2-5W-XQ7"/>
-                                                <constraint firstAttribute="trailing" secondItem="5Xe-m5-8b8" secondAttribute="trailing" constant="14" id="ofQ-oh-WYs"/>
+                                                <constraint firstAttribute="trailing" secondItem="QeG-xL-OoE" secondAttribute="trailing" constant="30" id="BuL-Sg-91l"/>
+                                                <constraint firstItem="QeG-xL-OoE" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="30" id="ETo-kC-Qpi"/>
+                                                <constraint firstItem="QeG-xL-OoE" firstAttribute="top" relation="lessThanOrEqual" secondItem="4N8-5g-n7l" secondAttribute="top" constant="25" id="VNk-Lz-h7y"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="QeG-xL-OoE" secondAttribute="bottom" constant="25" id="Y8A-BJ-5KL"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                    <size key="value" width="2" height="4"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                    <integer key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                    <integer key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadowPath" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="129" height="142"/>
+                                        <size key="customSize" width="132" height="140"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="2" height="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="sportImage" destination="fv7-iR-UOU" id="08a-Us-n2O"/>
+                                            <outlet property="sportImage" destination="nWM-jW-PHb" id="ZR8-KG-Ey2"/>
                                             <outlet property="sportNameLabel" destination="fGB-S1-ADf" id="1I6-gW-QuW"/>
                                             <segue destination="Tv0-xl-M3u" kind="show" id="1W6-vP-WTh"/>
                                         </connections>
@@ -268,7 +237,7 @@
                         <outlet property="calendarCollectionView" destination="uwZ-0F-t5G" id="cA4-Xb-RBO"/>
                         <outlet property="calendarStackHeight" destination="i0R-zX-IQQ" id="d9p-qU-Trr"/>
                         <outlet property="collectionView" destination="HEI-AE-3a6" id="TRH-CB-2Gz"/>
-                        <outlet property="collectionViewLayout" destination="0hT-mM-KaA" id="I1C-Pe-H7W"/>
+                        <outlet property="collectionViewLayout" destination="96k-Ll-yFV" id="gFi-h8-pX9"/>
                         <outlet property="dayLabel" destination="c1T-mB-L3h" id="2m1-6y-l1j"/>
                     </connections>
                 </viewController>
@@ -497,5 +466,6 @@
     <resources>
         <image name="Grupo 77" width="50.5" height="65.5"/>
         <image name="selected" width="35" height="35"/>
+        <image name="soccer-icon" width="50" height="64.5"/>
     </resources>
 </document>
