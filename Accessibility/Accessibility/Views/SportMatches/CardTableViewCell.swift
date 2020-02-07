@@ -38,7 +38,18 @@ class CardTableViewCell: UITableViewCell {
             setCardViewDynamicVoiceOver()
         }
     }
+
+    func configure(with viewModel: CardView.ViewModel) {
+        cardView?.configure(with: viewModel)
+    }
     
+    func configureDynamic(with viewModel: CardViewDynamic.ViewModel) {
+        cardViewDynamic?.configure(with: viewModel)
+    }
+}
+
+// MARK: Voice Over
+extension CardTableViewCell {
     func setCardViewVoiceOver() {
         let title = cardView?.titleLabel?.text
         let subtitle = cardView?.subtitleLabel?.text
@@ -59,6 +70,10 @@ class CardTableViewCell: UITableViewCell {
         
         if points != "" && points != "–" && points != nil {
             cardAccesInfo = NSLocalizedString("Partida encerrada \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Você fez \(points ?? "") pontos", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países, pontuação")
+            firstButton?.isAccessibilityElement = false
+            secondButton?.isAccessibilityElement = false
+            firstButton?.isUserInteractionEnabled = false
+            secondButton?.isUserInteractionEnabled = false
         } else {
             if firstCountry != "???" {
                 cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Selecione um país para palpitar", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
@@ -107,14 +122,5 @@ class CardTableViewCell: UITableViewCell {
         cardViewDynamic?.accessibilityLabel = cardAccesInfo
         
         accessibilityElements = [cardViewDynamic as Any, firstButton as Any, secondButton as Any]
-    }
-
-
-    func configure(with viewModel: CardView.ViewModel) {
-        cardView?.configure(with: viewModel)
-    }
-    
-    func configureDynamic(with viewModel: CardViewDynamic.ViewModel) {
-        cardViewDynamic?.configure(with: viewModel)
     }
 }

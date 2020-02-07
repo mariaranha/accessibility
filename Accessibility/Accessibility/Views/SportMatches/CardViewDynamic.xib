@@ -197,25 +197,31 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-Vz-llG">
-                    <rect key="frame" x="41.5" y="104.5" width="76" height="75.5"/>
+                    <rect key="frame" x="48.5" y="104.5" width="62" height="75.5"/>
+                    <connections>
+                        <action selector="firstCountrySelected:" destination="-1" eventType="touchUpInside" id="JrN-s6-6tf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-co-XzB">
-                    <rect key="frame" x="296.5" y="104.5" width="76" height="75.5"/>
+                    <rect key="frame" x="303.5" y="104.5" width="62" height="75.5"/>
+                    <connections>
+                        <action selector="secondCountrySelected:" destination="-1" eventType="touchUpInside" id="JV1-36-4aF"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AcM-zA-Hib" firstAttribute="top" secondItem="llG-yj-4uh" secondAttribute="top" constant="16" id="6HT-Qx-Bem"/>
                 <constraint firstItem="3Ed-co-XzB" firstAttribute="top" secondItem="R7d-l3-BhP" secondAttribute="top" constant="-8" id="Biz-xx-xrm"/>
-                <constraint firstItem="3Ed-co-XzB" firstAttribute="leading" secondItem="R7d-l3-BhP" secondAttribute="leading" constant="-8" id="Fmr-lr-Cqd"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="trailing" secondItem="9sE-Bd-XiN" secondAttribute="trailing" constant="10" id="OWL-KY-SQv"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="trailing" secondItem="GuJ-Na-VH1" secondAttribute="trailing" constant="10" id="OpH-QR-tdI"/>
                 <constraint firstItem="3Ed-co-XzB" firstAttribute="bottom" secondItem="9sE-Bd-XiN" secondAttribute="bottom" constant="8" id="VXS-iO-UiH"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="trailing" secondItem="AcM-zA-Hib" secondAttribute="trailing" constant="16" id="ano-Q9-dsg"/>
-                <constraint firstItem="e0y-Vz-llG" firstAttribute="leading" secondItem="byT-KC-jRT" secondAttribute="leading" constant="-8" id="aun-09-bjJ"/>
+                <constraint firstItem="3Ed-co-XzB" firstAttribute="leading" secondItem="9sE-Bd-XiN" secondAttribute="leading" constant="-10" id="f2B-AL-XT9"/>
+                <constraint firstItem="e0y-Vz-llG" firstAttribute="leading" secondItem="GuJ-Na-VH1" secondAttribute="leading" constant="-10" id="g2Y-iu-Blo"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="a9k-8a-voM" secondAttribute="bottom" constant="16" id="g58-PP-3N8"/>
                 <constraint firstItem="AcM-zA-Hib" firstAttribute="leading" secondItem="A2L-yn-BhM" secondAttribute="leading" constant="16" id="ifW-Ir-oqw"/>
                 <constraint firstItem="e0y-Vz-llG" firstAttribute="bottom" secondItem="GuJ-Na-VH1" secondAttribute="bottom" constant="8" id="iuu-WQ-dn0"/>
-                <constraint firstItem="3Ed-co-XzB" firstAttribute="trailing" secondItem="R7d-l3-BhP" secondAttribute="trailing" constant="8" id="kPJ-25-59L"/>
-                <constraint firstItem="e0y-Vz-llG" firstAttribute="trailing" secondItem="byT-KC-jRT" secondAttribute="trailing" constant="8" id="lWU-oI-jLJ"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="AcM-zA-Hib" secondAttribute="bottom" constant="16" id="plU-ht-jSG"/>
                 <constraint firstItem="A2L-yn-BhM" firstAttribute="bottom" secondItem="yCo-XE-DNa" secondAttribute="bottom" constant="16" id="vKx-Gj-NMN"/>
                 <constraint firstItem="e0y-Vz-llG" firstAttribute="top" secondItem="byT-KC-jRT" secondAttribute="top" constant="-8" id="zER-wy-dZK"/>

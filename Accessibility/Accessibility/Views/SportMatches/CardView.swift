@@ -19,12 +19,18 @@ final class CardView: UIView {
     //Card Images
     @IBOutlet weak var ringImage: UIImageView?
     @IBOutlet weak var cornerImage: UIImageView?
+    @IBOutlet weak var firstCountryView: UIView!
     @IBOutlet weak var firstCountryImage: UIImageView?
+    @IBOutlet weak var secondCountryView: UIView!
     @IBOutlet weak var secondCountryImage: UIImageView?
     
     //Button
     @IBOutlet weak var firstCountryButton: UIButton!
     @IBOutlet weak var secondCountryButton: UIButton!
+    
+    //Bet variables
+    var isFirstCountrySelected: Bool = false
+    var isSecondCountrySelected: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +47,55 @@ final class CardView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    
+    @IBAction func firstCountrySelected(_ sender: UIButton) {
+        
+        if isFirstCountrySelected == false && isSecondCountrySelected == false {
+            isFirstCountrySelected = !isFirstCountrySelected
+            secondCountryButton.backgroundColor = .white
+            secondCountryButton.alpha = 0.6
+            
+        } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
+            isFirstCountrySelected = !isFirstCountrySelected
+            secondCountryButton.backgroundColor = .clear
+            secondCountryButton.alpha = 1.0
+            
+        } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
+            isFirstCountrySelected = !isFirstCountrySelected
+            isSecondCountrySelected = !isSecondCountrySelected
+            firstCountryButton.backgroundColor = .clear
+            firstCountryButton.alpha = 1.0
+            
+            secondCountryButton.backgroundColor = .white
+            secondCountryButton.alpha = 0.6
+        }
+    
+    }
+    
+    
+    @IBAction func secondCountrySelected(_ sender: UIButton) {
+        
+        if isFirstCountrySelected == false && isSecondCountrySelected == false {
+            isSecondCountrySelected = !isSecondCountrySelected
+            firstCountryButton.backgroundColor = .white
+            firstCountryButton.alpha = 0.6
+            
+        } else if isFirstCountrySelected == false && isSecondCountrySelected == true {
+            isSecondCountrySelected = !isSecondCountrySelected
+            firstCountryButton.backgroundColor = .clear
+            firstCountryButton.alpha = 1.0
+            
+        } else if isFirstCountrySelected == true && isSecondCountrySelected == false {
+            isSecondCountrySelected = !isSecondCountrySelected
+            isFirstCountrySelected = !isFirstCountrySelected
+            secondCountryButton.backgroundColor = .clear
+            secondCountryButton.alpha = 1.0
+            
+            firstCountryButton.backgroundColor = .white
+            firstCountryButton.alpha = 0.6
+        }
     }
     
     func configure(with viewModel: ViewModel) {

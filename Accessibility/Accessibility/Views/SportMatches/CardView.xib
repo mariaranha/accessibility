@@ -15,6 +15,7 @@
                 <outlet property="firstCountryButton" destination="Nxv-t7-Qxh" id="myT-Kb-r1r"/>
                 <outlet property="firstCountryImage" destination="Tkb-t7-lHA" id="9Lk-5z-cRh"/>
                 <outlet property="firstCountryLabel" destination="38m-Xp-kaZ" id="XIE-nu-kkg"/>
+                <outlet property="firstCountryView" destination="0Os-7S-LOC" id="CqH-Fc-1d3"/>
                 <outlet property="monthLabel" destination="CZv-ul-Gqo" id="WDr-0W-5ab"/>
                 <outlet property="numberOfPointsLabel" destination="wP2-ar-vPc" id="kEn-hq-Gej"/>
                 <outlet property="pointsLabel" destination="aEd-je-v0o" id="uHn-Rm-Q4Z"/>
@@ -22,6 +23,7 @@
                 <outlet property="secondCountryButton" destination="W4l-jc-MJM" id="GeL-7z-Btk"/>
                 <outlet property="secondCountryImage" destination="xQL-w2-Re0" id="j26-g6-wmL"/>
                 <outlet property="secondCountryLabel" destination="Uul-dl-bha" id="hIh-KV-NHw"/>
+                <outlet property="secondCountryView" destination="0um-vn-skH" id="cd6-hA-cRK"/>
                 <outlet property="subtitleLabel" destination="Rdt-34-lPj" id="C2z-Tw-ykx"/>
                 <outlet property="timeLabel" destination="dqE-QB-8UP" id="XeU-Bl-CaY"/>
                 <outlet property="titleLabel" destination="BqG-0e-dE9" id="s9C-8N-a4S"/>
@@ -202,11 +204,17 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-t7-Qxh">
                     <rect key="frame" x="8" y="105.5" width="66" height="75.5"/>
-                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="firstCountrySelected:" destination="-1" eventType="touchUpInside" id="hl2-sf-0wy"/>
+                    </connections>
                 </button>
-                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4l-jc-MJM">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4l-jc-MJM">
                     <rect key="frame" x="120" y="105.5" width="66" height="75.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="secondCountrySelected:" destination="-1" eventType="touchUpInside" id="9qN-Ln-Puj"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
