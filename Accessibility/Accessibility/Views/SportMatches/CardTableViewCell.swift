@@ -75,11 +75,17 @@ extension CardTableViewCell {
 //            firstButton?.isUserInteractionEnabled = false
 //            secondButton?.isUserInteractionEnabled = false
         } else {
-            if firstCountry != "???" {
-                cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Selecione um país para palpitar", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
+            if firstCountry != "???" || secondCountry != "???" {
+                cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). \(firstCountry ?? "País indefinido") versus \(secondCountry ?? "País indefinido"). Selecione um país para palpitar", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
                 
-                firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(firstCountry ?? "País")", comment: "")
-                secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(secondCountry ?? "País")", comment: "")
+                if firstButton?.isSelected ?? true {
+                    firstButton?.accessibilityHint = NSLocalizedString("Você palpitou em \(firstCountry ?? "País indefinido")", comment: "")
+                } else {
+                    firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(firstCountry ?? "País indefinido")", comment: "")
+                }
+                
+                
+                secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(secondCountry ?? "País indefinido")", comment: "")
             } else {
                 cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(day ?? "") de \(month ?? "") às \(time ?? ""). Países não definidos", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
             }
@@ -124,3 +130,25 @@ extension CardTableViewCell {
         accessibilityElements = [cardViewDynamic as Any, firstButton as Any, secondButton as Any]
     }
 }
+
+
+//Not working
+//class AccessibilityButton: UIButton {
+//
+//    override func accessibilityActivate() -> Bool {
+//        let cardView = CardView()
+//        let firstCoutry = cardView.firstCountryLabel?.text ?? "País indefinido"
+//        let isFirstCountrySelected = cardView.isFirstCountrySelected
+//        
+//        if isFirstCountrySelected {
+//            accessibilityLabel = "Você palpitou em \(firstCoutry)"
+//            accessibilityHint = "Selecione duas vezes para remover o palpite"
+//        } else {
+//            accessibilityLabel = "Você removeu seu palpite em \(firstCoutry)"
+//            accessibilityHint = "Selecione duas vezes para palpitar"
+//        }
+//        
+//        
+//        return false
+//    }
+//}
