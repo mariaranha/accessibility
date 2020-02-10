@@ -12,6 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sportImage: UIImageView!
     @IBOutlet weak var sportNameLabel: UILabel!
+    @IBOutlet weak var labelWidth: NSLayoutConstraint!
     
     class var reuseIdentifier: String {
         return "CellReuseIdentifier"

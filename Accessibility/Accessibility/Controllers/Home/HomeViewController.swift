@@ -50,8 +50,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         setCalendarStackHeight()
         
+        
+        
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        
+        DispatchQueue.main.async {
+            self.collectionView.collectionViewLayout.invalidateLayout()
+
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,7 +118,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else if size > 40 {
             self.calendarStackHeight.constant = 210
             
+            for cell in collectionView.visibleCells as! [CollectionViewCell]{
+                cell.labelWidth.constant = 200
+            }
+            
         }
+        
         
         DispatchQueue.main.async {
             self.collectionView.collectionViewLayout.invalidateLayout()
@@ -172,18 +184,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 cell.contentView.isAccessibilityElement = true
                 cell.contentView.accessibilityLabel = NSLocalizedString ("Modalidade \(sportName)", comment: "Modalidade do Esporte")
                 cell.contentView.accessibilityHint = NSLocalizedString ("Clique para acessar os jogos dessa modalidade", comment: "Selecionar o card")
-                
-                
-                // Configure the cell
-//                cell.layer.borderWidth = 1
-//                cell.layer.borderColor = UIColor.clear.cgColor
-//                cell.layer.shadowColor = UIColor.black.cgColor
-//                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//                cell.layer.shadowRadius = 8.0
-//                cell.layer.shadowOpacity = 0.2
-//                cell.layer.masksToBounds = false
-//                (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: 100, height: 100)
-                
+
                 return cell
             }
         }
@@ -215,6 +216,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             // Getting selected sport name to populate the next view
             if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
                 self.selectedSport = cell.sportNameLabel.text
+                
+                let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+                let size = userFontSize.pointSize
+                var cellWidth: CGFloat?
+                
+                if size > 33 {
+                    cell.labelWidth.constant = 200
+                    DispatchQueue.main.async {
+                        self.collectionView.collectionViewLayout.invalidateLayout()
+
+                    }
+                }
+                
                 performSegue(withIdentifier: "goToCards", sender: nil)
             }
             
@@ -325,19 +339,22 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         var cellWidth: CGFloat?
         
         print(size)
-        
-        if size < 21 {
-            cellWidth = (self.view.frame.width / 3)
-            return CGSize(width: cellWidth! - 10, height: cellWidth! + 20)
-        }else if size >= 21 && size < 33{
-            cellWidth = (self.view.frame.width / 2)
-            return CGSize(width: cellWidth! - 15, height: cellWidth! + 15)
-        } else if size == 33{
-            cellWidth = (self.view.frame.width / 2)
-            return CGSize(width: cellWidth! - 10, height: cellWidth! + 35)
+        if collectionView == self.collectionView{
+            if size < 21 {
+                cellWidth = (self.view.frame.width / 3)
+                return CGSize(width: cellWidth! , height: cellWidth! + 20)
+            }else if size >= 21 && size < 33{
+                cellWidth = (self.view.frame.width / 2)
+                return CGSize(width: cellWidth! - 15, height: cellWidth! + 15)
+            } else if size == 33{
+                cellWidth = (self.view.frame.width / 2)
+                return CGSize(width: cellWidth! - 10, height: cellWidth! + 35)
+            } else {
+                cellWidth = self.view.frame.width
+                return CGSize(width: cellWidth! - 40, height: cellWidth! - 40)
+            }
         } else {
-            cellWidth = self.view.frame.width
-            return CGSize(width: cellWidth! - 50, height: cellWidth! - 50)
+            return CGSize(width:5, height: 5)
         }
     }
 }
