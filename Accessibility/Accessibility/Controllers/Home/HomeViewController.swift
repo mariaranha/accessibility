@@ -60,7 +60,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewWillAppear(false)
         
         self.monthDay = getMonthDay()
-        
         self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
         
@@ -171,10 +170,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 let sportName = sportsOfTheDayDisplayNames[indexPath.row]
                 let iconName = getIcon(sport: sportName)
                 cell.configureCell(sportImage: iconName, sport: sportName)
-                cell.contentView.isAccessibilityElement = true
-                cell.contentView.accessibilityLabel = NSLocalizedString ("Modalidade \(sportName)", comment: "Modalidade do Esporte")
-                cell.contentView.accessibilityHint = NSLocalizedString ("Clique para acessar os jogos dessa modalidade", comment: "Selecionar o card")
-                
                 
                 // Configure the cell
 //                cell.layer.borderWidth = 1

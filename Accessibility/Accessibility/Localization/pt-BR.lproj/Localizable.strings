@@ -21,3 +21,14 @@
 "August" = "Agosto";
 "22 July 2020" = "22 de Julho de 2020";
 "%d %@ 2020" = "%d de %@ de 2020";
+"%@ %@ %@" = "%@ %@ %@";
+"Sunday" = "Domingo";
+"Monday" = "Segunda feira";
+"Tuesday" = "terça feira";
+"Wednesday" = "Quarta feira";
+"Thursday" = "Quinta feira";
+"Friday" = "Sexta feira";
+"Saturday" = "Sábado";
+"Double tap to select" = "Toque duas vezes para selecionar";
+"Double tap to access this sport games" = "Toque duas vezes para acessar os jogos desse esporte";
+"Sport: %@" = "Esporte: %@";
