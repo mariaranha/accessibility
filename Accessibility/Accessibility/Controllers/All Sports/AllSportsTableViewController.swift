@@ -12,14 +12,16 @@ class AllSportsTableViewController: UITableViewController {
     
     let jsonManager = JSONManager()
     var json: [Discipline] = []
-    var sports: [String]!
+    var sportsDisplayName: [String]!
+    var sportsArray: [Discipline]!
     var numberOfSports: Int!
-    var selectedSport: String!
+    var selectedSportDisplayName: String!
+    var selectedSport: Discipline!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sports = jsonManager.getSportsOnly()
-        numberOfSports = sports.count
+        self.sportsDisplayName = jsonManager.getSportsForDisplay()
+        self.numberOfSports = sportsDisplayName.count
     }
 
     // MARK: - Table view data source
@@ -39,7 +41,7 @@ class AllSportsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "sportCell", for: indexPath) as! AllSportsTableViewCell
-        let sportName: String = sports[indexPath.row]
+        let sportName: String = sportsDisplayName[indexPath.row]
         cell.sportName.text = sportName.capitalized
         cell.sportIcon.image = getIcon(sport: sportName)
 
@@ -48,8 +50,14 @@ class AllSportsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.selectedSport = self.sports[indexPath.row]
-        performSegue(withIdentifier: "goToDisciplines", sender: nil)
+        self.selectedSportDisplayName = self.sportsDisplayName[indexPath.row]
+        self.sportsArray = jsonManager.getSportNamed(sport: self.selectedSportDisplayName)
+        if (sportsArray.count == 2) {
+            self.selectedSport = sportsArray[0]
+            performSegue(withIdentifier: "sportsToCards", sender: nil)
+        } else {
+            performSegue(withIdentifier: "goToDisciplines", sender: nil)
+        }
     }
 
     // MARK: - Navigation
@@ -58,7 +66,14 @@ class AllSportsTableViewController: UITableViewController {
         
         if (segue.identifier == "goToDisciplines") {
             if let nextViewController = segue.destination as? DisciplinesTableViewController {
-                nextViewController.subcategories = jsonManager.getSubcategories(sport: self.selectedSport)
+                nextViewController.subcategories = jsonManager.getSubcategories(sport: self.selectedSportDisplayName)
+            }
+        } else if (segue.identifier == "sportsToCards") {
+            if let newVC = segue.destination as? SportMatchesViewController {
+                newVC.discipline = self.selectedSport
+                newVC.matchDay = 23
+                newVC.dayOnly = false
+                newVC.sportTitle = self.selectedSportDisplayName
             }
         }
     }

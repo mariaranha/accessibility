@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "Color Mode"; ObjectID = "05A-Mg-Fes"; */
+"05A-Mg-Fes.normalTitle" = "Color Mode";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "3dV-ch-lTM"; */
+"3dV-ch-lTM.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Esportes"; ObjectID = "3kC-3Z-l50"; */
+"3kC-3Z-l50.title" = "Esportes";
+
+/* Class = "UITabBarItem"; title = "Rankings"; ObjectID = "4C4-wO-E6H"; */
+"4C4-wO-E6H.title" = "Rankings";
+
+/* Class = "UINavigationItem"; title = "Esportes do Dia"; ObjectID = "7fq-io-hFf"; */
+"7fq-io-hFf.title" = "Esportes do Dia";
+
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "KT2-35-ilb"; */
+"KT2-35-ilb.title" = "Perfil";
+
+/* Class = "UILabel"; text = "22 de Julho de 2020"; ObjectID = "c1T-mB-L3h"; */
+"c1T-mB-L3h.text" = "22 de Julho de 2020";
+
+/* Class = "UILabel"; text = "Atletismo"; ObjectID = "fGB-S1-ADf"; */
+"fGB-S1-ADf.text" = "Atletismo";
+
+/* Class = "UILabel"; text = "Sport"; ObjectID = "kxc-vB-kco"; */
+"kxc-vB-kco.text" = "Sport";
+
+/* Class = "UINavigationItem"; title = "Subcategorias"; ObjectID = "qUd-JG-104"; */
+"qUd-JG-104.title" = "Subcategorias";
+
+/* Class = "UINavigationItem"; title = "Esportes"; ObjectID = "vpV-zo-Fyw"; */
+"vpV-zo-Fyw.title" = "Esportes";
+
+/* Class = "UILabel"; text = "RESULTADO"; ObjectID = "w1e-MA-gpl"; */
+"w1e-MA-gpl.text" = "RESULTADO";
+
+/* Class = "UILabel"; text = "Subcategory"; ObjectID = "yI6-Xy-LMU"; */
+"yI6-Xy-LMU.text" = "Subcategory";
