@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         setSportsOfTheDay(day: 22)
         
         self.weekDays = getWeekDays()
-        
+        self.dayLabel.text = NSLocalizedString("22 July 2020", comment: "Default date displayed")
         // Setting view controller title based
         // on user system language
         let viewControllerTitle = NSLocalizedString("Sports of the day",
@@ -205,11 +205,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 var month: String!
                 var day = Int(cell.dayLabel.text!)!
                 if day < 10 {
-                    month = "Agosto"
+                    month = NSLocalizedString("August", comment: "August month")
                 } else {
-                    month = "Julho"
+                    month = NSLocalizedString("July", comment: "July month")
                 }
-                self.dayLabel.text = "\(day) de \(month!) de 2020"
+                self.dayLabel.text = String(format: NSLocalizedString("%d %@ 2020", comment: "Date of the day"), day, month!)
 
             }
         } else {
