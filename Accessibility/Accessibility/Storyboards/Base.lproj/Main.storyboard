@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="2075.36231884058" y="-446.65178571428567"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Bfx-5E-fHJ">
             <objects>
-                <tabBarController id="EUt-nP-cKH" sceneMemberID="viewController">
+                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="iih-c4-pIE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bBX-f7-Agm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -370,7 +370,7 @@
             </objects>
             <point key="canvasLocation" x="3789.8550724637685" y="407.8125"/>
         </scene>
-        <!--Subcategorias-->
+        <!--Subcategories-->
         <scene sceneID="TVQ-bd-FHb">
             <objects>
                 <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,14 +380,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -411,7 +411,7 @@
                             <outlet property="delegate" destination="9wJ-eD-RgC" id="RmU-rq-jJX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subcategorias" id="qUd-JG-104"/>
+                    <navigationItem key="navigationItem" title="Subcategories" id="qUd-JG-104"/>
                     <connections>
                         <segue destination="Tv0-xl-M3u" kind="show" identifier="subcategoriesToCards" id="psD-1y-PSj"/>
                     </connections>
@@ -678,6 +678,6 @@
         <image name="soccer-icon" width="50" height="64.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xxg-hc-x8B"/>
+        <segue reference="psD-1y-PSj"/>
     </inferredMetricsTieBreakers>
 </document>
