@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol JSONObject {
+    var jsonObject: [Discipline] {get set}
+}
+
 class JSONManager {
     
     private var json: [Discipline] = []
@@ -43,11 +47,11 @@ class JSONManager {
         return json
     }
     
-    public func getSportsOnly() -> [String] {
+    public func getSportsForDisplay() -> [String] {
         // This function returns all sports at the
         // olympic games as a sorted string array.
         
-        self.json = loadJSONFile()
+        let json = loadJSONFile()
         for element in json {
             sports.append(element.sport)
         }
@@ -56,18 +60,32 @@ class JSONManager {
         return sports
     }
     
-    public func getSubcategories(sport: String ) -> [String] {
+    public func getSportNamed(sport: String) -> [Discipline] {
+        // This function return all sports at the
+        // olympic games as a discipline array
+        
+        let jsonFile = self.loadJSONFile()
+        var sportsArray: [Discipline] = []
+        for element in jsonFile {
+            if (element.sport == sport) {
+                sportsArray.append(element)
+            }
+        }
+        
+        return sportsArray
+    }
+    
+    public func getSubcategories(sport: String ) -> [Discipline] {
         // Returns a array of subcategories based on the
         // given sport parameter
         
-        var subcategories: [String] = []
+        var subcategories: [Discipline] = []
         
-        if (self.json.count == 0) {
-            self.json = loadJSONFile()
-        }
+        let json = loadJSONFile()
+        
         for element in json {
             if (element.sport == sport) {
-                subcategories.append(element.name)
+                subcategories.append(element)
             }
         }
         

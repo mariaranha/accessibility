@@ -26,60 +26,57 @@ class SportMatchesPresenter {
                         UserCornerImage.green,
                         UserCornerImage.red]
  
-    func formatCards() -> [CardView.ViewModel] {
+    func formatCards(title: String, subtitle: String, numberOfPoints: String,
+                     firstCountryName: String, secondCountryName: String, day: String,
+                     mounth: String, time: String, index: Int, viewModelArray: [CardView.ViewModel]) -> [CardView.ViewModel] {
+        
         let emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
+        
+        var newViewModelArray: [CardView.ViewModel] = viewModelArray
         
         setCornerImage()
         
-        let array = [CardView.ViewModel(title: "Feminino",
-                                       subtitle: "Peso Mosca (48-51kg) - Eliminatórias",
-                                       numberOfPoints: "–",
-                                       firstCountryName: "BRA",
-                                       secondCountryName: "CHN",
-                                       day: "24",
-                                       mounth: "JUN",
-                                       time: "12:40",
-                                       cornerImage: cornerImages[0], //use i inside for model in models
-                                       firstCountryFlag: UIImage(named: "brazil-flag-xl") ?? emptyFlag,
-                                       secondCountryFlag: UIImage(named: "china-flag-xl") ?? emptyFlag),
-                     CardView.ViewModel(title: "Masculino",
-                                       subtitle: "Peso Galo (56kg) - Quartas de final",
-                                       numberOfPoints: "20",
-                                       firstCountryName: "USA",
-                                       secondCountryName: "PAK",
-                                       day: "25",
-                                       mounth: "JUN",
-                                       time: "12:30PM",
-                                       cornerImage: cornerImages[1],
-                                       firstCountryFlag: UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
-                                       secondCountryFlag: UIImage(named: "pakistan-flag-xl") ?? emptyFlag),
-                    ]
+        let newCard = CardView.ViewModel(title: title.capitalized,
+                                         subtitle: subtitle.capitalized,
+                                         numberOfPoints: numberOfPoints,
+                                         firstCountryName: firstCountryName,
+                                         secondCountryName: secondCountryName,
+                                         day: day,
+                                         mounth: mounth,
+                                         time: time,
+                                         cornerImage: cornerImages[0], //use i inside for model in models
+                                         firstCountryFlag: UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                                         secondCountryFlag: UIImage(named: "china-flag-xl") ?? emptyFlag)
         
-        return array
+        newViewModelArray.append(newCard)
+        
+        return newViewModelArray
     }
     
-    func formatCardsDynamic() -> [CardViewDynamic.ViewModel] {
+    func formatCardsDynamic(title: String,
+                            subtitle: String,
+                            numberOfPoints: String,
+                            firstCountryName: String,
+                            secondCountryName: String,
+                            date: String,
+                            viewModelArray: [CardViewDynamic.ViewModel]) -> [CardViewDynamic.ViewModel]  {
+        
         let emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
         
-        let array = [CardViewDynamic.ViewModel(title: "Feminino",
-                                       subtitle: "Peso Mosca (48-51kg) - Eliminatórias",
-                                       numberOfPoints: "–",
-                                       firstCountryName: "BRA",
-                                       secondCountryName: "CHN",
-                                       date: "24 JUN 12:40",
-                                       firstCountryFlag: UIImage(named: "brazil-flag-xl") ?? emptyFlag,
-                                       secondCountryFlag: UIImage(named: "china-flag-xl") ?? emptyFlag),
-                     CardViewDynamic.ViewModel(title: "Masculino",
-                                       subtitle: "Peso Galo (56kg) - Quartas de final",
-                                       numberOfPoints: "20",
-                                       firstCountryName: "USA",
-                                       secondCountryName: "PAK",
-                                       date: "25 JUN 12:30PM",
-                                       firstCountryFlag: UIImage(named: "united-states-of-america-flag-xl") ?? emptyFlag,
-                                       secondCountryFlag: UIImage(named: "pakistan-flag-xl") ?? emptyFlag),
-                    ]
+        var newViewModelArray: [CardViewDynamic.ViewModel] = viewModelArray
         
-        return array
+        let newCard = CardViewDynamic.ViewModel(title: title.capitalized,
+                                                subtitle: subtitle.capitalized,
+                                                numberOfPoints: numberOfPoints,
+                                                firstCountryName: firstCountryName,
+                                                secondCountryName: secondCountryName,
+                                                date: "24 JUN 12:40",
+                                                firstCountryFlag: UIImage(named: "brazil-flag-xl") ?? emptyFlag,
+                                                secondCountryFlag: UIImage(named: "china-flag-xl") ?? emptyFlag)
+        
+        newViewModelArray.append(newCard)
+        
+        return newViewModelArray
     }
     
     func setCornerImage() {
