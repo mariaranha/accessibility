@@ -31,4 +31,9 @@
 "Saturday" = "Saturday";
 "Double tap to select" = "Double tap to select";
 "Double tap to access this sport games" = "Double tap to access this sport games";
-"Sport: %@" = "Sport: %@";"
+"Sport: %@" = "Sport: %@";
+"Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points"  = "Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points";
+"Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb" = "Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb";
+"You throbbed at %@" = "You throbbed at %@";
+"Double tap to throb at %@" = "Double tap to throb at %@";
+"Match %@. %@. %@ %@ at %@. Undefined countries" = "Match %@. %@. %@ %@ at %@. Undefined countries";
