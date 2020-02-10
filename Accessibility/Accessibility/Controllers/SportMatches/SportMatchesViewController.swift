@@ -38,10 +38,6 @@ class SportMatchesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded()
-        
         //Check font
         checkFontSize()
         matchesTableView.reloadData()
@@ -54,8 +50,6 @@ class SportMatchesViewController: UIViewController {
     
         let nib = UINib.init(nibName: "CardView", bundle: nil)
         self.matchesTableView.register(nib, forCellReuseIdentifier: "cardView")
-        
-        matchesTableView.reloadData()
         
         emptyFlag = UIImage(named: "empty-flag") ?? UIImage()
         
