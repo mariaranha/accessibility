@@ -17,6 +17,9 @@ class DisciplinesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewControllerTitle = NSLocalizedString("Subcategories",
+                                                           comment: "This represents the title of a view controller containing a subcategories list of a sport")
+        self.navigationController?.navigationBar.topItem?.titleView?.largeContentTitle = viewControllerTitle
         subcategoriesNumber = subcategories.count
     }
 

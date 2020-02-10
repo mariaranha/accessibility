@@ -12,7 +12,7 @@ import Foundation
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var monthDay: Int!
-    let weekDays = ["S", "T", "Q", "Q", "S", "S", "D"]
+    var weekDays: [String]!
     let days = ["22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
                 "01", "02", "03", "04", "05", "06", "07", "08", "09"]
     
@@ -42,11 +42,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         json = jsonManager.loadJSONFile()
         setSportsOfTheDay(day: 22)
         
+        self.weekDays = getWeekDays()
+        
         // Setting view controller title based
         // on user system language
         let viewControllerTitle = NSLocalizedString("Sports of the day",
                                                     comment: "This represents the home title: 'sports of the day'")
-        self.title = viewControllerTitle
+        self.navigationController?.navigationBar.topItem?.title = viewControllerTitle
         
         setCalendarStackHeight()
         
@@ -313,6 +315,22 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
         return selectedSportArray
+    }
+    
+    private func getWeekDays() -> [String] {
+        // Returns week days based on user location
+        
+        if let locale = NSLocale.current.languageCode {
+            switch locale {
+            case "pt":
+                return ["S", "T", "Q", "Q", "S", "S", "D"]
+            case "en":
+                return ["M", "T", "W", "T", "F", "S", "S"]
+            default:
+                return ["M", "T", "W", "T", "F", "S", "S"]
+            }
+        }
+        return ["M", "T", "W", "T", "F", "S", "S"]
     }
 
 }

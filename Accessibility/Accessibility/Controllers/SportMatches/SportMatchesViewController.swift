@@ -169,10 +169,12 @@ class SportMatchesViewController: UIViewController {
     
     private func returnMounth(day: Int) -> String {
         let august: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let augustName = NSLocalizedString("AUG", comment: "Abreviation of august month")
+        let julyName = NSLocalizedString("JUL", comment: "Abreviation of july month")
         if (august.contains(day)) {
-            return "AUG"
+            return augustName
         } else {
-            return "JUN"
+            return julyName
         }
     }
 }

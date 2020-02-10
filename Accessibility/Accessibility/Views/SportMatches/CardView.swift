@@ -50,6 +50,8 @@ final class CardView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let pointsTitle = NSLocalizedString("Points", comment: "User points in the game")
+        self.pointsLabel?.text = pointsTitle
     }
     
     

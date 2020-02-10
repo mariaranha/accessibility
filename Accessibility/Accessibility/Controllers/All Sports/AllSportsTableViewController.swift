@@ -22,6 +22,9 @@ class AllSportsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.sportsDisplayName = jsonManager.getSportsForDisplay()
         self.numberOfSports = sportsDisplayName.count
+        let viewControllerTitle = NSLocalizedString("All sports",
+                                                           comment: "This represents the title of a view controller containing all sports list")
+        self.navigationController?.navigationBar.topItem?.titleView?.largeContentTitle = viewControllerTitle
     }
 
     // MARK: - Table view data source
@@ -73,7 +76,7 @@ class AllSportsTableViewController: UITableViewController {
                 newVC.discipline = self.selectedSport
                 newVC.matchDay = 23
                 newVC.dayOnly = false
-                newVC.sportTitle = self.selectedSportDisplayName
+                newVC.sportTitle = self.selectedSportDisplayName.capitalized
             }
         }
     }

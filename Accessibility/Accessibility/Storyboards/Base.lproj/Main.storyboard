@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="2075.36231884058" y="-446.65178571428567"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Bfx-5E-fHJ">
             <objects>
-                <tabBarController id="EUt-nP-cKH" sceneMemberID="viewController">
+                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="iih-c4-pIE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bBX-f7-Agm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -272,7 +272,7 @@
         <scene sceneID="jBU-zq-jBr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1yM-zf-8Vg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="3dV-ch-lTM"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="3dV-ch-lTM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="h1l-fh-9gz">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -291,7 +291,7 @@
         <scene sceneID="3N3-gT-w0m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0eV-XV-5lS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Esportes" id="3kC-3Z-l50"/>
+                    <tabBarItem key="tabBarItem" title="Esportes" image="sportscourt.fill" catalog="system" id="3kC-3Z-l50"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bIa-2S-JWf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -370,7 +370,7 @@
             </objects>
             <point key="canvasLocation" x="3789.8550724637685" y="407.8125"/>
         </scene>
-        <!--Subcategorias-->
+        <!--Subcategories-->
         <scene sceneID="TVQ-bd-FHb">
             <objects>
                 <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,14 +380,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -411,7 +411,7 @@
                             <outlet property="delegate" destination="9wJ-eD-RgC" id="RmU-rq-jJX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subcategorias" id="qUd-JG-104"/>
+                    <navigationItem key="navigationItem" title="Subcategories" id="qUd-JG-104"/>
                     <connections>
                         <segue destination="Tv0-xl-M3u" kind="show" identifier="subcategoriesToCards" id="psD-1y-PSj"/>
                     </connections>
@@ -424,7 +424,7 @@
         <scene sceneID="yuT-wT-q8N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Blq-25-avO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" id="KT2-35-ilb"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="KT2-35-ilb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rNp-dr-SdO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -443,7 +443,7 @@
         <scene sceneID="CEo-Oq-AIA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJ3-pm-G7b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rankings" id="4C4-wO-E6H"/>
+                    <tabBarItem key="tabBarItem" title="Rankings" image="person.3.fill" catalog="system" id="4C4-wO-E6H"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zw-50-HsA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -674,8 +674,12 @@
     </scenes>
     <resources>
         <image name="Grupo 77" width="50.5" height="65.5"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="selected" width="35" height="35"/>
         <image name="soccer-icon" width="50" height="64.5"/>
+        <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xxg-hc-x8B"/>
