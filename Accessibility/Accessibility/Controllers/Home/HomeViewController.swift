@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -35,16 +36,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     
-    struct JSON: Decodable {
-        let model: [Discipline]
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         json = jsonManager.loadJSONFile()
         setSportsOfTheDay(day: 22)
-        //load card infos
+        
+        // Setting view controller title based
+        // on user system language
+        let viewControllerTitle = NSLocalizedString("Sports of the day",
+                                                    comment: "This represents the home title: 'sports of the day'")
+        self.title = viewControllerTitle
         
         setCalendarStackHeight()
         
