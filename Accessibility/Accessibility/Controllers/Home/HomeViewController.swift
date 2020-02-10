@@ -178,6 +178,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier,
                                                              for: indexPath) as? CollectionViewCell {
+                
+                
+                cell.contentView.layer.cornerRadius = 8
+                cell.layer.borderWidth = 0
+                cell.layer.borderColor = UIColor.lightGray.cgColor
+
+                cell.layer.backgroundColor = UIColor.white.cgColor
+                cell.layer.shadowColor = UIColor.gray.cgColor
+                cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+                cell.layer.shadowOpacity = 0.2
+                cell.layer.masksToBounds = false
+                
                 let sportName = sportsOfTheDayDisplayNames[indexPath.row]
                 let iconName = getIcon(sport: sportName)
                 cell.configureCell(sportImage: iconName, sport: sportName)
