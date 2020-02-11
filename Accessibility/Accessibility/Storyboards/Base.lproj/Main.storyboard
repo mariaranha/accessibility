@@ -199,8 +199,8 @@
                                                 <constraint firstItem="nWM-jW-PHb" firstAttribute="centerX" secondItem="4N8-5g-n7l" secondAttribute="centerX" id="QDZ-SX-jg1"/>
                                                 <constraint firstItem="fGB-S1-ADf" firstAttribute="centerX" secondItem="4N8-5g-n7l" secondAttribute="centerX" id="Rfi-b3-KhR"/>
                                                 <constraint firstAttribute="trailing" secondItem="nWM-jW-PHb" secondAttribute="trailing" constant="37" id="Tqs-sp-3Qj"/>
-                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="25" id="V3v-30-8CW"/>
                                                 <constraint firstItem="nWM-jW-PHb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="37" id="nSl-tg-JcX"/>
+                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="25" id="oqk-DI-HCx"/>
                                                 <constraint firstItem="nWM-jW-PHb" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="37" id="vst-cT-Gf9"/>
                                             </constraints>
                                         </collectionViewCellContentView>

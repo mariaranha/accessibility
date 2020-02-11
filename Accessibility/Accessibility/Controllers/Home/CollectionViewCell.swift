@@ -32,17 +32,28 @@ class CollectionViewCell: UICollectionViewCell {
         let userFontSize = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         let size = userFontSize.pointSize
         
+        //change constraints to allow card to expand
         if size >= 21{
             self.imageLeading.priority = UILayoutPriority(rawValue: 1)
             self.imageTrailing.priority = UILayoutPriority(rawValue: 1)
             self.imageLeadingGreater.priority = UILayoutPriority(rawValue: 1000)
             self.imageTrailingGreater.priority = UILayoutPriority(rawValue: 1000)
+            self.labelWidth.constant = 160
         } else {
             self.imageLeading.priority = UILayoutPriority(rawValue: 1000)
             self.imageTrailing.priority = UILayoutPriority(rawValue: 1000)
             self.imageLeadingGreater.priority = UILayoutPriority(rawValue: 1)
             self.imageTrailingGreater.priority = UILayoutPriority(rawValue: 1)
         }
+        
+        if size >= 40{
+            self.sportImage.adjustsImageSizeForAccessibilityContentSizeCategory = true
+            self.labelWidth.constant = 250
+        } else {
+            self.sportImage.adjustsImageSizeForAccessibilityContentSizeCategory = false
+
+        }
+        
     }
     
 }
