@@ -11,6 +11,10 @@ import Foundation
 
 class HomeViewController: UIViewController {
     
+    public static var isVoiceOverRunning: Bool {
+        return UIAccessibility.isVoiceOverRunning
+    }
+    
     var monthDay: Int!
     var weekDays: [String]!
     let days = ["22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
@@ -28,6 +32,10 @@ class HomeViewController: UIViewController {
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    
+    
+    @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var calendarStack: UIStackView!
     @IBOutlet weak var dayStackView: UIStackView!
     
     @IBOutlet weak var calendarStackHeight: NSLayoutConstraint!
@@ -71,6 +79,22 @@ class HomeViewController: UIViewController {
         self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if UIAccessibility.isVoiceOverRunning {
+            
+            calendarButton.isAccessibilityElement = true
+            collectionView.isAccessibilityElement = true
+            
+            accessibilityElements = [navigationController?.title as Any, calendarButton as Any, collectionView as Any]
+            print("Voice over running")
+        } else {
+            calendarButton.removeFromSuperview()
+            print("not using voice over")
+        }
     }
     
     private func printSportsOfTheDay() {
@@ -132,6 +156,9 @@ class HomeViewController: UIViewController {
             }
             
         }
+        
+        
+        
         
     }
     

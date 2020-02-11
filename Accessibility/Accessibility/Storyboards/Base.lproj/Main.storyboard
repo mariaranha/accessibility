@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RT6-Pm-eVx">
-                                <rect key="frame" x="0.0" y="140" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="90"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uwZ-0F-t5G">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
@@ -163,7 +163,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-AE-3a6">
-                                <rect key="frame" x="0.0" y="238" width="414" height="575"/>
+                                <rect key="frame" x="0.0" y="186" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="96k-Ll-yFV">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -227,14 +227,21 @@
                                     <outlet property="delegate" destination="419-8s-BFe" id="j5c-dw-5Q4"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk7-4j-dyZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="90"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="top" secondItem="r9s-lB-SrO" secondAttribute="top" id="3NZ-kI-Exg"/>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="leading" secondItem="r9s-lB-SrO" secondAttribute="leading" id="LfC-z1-cK7"/>
+                            <constraint firstItem="tk7-4j-dyZ" firstAttribute="trailing" secondItem="RT6-Pm-eVx" secondAttribute="trailing" id="NDk-X8-NHa"/>
+                            <constraint firstItem="tk7-4j-dyZ" firstAttribute="bottom" secondItem="RT6-Pm-eVx" secondAttribute="bottom" id="T2S-wU-jtV"/>
                             <constraint firstItem="HEI-AE-3a6" firstAttribute="bottom" secondItem="r9s-lB-SrO" secondAttribute="bottom" id="WLu-iL-53J"/>
                             <constraint firstItem="HEI-AE-3a6" firstAttribute="top" secondItem="RT6-Pm-eVx" secondAttribute="bottom" constant="8" id="aH9-Hs-HUh"/>
                             <constraint firstItem="RT6-Pm-eVx" firstAttribute="trailing" secondItem="r9s-lB-SrO" secondAttribute="trailing" id="b1D-Mi-sec"/>
+                            <constraint firstItem="tk7-4j-dyZ" firstAttribute="top" secondItem="RT6-Pm-eVx" secondAttribute="top" id="eLh-QE-TMh"/>
+                            <constraint firstItem="tk7-4j-dyZ" firstAttribute="leading" secondItem="RT6-Pm-eVx" secondAttribute="leading" id="iwX-tj-3Qg"/>
                             <constraint firstItem="HEI-AE-3a6" firstAttribute="leading" secondItem="r9s-lB-SrO" secondAttribute="leading" id="rQs-Ef-6Fo"/>
                             <constraint firstItem="HEI-AE-3a6" firstAttribute="trailing" secondItem="r9s-lB-SrO" secondAttribute="trailing" id="xiP-AE-dkb"/>
                         </constraints>
@@ -242,7 +249,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Esportes do Dia" largeTitleDisplayMode="always" id="7fq-io-hFf"/>
                     <connections>
+                        <outlet property="calendarButton" destination="tk7-4j-dyZ" id="OtR-k9-oZk"/>
                         <outlet property="calendarCollectionView" destination="uwZ-0F-t5G" id="cA4-Xb-RBO"/>
+                        <outlet property="calendarStack" destination="RT6-Pm-eVx" id="5qY-YG-VvS"/>
                         <outlet property="calendarStackHeight" destination="i0R-zX-IQQ" id="d9p-qU-Trr"/>
                         <outlet property="collectionView" destination="HEI-AE-3a6" id="TRH-CB-2Gz"/>
                         <outlet property="collectionViewLayout" destination="96k-Ll-yFV" id="gFi-h8-pX9"/>
@@ -387,14 +396,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
