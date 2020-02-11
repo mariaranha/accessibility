@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CA4C16F23E31CE30033BAB5"
-               BuildableName = "Accessibility.app"
+               BuildableName = "Palpite Oli&#x301;mpico.app"
                BlueprintName = "Accessibility"
                ReferencedContainer = "container:Accessibility.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CA4C16F23E31CE30033BAB5"
-            BuildableName = "Accessibility.app"
+            BuildableName = "Palpite Oli&#x301;mpico.app"
             BlueprintName = "Accessibility"
             ReferencedContainer = "container:Accessibility.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CA4C16F23E31CE30033BAB5"
-            BuildableName = "Accessibility.app"
+            BuildableName = "Palpite Oli&#x301;mpico.app"
             BlueprintName = "Accessibility"
             ReferencedContainer = "container:Accessibility.xcodeproj">
          </BuildableReference>

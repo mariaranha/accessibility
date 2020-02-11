@@ -8,19 +8,15 @@
 
 import Foundation
 
-protocol JSONObject {
-    var jsonObject: [Discipline] {get set}
-}
-
 class JSONManager {
     
-    private var json: [Discipline] = []
     private var sports: [String] = []
     
     public func loadJSONFile() -> [Discipline] {
         // Loading JSON file and building and building JSON array.
         
         let jsonFile = getJSONFile()
+        var json: [Discipline] = []
         if let url = Bundle.main.url(forResource: jsonFile, withExtension: "json") {
             do {
                 let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
@@ -32,7 +28,7 @@ class JSONManager {
                                 if let element = element as? NSDictionary {
                                     
                                     let discipline = Discipline(json: element as! [String : Any] )
-                                    self.json.append(discipline!)
+                                    json.append(discipline!)
                                 }
                             }
                         }

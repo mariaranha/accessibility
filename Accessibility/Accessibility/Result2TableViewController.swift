@@ -41,9 +41,9 @@ class Result2TableViewController: UITableViewController {
                 return cell
             }
         else if indexPath.row == 1{
-            let cell : Result2TableViewCell = tableView.dequeueReusableCell(withIdentifier: "Result2Cell", for: indexPath) as! Result2TableViewCell
+            let cell : ResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Result2Cell", for: indexPath) as! ResultTableViewCell
 
-                cell.title.text = "RESULTADO"
+            cell.title.text = NSLocalizedString("Result", comment: "Game result label")
                 return cell
 
             }

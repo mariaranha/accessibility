@@ -55,7 +55,7 @@ class AllSportsTableViewController: UITableViewController {
         
         self.selectedSportDisplayName = self.sportsDisplayName[indexPath.row]
         self.sportsArray = jsonManager.getSportNamed(sport: self.selectedSportDisplayName)
-        if (sportsArray.count == 2) {
+        if (sportsArray.count == 1) {
             self.selectedSport = sportsArray[0]
             performSegue(withIdentifier: "sportsToCards", sender: nil)
         } else {

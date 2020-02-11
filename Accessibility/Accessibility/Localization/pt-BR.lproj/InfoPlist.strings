@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Accessibility
+
+  Created by Matheus Oliveira on 11/02/20.
+  Copyright © 2020 Marina Miranda Aranha. All rights reserved.
+*/
+/* Localized Bundle Display Name */
+"CFBundleDisplayName" = "Pitaco Olímpico";

@@ -18,13 +18,16 @@
 		0B2529F623E8F4D900E6D584 /* SportMatchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */; };
 		0B252A0023EA370E00E6D584 /* CardViewDynamic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */; };
 		0B252A0223EAD8C800E6D584 /* CardViewDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */; };
+		0B7B629A23EDB66A007E0D02 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B629923EDB66A007E0D02 /* CardDetailViewController.swift */; };
+		0B7B629D23EDB6E7007E0D02 /* CardDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B629C23EDB6E7007E0D02 /* CardDetailPresenter.swift */; };
 		2F0FEE4123EC35ED00F3241A /* Result2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */; };
 		2F0FEE4323EC360800F3241A /* Card2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */; };
-		2F0FEE4523EC362A00F3241A /* Result2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */; };
-		2F0FEE4723EC365300F3241A /* RankingTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */; };
+		2F0FEE4523EC362A00F3241A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4423EC362A00F3241A /* ResultTableViewCell.swift */; };
+		2F0FEE4723EC365300F3241A /* RankingTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FEE4623EC365300F3241A /* RankingTeamTableViewCell.swift */; };
 		2F1BA0F623EADD01005E33E8 /* calendar-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F1BA0F523EADD01005E33E8 /* calendar-pt.json */; };
 		2F1E6CFF23E33B1E005FAE71 /* JsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */; };
 		2F40FB9723E33AF500A1DACB /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */; };
+		2F91233F23F2EACA0050F583 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F91234123F2EACA0050F583 /* InfoPlist.strings */; };
 		2FB7EC6823E3382700A11887 /* calendar-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7EC6723E3382700A11887 /* calendar-en.json */; };
 		2FC0931D23E4538100F7881A /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0931C23E4538100F7881A /* Discipline.swift */; };
 		2FCCAE9323F09F290067820B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE9523F09F290067820B /* Localizable.strings */; };
@@ -68,15 +71,19 @@
 		0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMatchesPresenter.swift; sourceTree = "<group>"; };
 		0B2529FF23EA370E00E6D584 /* CardViewDynamic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewDynamic.xib; sourceTree = "<group>"; };
 		0B252A0123EAD8C800E6D584 /* CardViewDynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDynamic.swift; sourceTree = "<group>"; };
+		0B7B629923EDB66A007E0D02 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		0B7B629C23EDB6E7007E0D02 /* CardDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailPresenter.swift; sourceTree = "<group>"; };
 		2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result2TableViewController.swift; sourceTree = "<group>"; };
 		2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2TableViewCell.swift; sourceTree = "<group>"; };
-		2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result2TableViewCell.swift; sourceTree = "<group>"; };
-		2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTeamTableViewController.swift; sourceTree = "<group>"; };
+		2F0FEE4423EC362A00F3241A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		2F0FEE4623EC365300F3241A /* RankingTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTeamTableViewCell.swift; sourceTree = "<group>"; };
 		2F1BA0F523EADD01005E33E8 /* calendar-pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "calendar-pt.json"; sourceTree = "<group>"; };
 		2F1E6CFE23E33B1E005FAE71 /* JsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTest.swift; sourceTree = "<group>"; };
 		2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40FB9623E33AF500A1DACB /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
 		2F40FB9823E33AF500A1DACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F91234023F2EACA0050F583 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F91234223F2EAD10050F583 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2FB7EC6723E3382700A11887 /* calendar-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "calendar-en.json"; sourceTree = "<group>"; };
 		2FC0931C23E4538100F7881A /* Discipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Discipline.swift; path = AccessibilityTests/Discipline.swift; sourceTree = SOURCE_ROOT; };
 		2FCCAE8E23F09EBB0067820B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -90,7 +97,7 @@
 		2FD82A8323E85A7500A4CEA9 /* DisciplinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesTableViewController.swift; sourceTree = "<group>"; };
 		2FD82A8523E8854800A4CEA9 /* SubcategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubcategoriesTableViewCell.swift; path = "Accessibility/Controllers/All Sports/SubcategoriesTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		9CA4C17023E31CE30033BAB5 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA4C17023E31CE30033BAB5 /* Pitaco Olímpico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitaco Olímpico.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +131,8 @@
 		0B2529F423E8F4C000E6D584 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */,
+				0B7B629E23EDB6FB007E0D02 /* Sport Matches */,
+				0B7B629F23EDB71C007E0D02 /* Card Detail */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -149,13 +157,42 @@
 			path = SportMatches;
 			sourceTree = "<group>";
 		};
+		0B7B629B23EDB67D007E0D02 /* Card Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0B7B629923EDB66A007E0D02 /* CardDetailViewController.swift */,
+			);
+			path = "Card Detail";
+			sourceTree = "<group>";
+		};
+		0B7B629E23EDB6FB007E0D02 /* Sport Matches */ = {
+			isa = PBXGroup;
+			children = (
+				0B2529F523E8F4D900E6D584 /* SportMatchesPresenter.swift */,
+			);
+			path = "Sport Matches";
+			sourceTree = "<group>";
+		};
+		0B7B629F23EDB71C007E0D02 /* Card Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0B7B629C23EDB6E7007E0D02 /* CardDetailPresenter.swift */,
+			);
+			path = "Card Detail";
+			sourceTree = "<group>";
+		};
+		0B7B62A123F254ED007E0D02 /* Card Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2F0FEE4623EC365300F3241A /* RankingTeamTableViewCell.swift */,
+				2F0FEE4423EC362A00F3241A /* ResultTableViewCell.swift */,
+			);
+			path = "Card Detail";
+			sourceTree = "<group>";
+		};
 		2F0FEE3F23EC35B600F3241A /* Result Team */ = {
 			isa = PBXGroup;
 			children = (
-				2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */,
-				2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */,
-				2F0FEE4423EC362A00F3241A /* Result2TableViewCell.swift */,
-				2F0FEE4623EC365300F3241A /* RankingTeamTableViewController.swift */,
 			);
 			path = "Result Team";
 			sourceTree = "<group>";
@@ -183,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				2FCCAE9523F09F290067820B /* Localizable.strings */,
+				2F91234123F2EACA0050F583 /* InfoPlist.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -208,7 +246,7 @@
 		9CA4C17123E31CE30033BAB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CA4C17023E31CE30033BAB5 /* Accessibility.app */,
+				9CA4C17023E31CE30033BAB5 /* Pitaco Olímpico.app */,
 				2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */,
 			);
 			name = Products;
@@ -223,6 +261,7 @@
 				9CA4C18923E31D050033BAB5 /* Models */,
 				9CA4C18823E31CFA0033BAB5 /* Views */,
 				9CA4C18723E31CF30033BAB5 /* Controllers */,
+				2F0FEE4023EC35ED00F3241A /* Result2TableViewController.swift */,
 				0B2529F423E8F4C000E6D584 /* Presenter */,
 				9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */,
 				9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */,
@@ -240,9 +279,11 @@
 				2FD82A7C23E8453800A4CEA9 /* All Sports */,
 				9CDA0EDC23E4639D00749D19 /* Home */,
 				0B252A0623EC3D9B00E6D584 /* SportMatches */,
+				0B7B629B23EDB67D007E0D02 /* Card Detail */,
 				9CA4C18B23E320AA0033BAB5 /* SportsViewController.swift */,
 				0B2529E123E84DF700E6D584 /* ColorModeViewController.swift */,
 				2FCCAE9723F175A80067820B /* TabBarViewController.swift */,
+				2F0FEE4223EC360800F3241A /* Card2TableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +293,7 @@
 			children = (
 				0B252A0523EC3D6D00E6D584 /* SportMatches */,
 				9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */,
+				0B7B62A123F254ED007E0D02 /* Card Detail */,
 				2FD82A8123E8486300A4CEA9 /* AllSportsTableViewCell.swift */,
 				2FD82A8523E8854800A4CEA9 /* SubcategoriesTableViewCell.swift */,
 				0B2529DD23E480C800E6D584 /* Auxiliary.swift */,
@@ -323,7 +365,7 @@
 			);
 			name = Accessibility;
 			productName = Accessibility;
-			productReference = 9CA4C17023E31CE30033BAB5 /* Accessibility.app */;
+			productReference = 9CA4C17023E31CE30033BAB5 /* Pitaco Olímpico.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -378,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2529E023E84D9300E6D584 /* Profile.storyboard in Resources */,
+				2F91233F23F2EACA0050F583 /* InfoPlist.strings in Resources */,
 				0B2529D823E4506400E6D584 /* SportMatches.storyboard in Resources */,
 				2FCCAE9323F09F290067820B /* Localizable.strings in Resources */,
 				9CA4C18023E31CE50033BAB5 /* LaunchScreen.storyboard in Resources */,
@@ -411,7 +454,8 @@
 				2FC0931D23E4538100F7881A /* Discipline.swift in Sources */,
 				2FD82A7B23E83EB200A4CEA9 /* JSONManager.swift in Sources */,
 				2F0FEE4323EC360800F3241A /* Card2TableViewCell.swift in Sources */,
-				2F0FEE4723EC365300F3241A /* RankingTeamTableViewController.swift in Sources */,
+				2F0FEE4723EC365300F3241A /* RankingTeamTableViewCell.swift in Sources */,
+				0B7B629A23EDB66A007E0D02 /* CardDetailViewController.swift in Sources */,
 				9CDA0EE123E4742A00749D19 /* CalendarCollectionViewCell.swift in Sources */,
 				2FD82A8023E8482500A4CEA9 /* AllSportsTableViewController.swift in Sources */,
 				9C52CF8223E9C15E00A3853E /* UIViewExtensions.swift in Sources */,
@@ -423,11 +467,12 @@
 				2FCCAE9823F175A80067820B /* TabBarViewController.swift in Sources */,
 				0B2529DC23E45B2F00E6D584 /* CardTableViewCell.swift in Sources */,
 				0B2529DA23E450B000E6D584 /* SportMatchesViewController.swift in Sources */,
-				2F0FEE4523EC362A00F3241A /* Result2TableViewCell.swift in Sources */,
+				2F0FEE4523EC362A00F3241A /* ResultTableViewCell.swift in Sources */,
 				9CA4C17423E31CE30033BAB5 /* AppDelegate.swift in Sources */,
 				2FD82A8623E8854800A4CEA9 /* SubcategoriesTableViewCell.swift in Sources */,
 				2F0FEE4123EC35ED00F3241A /* Result2TableViewController.swift in Sources */,
 				9CA4C17623E31CE30033BAB5 /* SceneDelegate.swift in Sources */,
+				0B7B629D23EDB6E7007E0D02 /* CardDetailPresenter.swift in Sources */,
 				0B2529E223E84DF700E6D584 /* ColorModeViewController.swift in Sources */,
 				9CA4C18C23E320AA0033BAB5 /* SportsViewController.swift in Sources */,
 				2FD82A8423E85A7500A4CEA9 /* DisciplinesTableViewController.swift in Sources */,
@@ -446,6 +491,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2F91234123F2EACA0050F583 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F91234023F2EACA0050F583 /* en */,
+				2F91234223F2EAD10050F583 /* pt-BR */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		2FCCAE9523F09F290067820B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -647,7 +701,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marina.Accessibility;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pitaco Olímpico";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -665,7 +719,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marina.Accessibility;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pitaco Olímpico";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
