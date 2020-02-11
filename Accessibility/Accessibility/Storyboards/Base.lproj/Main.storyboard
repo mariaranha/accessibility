@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,13 +64,13 @@
         <!--Esportes do Dia-->
         <scene sceneID="SZX-FT-vyz">
             <objects>
-                <viewController id="419-8s-BFe" customClass="HomeViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="419-8s-BFe" customClass="HomeViewController" customModule="Pitaco_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9g-6e-cdl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RT6-Pm-eVx">
-                                <rect key="frame" x="0.0" y="140" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="90"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uwZ-0F-t5G">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
@@ -82,7 +82,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCellReuseIdentifier" id="Rdu-eP-ZbK" customClass="CalendarCollectionViewCell" customModule="Accessibility" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCellReuseIdentifier" id="Rdu-eP-ZbK" customClass="CalendarCollectionViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="8" width="58" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rsc-tw-ed7">
@@ -163,7 +163,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-AE-3a6">
-                                <rect key="frame" x="0.0" y="238" width="414" height="575"/>
+                                <rect key="frame" x="0.0" y="186" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="96k-Ll-yFV">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -172,7 +172,7 @@
                                     <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Accessibility" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="132" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4N8-5g-n7l">
@@ -180,10 +180,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" image="soccer-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nWM-jW-PHb">
-                                                    <rect key="frame" x="37" y="25" width="58" height="64.5"/>
+                                                    <rect key="frame" x="37" y="25" width="58" height="68"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Atletismo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
-                                                    <rect key="frame" x="2.5" y="100" width="127" height="20.5"/>
+                                                    <rect key="frame" x="2.5" y="103.5" width="127" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="127" id="G0R-nW-Rid"/>
                                                     </constraints>
@@ -257,7 +257,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="Bfx-5E-fHJ">
             <objects>
-                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Pitaco_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="iih-c4-pIE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bBX-f7-Agm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -319,13 +319,13 @@
         <!--Esportes-->
         <scene sceneID="mqd-px-ueO">
             <objects>
-                <tableViewController id="WJR-0f-r5f" customClass="AllSportsTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WJR-0f-r5f" customClass="AllSportsTableViewController" customModule="Pitaco_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NBV-Bd-VCb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sportCell" id="TiH-7r-OD0" customClass="AllSportsTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sportCell" id="TiH-7r-OD0" customClass="AllSportsTableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TiH-7r-OD0" id="BqA-bv-7qt">
@@ -380,21 +380,21 @@
         <!--Subcategories-->
         <scene sceneID="TVQ-bd-FHb">
             <objects>
-                <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Pitaco_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sgy-Ur-aLL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -478,13 +478,13 @@
         <!--Result2 Table View Controller-->
         <scene sceneID="6gq-ER-7XF">
             <objects>
-                <tableViewController id="IZM-QH-EII" customClass="Result2TableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IZM-QH-EII" customClass="Result2TableViewController" customModule="Pitaco_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg8-Qm-yHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Card2Cell" id="2We-nE-1i1" customClass="Card2TableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Card2Cell" id="2We-nE-1i1" customClass="Card2TableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2We-nE-1i1" id="i4U-rC-cbk">
@@ -492,7 +492,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Result2Cell" id="ITW-H3-yjs" customClass="ResultTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Result2Cell" id="ITW-H3-yjs" customClass="ResultTableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="71.5" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITW-H3-yjs" id="WQ4-Js-bPV">
@@ -518,7 +518,7 @@
                                     <outlet property="title" destination="w1e-MA-gpl" id="Ihu-lu-0aI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTeamCell" rowHeight="154" id="Qdw-th-F2n" customClass="RankingTeamTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTeamCell" rowHeight="154" id="Qdw-th-F2n" customClass="RankingTeamTableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="124.5" width="414" height="154"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qdw-th-F2n" id="HLa-FX-cN0">
@@ -685,7 +685,7 @@
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="selected" width="35" height="35"/>
-        <image name="soccer-icon" width="50" height="64.5"/>
+        <image name="soccer-icon" width="49.5" height="68"/>
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

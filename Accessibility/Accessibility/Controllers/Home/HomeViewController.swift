@@ -142,6 +142,12 @@ class HomeViewController: UIViewController {
         
         let defaultIcon: UIImage = UIImage(named: "soccer-icon")!
         
+        if (sport == "baseball/softball") {
+            if let icon = UIImage(named: "baseballsoftball-icon") {
+                return icon
+            }
+        }
+        
         if let icon = UIImage(named: "\(sport)-icon") {
             return icon
         }
