@@ -135,6 +135,23 @@ final class CardView: UIView {
         firstCountryImage?.image = viewModel.firstCountryFlag
         secondCountryImage?.image = viewModel.secondCountryFlag
     }
+    @IBAction func firstCountryPressed(_ sender: Any) {
+        firstCountryButton.isAccessibilityElement = true
+        if isFirstCountrySelected == false{
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("You throbbed at Brazil", comment: ""))
+        } else {
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at Brazil", comment: ""))
+        }
+    }
+    @IBAction func secondCountryPressed(_ sender: Any) {
+        secondCountryButton.isAccessibilityElement = true
+        if isSecondCountrySelected == false{
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("You throbbed at China", comment: ""))
+        } else {
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at China", comment: ""))
+        }
+        
+    }
 }
 
 extension CardView {

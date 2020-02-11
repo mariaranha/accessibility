@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Accessibility" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Palpite_Olímpico" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="K4c-5G-2Ay" id="BUz-uS-wjy"/>
                 <outlet property="cornerImage" destination="Y1g-j1-p7b" id="hxr-x6-ruO"/>
@@ -206,6 +206,7 @@
                     <rect key="frame" x="8" y="105.5" width="66" height="75.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <action selector="firstCountryPressed:" destination="-1" eventType="touchUpInside" id="kxb-gi-y0v"/>
                         <action selector="firstCountrySelected:" destination="-1" eventType="touchUpInside" id="hl2-sf-0wy"/>
                     </connections>
                 </button>
@@ -213,6 +214,7 @@
                     <rect key="frame" x="120" y="105.5" width="66" height="75.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <action selector="secondCountryPressed:" destination="-1" eventType="touchUpInside" id="IQy-mK-8BC"/>
                         <action selector="secondCountrySelected:" destination="-1" eventType="touchUpInside" id="9qN-Ln-Puj"/>
                     </connections>
                 </button>

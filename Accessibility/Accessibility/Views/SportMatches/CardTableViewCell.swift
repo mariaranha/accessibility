@@ -12,7 +12,6 @@ import Foundation
 class CardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cardView: CardView?
-    
     @IBOutlet weak var cardViewDynamic: CardViewDynamic!
     
     override func awakeFromNib() {
@@ -70,24 +69,17 @@ extension CardTableViewCell {
         
         if points != "" && points != "–" && points != nil {
             
-            cardAccessInfo = String(format: NSLocalizedString("Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países, pontuação"), title ?? "", subtitle ?? "", day ?? "", month ?? "", time ?? "", firstCountry ?? "", secondCountry ?? "", points ?? "")
+            cardAccessInfo = String(format: NSLocalizedString("Match ended %@, %@, %@ %@ at %@. Brazil versus China. You did %@ points", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países, pontuação"), title ?? "", subtitle ?? "", day ?? "", month ?? "", time ?? "", points ?? "")
             
             firstButton?.isAccessibilityElement = false
             secondButton?.isAccessibilityElement = false
         } else {
             if firstCountry != "???" || secondCountry != "???" {
                 
-                cardAccessInfo = String(format: NSLocalizedString("Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países"), title ?? "", subtitle ?? "", day ?? "", month ?? "", time ?? "", firstCountry ?? "País indefinido", secondCountry ?? "País indefinido")
-                
-                if firstButton?.isSelected ?? true {
-                    
-                    firstButton?.accessibilityHint = String(format: NSLocalizedString("You throbbed at %@", comment: ""), firstCountry ?? "País indefinido")
-                } else {
-                    firstButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at %@", comment: ""), firstCountry ?? "País indefinido")
-                    
-                }
-                
-                secondButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at %@", comment: ""), secondCountry ?? "País indefinido")
+                cardAccessInfo = String(format: NSLocalizedString("Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países"), title ?? "", subtitle ?? "", day ?? "", month ?? "", time ?? "")
+
+                firstButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at Brazil", comment: ""))
+                secondButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at China", comment: ""))
                 
             } else {
                 
@@ -122,10 +114,10 @@ extension CardTableViewCell {
             cardAccessInfo = String(format: NSLocalizedString("Match ended. %@. %@. %@. %@ versus %@.", comment: ""), title ?? "", subtitle ?? "", date ?? "", firstCountry ?? "", secondCountry ?? "")
         } else {
             if firstCountry != "???" {
-                cardAccessInfo = String(format: NSLocalizedString("Match ended. %@. %@. %@. %@ versus %@. Select the country you want to throb", comment: "Match card with informations: Title, subtitle, date and countries"), title ?? "", subtitle ?? "", date ?? "", firstCountry ?? "", secondCountry ?? "")
+                cardAccessInfo = String(format: NSLocalizedString("Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information", comment: "Match card with informations: Title, subtitle, date and countries"), title ?? "", subtitle ?? "", date ?? "")
                 
-                firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(firstCountry ?? "País")", comment: "")
-                secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(secondCountry ?? "País")", comment: "")
+                firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em Brazil", comment: "")
+                secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em China)", comment: "")
             } else {
                 cardAccessInfo = String(format: NSLocalizedString("Match. %@. %@. %@. Undefinied countries", comment: ""),title ?? "", subtitle ?? "", date ?? "" )
             }
@@ -136,25 +128,3 @@ extension CardTableViewCell {
         accessibilityElements = [cardViewDynamic as Any, firstButton as Any, secondButton as Any]
     }
 }
-
-
-//Not working
-//class AccessibilityButton: UIButton {
-//
-//    override func accessibilityActivate() -> Bool {
-//        let cardView = CardView()
-//        let firstCoutry = cardView.firstCountryLabel?.text ?? "País indefinido"
-//        let isFirstCountrySelected = cardView.isFirstCountrySelected
-//        
-//        if isFirstCountrySelected {
-//            accessibilityLabel = "Você palpitou em \(firstCoutry)"
-//            accessibilityHint = "Selecione duas vezes para remover o palpite"
-//        } else {
-//            accessibilityLabel = "Você removeu seu palpite em \(firstCoutry)"
-//            accessibilityHint = "Selecione duas vezes para palpitar"
-//        }
-//        
-//        
-//        return false
-//    }
-//}

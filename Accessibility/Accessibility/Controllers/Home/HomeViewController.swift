@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var calendarStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,9 @@ class HomeViewController: UIViewController {
         
         setCalendarStackHeight()
         
-        
+        self.calendarStack.isAccessibilityElement = true
+        self.calendarStack.accessibilityLabel = String(format: NSLocalizedString ("Sports of day %@ double tap to choose another day", comment: "Accessibility Label: Country flag"), dayLabel.text! ?? "dia")
+
         
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(fontChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
@@ -61,6 +64,12 @@ class HomeViewController: UIViewController {
             self.collectionView.collectionViewLayout.invalidateLayout()
 
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        accessibilityElements = [self.navigationController?.title, calendarStack as Any, collectionView as Any]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -293,6 +302,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                        
                    } else {
                        cell.selectDay(isSelected: false)
+                       cell.dayLabel.textColor = .black
                    }
                    
                    if size > 40{
@@ -342,6 +352,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             if collectionView == calendarCollectionView {
                 if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
                     cell.selectDay(isSelected: true)
+                    cell.dayLabel.textColor = .white
                     
                     let tappedDay = Int(cell.dayLabel.text!)!
                     setSportsOfTheDay(day: tappedDay)
@@ -374,6 +385,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
            if collectionView == calendarCollectionView{
                if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
                    cell.selectDay(isSelected: false)
+                cell.dayLabel.textColor = .black
 
                }
            }

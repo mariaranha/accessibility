@@ -131,6 +131,22 @@ final class CardViewDynamic: UIView {
         
         layoutIfNeeded()
     }
+    @IBAction func firstCountryTapped(_ sender: Any) {
+        firstCountryButton.isAccessibilityElement = true
+        if isFirstCountrySelected == false{
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("You throbbed at Brazil", comment: ""))
+        } else {
+            firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at Brazil", comment: ""))
+        }
+    }
+    @IBAction func secondCountryTapped(_ sender: Any) {
+         secondCountryButton.isAccessibilityElement = true
+          if isSecondCountrySelected == false{
+               firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("You throbbed at China", comment: ""))
+           } else {
+               firstCountryButton?.accessibilityHint = String(format: NSLocalizedString("Double tap to throb at China", comment: ""))
+        }
+    }
 }
 
 

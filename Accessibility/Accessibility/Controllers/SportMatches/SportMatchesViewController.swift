@@ -244,6 +244,8 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
             selectedCard = card
         }
         
+//        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged,
+//        argument: nil)
         performSegue(withIdentifier: "cardDetail", sender: nil)
     
     }
