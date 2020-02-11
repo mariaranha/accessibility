@@ -26,6 +26,12 @@ class CollectionViewCell: UICollectionViewCell {
         
         self.sportImage.image = sportImage
         self.sportNameLabel.text = sport.capitalized
+        self.contentView.isAccessibilityElement = true
+        let sportAccessibilityLabel = String(format:  NSLocalizedString("Sport: %@",
+                                                                       comment: "Sport name"), sport)
+        self.contentView.accessibilityLabel = sportAccessibilityLabel
+        self.contentView.accessibilityHint = NSLocalizedString("Double tap to access this sport games",
+                                                               comment: "Select the sport card")
     }
     
     func addConstraints(){

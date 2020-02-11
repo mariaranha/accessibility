@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(false)
         
         self.monthDay = getMonthDay()
-        
         self.collectionViewLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         self.collectionViewLayout.minimumLineSpacing = 10
         

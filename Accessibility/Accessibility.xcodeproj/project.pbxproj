@@ -94,7 +94,7 @@
 		2FD82A8323E85A7500A4CEA9 /* DisciplinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesTableViewController.swift; sourceTree = "<group>"; };
 		2FD82A8523E8854800A4CEA9 /* SubcategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubcategoriesTableViewCell.swift; path = "Accessibility/Controllers/All Sports/SubcategoriesTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		9C52CF8123E9C15E00A3853E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		9CA4C17023E31CE30033BAB5 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA4C17023E31CE30033BAB5 /* Palpite Olímpico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Palpite Olímpico.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4C17323E31CE30033BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17523E31CE30033BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9CA4C17723E31CE30033BAB5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		9CA4C17123E31CE30033BAB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CA4C17023E31CE30033BAB5 /* Accessibility.app */,
+				9CA4C17023E31CE30033BAB5 /* Palpite Olímpico.app */,
 				2F40FB9423E33AF500A1DACB /* AccessibilityTests.xctest */,
 			);
 			name = Products;
@@ -361,7 +361,7 @@
 			);
 			name = Accessibility;
 			productName = Accessibility;
-			productReference = 9CA4C17023E31CE30033BAB5 /* Accessibility.app */;
+			productReference = 9CA4C17023E31CE30033BAB5 /* Palpite Olímpico.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -687,7 +687,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marina.Accessibility;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Palpite Olímpico";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -705,7 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marina.Accessibility;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Palpite Olímpico";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
