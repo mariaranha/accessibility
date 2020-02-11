@@ -133,16 +133,16 @@ class SportMatchesPresenter {
             break
         }
     }
-
 }
 
-
 //    func formatCards(_ models: [CardModel]) -> [CardView.ViewModel] {
-//        var viewModels: [Card.ViewModel] = []
+//
+//        var viewModels: [CardView.ViewModel] = []
+//
 //
 //        for model in models {
 //            viewModels.append(.init(title: model.firstTitle ?? model.secondTitle ?? "",
-//                                    subtitle: T##String,
+//                                    subtitle: String,
 //                                    numberOfPoints: <#T##String#>,
 //                                    firstCountryName: <#T##String#>,
 //                                    secondCountryName: <#T##String#>,
@@ -150,9 +150,9 @@ class SportMatchesPresenter {
 //                                    time: <#T##String#>,
 //                                    cornerImage: <#T##UIImage#>,
 //                                    firstCountryFlag: <#T##UIImage#>,
-//                                    secondCountryFlag: <#T##UIImage#>)
+//                                    secondCountryFlag: <#T##UIImage#>))
 //        }
-        
+//    }
         
 
 
