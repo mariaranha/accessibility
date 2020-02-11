@@ -12,7 +12,6 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var cardDetailTableView: UITableView!
     
-    
     //Card infos
     var cardTitle: String = ""
     var subtitle: String = ""
