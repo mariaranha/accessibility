@@ -39,3 +39,7 @@
 "Match %@. %@. %@ %@ at %@. Undefined countries" = "Match %@. %@. %@ %@ at %@. Undefined countries";
 "Match ended. %@. %@. %@. %@ versus %@." = "Match ended. %@. %@. %@. %@ versus %@.";
 "Match. %@. %@. %@. Undefinied countries" = "Match. %@. %@. %@. Undefinied countries";
+"Country flag %@" = "Country flag %@";
+"Country name: %@" = "Country name: %@";
+"Result: %@" = "Result %@";
+"Result" = "Result";

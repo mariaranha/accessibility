@@ -136,7 +136,7 @@ extension CardDetailViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 1 {
             guard let cell = cardDetailTableView.dequeueReusableCell(withIdentifier: "resultCell") as? ResultTableViewCell else { return UITableViewCell() }
 
-            cell.title.text = "RESULTADO"
+            cell.title.text = NSLocalizedString("Result", comment: "Game result label")
             return cell
             
         //RANKING CELL

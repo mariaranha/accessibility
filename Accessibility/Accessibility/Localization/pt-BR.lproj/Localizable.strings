@@ -40,3 +40,7 @@
 "Match ended. %@. %@. %@. %@ versus %@." = "Partida encerrada. %@. %@. %@. %@ versus %@.";
 "Match ended. %@. %@. %@. %@ versus %@. Select the country you want to throb" = "Partida encerrada. %@. %@. %@. %@ versus %@. Selecione os países que deseja palpitar";
 "Match. %@. %@. %@. Undefinied countries" = "Partida. %@. %@. %@. Países indefinidos";
+"Country flag %@" = "Bandeira do país %@";
+"Country name: %@" = "Nome do país: %@";
+"Result: %@" = "Resultado: %@";
+"Result" = "Resultado";
