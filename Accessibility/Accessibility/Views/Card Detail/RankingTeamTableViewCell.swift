@@ -22,23 +22,23 @@ class RankingTeamTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-                flag1View.isAccessibilityElement = true
-        flag1View.accessibilityLabel = NSLocalizedString ("Bandeira do país \(countryName1.text ?? "País")", comment: "Accessibility Label: Bandeira do páis")
+        flag1View.isAccessibilityElement = true
+        flag1View.accessibilityLabel = String(format: NSLocalizedString ("Country flag %@", comment: "Accessibility Label: Country flag"), countryName1.text ?? "país")
         
         countryName1.isAccessibilityElement = true
-        countryName1.accessibilityLabel = NSLocalizedString ("Nome do país \(countryName1.text ?? "País")", comment: "Accessibility Label: Nome do país")
+        countryName1.accessibilityLabel = String(format: NSLocalizedString ("Country name: %@", comment: "Accessibility Label: Country name"), countryName1.text ?? "País")
         
         flag2View.isAccessibilityElement = true
-        flag2View.accessibilityLabel = NSLocalizedString ("Bandeira do país \(countryName2.text ?? "País")", comment: "Accessibility Label: Bandeira do páis")
+        flag2View.accessibilityLabel = String(format: NSLocalizedString ("Country flag %@", comment: "Accessibility Label: Country flag"), countryName2.text ?? "país")
         
         countryName2.isAccessibilityElement = true
-        countryName2.accessibilityLabel = NSLocalizedString ("Nome do país \(countryName2.text ?? "País")", comment: "Accessibility Label: Nome do país")
+        countryName2.accessibilityLabel = String(format: NSLocalizedString ("Country name: %@", comment: "Accessibility Label: Country name"), countryName2.text ?? "País")
         
         gameTitle.isAccessibilityElement = true
-        gameTitle.accessibilityLabel = NSLocalizedString ("Tipo de partida \(gameTitle.text ?? "País")", comment: "Accessibility Label: Tipo de partida")
+        gameTitle.accessibilityLabel = String(format: NSLocalizedString("Sport %@", comment: "Accessibility Label: Tipo de partida"), gameTitle.text ?? "Title")
         
         result.isAccessibilityElement = true
-        result.accessibilityLabel = NSLocalizedString ("Resultado do jogo \(result.text ?? "País")", comment: "Accessibility Label: Placar resultado da modalidade")
+        result.accessibilityLabel = String(format: NSLocalizedString("Result %@", comment: "Accessibility Label: Sport match result"), result.text ?? "")
     }
 
 }
