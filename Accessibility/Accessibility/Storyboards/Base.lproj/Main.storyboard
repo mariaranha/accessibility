@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUt-nP-cKH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -165,7 +165,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-AE-3a6">
                                 <rect key="frame" x="0.0" y="238" width="414" height="575"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="96k-Ll-yFV">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="4" id="96k-Ll-yFV">
                                     <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -179,37 +179,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="132" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QeG-xL-OoE">
-                                                    <rect key="frame" x="30" y="25" width="72" height="90"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="soccer-icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWM-jW-PHb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="64.5"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Atletismo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
-                                                            <rect key="frame" x="0.0" y="69.5" width="72" height="20.5"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" image="soccer-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nWM-jW-PHb">
+                                                    <rect key="frame" x="37" y="25" width="58" height="64.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" text="Atletismo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGB-S1-ADf">
+                                                    <rect key="frame" x="2.5" y="100" width="127" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="127" id="G0R-nW-Rid"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="QeG-xL-OoE" secondAttribute="trailing" constant="30" id="BuL-Sg-91l"/>
-                                                <constraint firstItem="QeG-xL-OoE" firstAttribute="top" relation="lessThanOrEqual" secondItem="4N8-5g-n7l" secondAttribute="top" constant="25" id="CjZ-XH-2lX"/>
-                                                <constraint firstItem="QeG-xL-OoE" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="30" id="ETo-kC-Qpi"/>
-                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="QeG-xL-OoE" secondAttribute="bottom" constant="25" id="fih-UI-9gz"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nWM-jW-PHb" secondAttribute="trailing" constant="37" id="Fot-l4-IZm"/>
+                                                <constraint firstItem="fGB-S1-ADf" firstAttribute="top" secondItem="nWM-jW-PHb" secondAttribute="bottom" constant="10.5" id="HDY-Qq-9yf"/>
+                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="centerX" secondItem="4N8-5g-n7l" secondAttribute="centerX" id="QDZ-SX-jg1"/>
+                                                <constraint firstItem="fGB-S1-ADf" firstAttribute="centerX" secondItem="4N8-5g-n7l" secondAttribute="centerX" id="Rfi-b3-KhR"/>
+                                                <constraint firstAttribute="trailing" secondItem="nWM-jW-PHb" secondAttribute="trailing" constant="37" id="Tqs-sp-3Qj"/>
+                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="37" id="nSl-tg-JcX"/>
+                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="top" secondItem="4N8-5g-n7l" secondAttribute="top" constant="25" id="oqk-DI-HCx"/>
+                                                <constraint firstItem="nWM-jW-PHb" firstAttribute="leading" secondItem="4N8-5g-n7l" secondAttribute="leading" constant="37" id="vst-cT-Gf9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="132" height="140"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="imageLeading" destination="vst-cT-Gf9" id="fX9-gq-4Tm"/>
+                                            <outlet property="imageLeadingGreater" destination="nSl-tg-JcX" id="4Vt-JG-S2f"/>
+                                            <outlet property="imageTrailing" destination="Tqs-sp-3Qj" id="mna-iO-stM"/>
+                                            <outlet property="imageTrailingGreater" destination="Fot-l4-IZm" id="nMJ-F8-KKd"/>
+                                            <outlet property="labelWidth" destination="G0R-nW-Rid" id="F7L-zD-tdd"/>
                                             <outlet property="sportImage" destination="nWM-jW-PHb" id="ZR8-KG-Ey2"/>
                                             <outlet property="sportNameLabel" destination="fGB-S1-ADf" id="1I6-gW-QuW"/>
                                         </connections>
@@ -682,6 +689,6 @@
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xxg-hc-x8B"/>
+        <segue reference="atO-4Q-ymz"/>
     </inferredMetricsTieBreakers>
 </document>
