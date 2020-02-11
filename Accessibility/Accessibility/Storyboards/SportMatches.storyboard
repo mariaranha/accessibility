@@ -57,12 +57,16 @@
                                                 <constraint firstAttribute="trailing" secondItem="8p6-gL-R7y" secondAttribute="trailing" constant="16" id="hOM-TD-0rx"/>
                                                 <constraint firstItem="8p6-gL-R7y" firstAttribute="leading" secondItem="R3W-Om-Yrd" secondAttribute="leading" constant="16" id="oA0-gs-Ie5"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cardView" destination="8p6-gL-R7y" id="Yl2-Vn-4h1"/>
                                             <outlet property="contentView" destination="R3W-Om-Yrd" id="eP8-10-BRH"/>
-                                            <segue destination="Tkx-Ek-2qd" kind="presentation" id="Jnc-aA-w9K"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cardCellDynamic" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCellDynamic" id="xYR-o4-aXe" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
@@ -108,7 +112,6 @@
                                         <connections>
                                             <outlet property="cardView" destination="0Nn-r2-P8q" id="zZB-hM-uxv"/>
                                             <outlet property="cardViewDynamic" destination="0Nn-r2-P8q" id="sQP-78-kz4"/>
-                                            <segue destination="Tkx-Ek-2qd" kind="presentation" id="thZ-u7-xTa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,6 +136,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="matchesTableView" destination="4A7-Hy-0sz" id="pwm-hJ-QKA"/>
+                        <segue destination="Tkx-Ek-2qd" kind="presentation" identifier="cardDetail" id="5jH-v1-ldw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQG-T1-tie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,7 +146,7 @@
         <!--Card Detail View Controller-->
         <scene sceneID="YC7-Bx-yJs">
             <objects>
-                <viewController id="Tkx-Ek-2qd" customClass="CardDetailViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cardDetailVC" id="Tkx-Ek-2qd" customClass="CardDetailViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Srx-0r-nmR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,48 +155,54 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="07r-d2-v3z">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="16.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="07r-d2-v3z" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="07r-d2-v3z" id="4PY-tx-kc8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSJ-Ng-UXU" customClass="CardView" customModule="Accessibility" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="382" height="0.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="TSJ-Ng-UXU" secondAttribute="trailing" constant="16" id="8G8-dx-dod"/>
-                                                <constraint firstAttribute="bottom" secondItem="TSJ-Ng-UXU" secondAttribute="bottom" constant="8" id="J96-Ey-uyw"/>
-                                                <constraint firstItem="TSJ-Ng-UXU" firstAttribute="leading" secondItem="4PY-tx-kc8" secondAttribute="leading" constant="16" id="mS2-Fb-uQi"/>
-                                                <constraint firstItem="TSJ-Ng-UXU" firstAttribute="top" secondItem="4PY-tx-kc8" secondAttribute="top" constant="8" id="mcI-co-h1z"/>
+                                                <constraint firstAttribute="trailing" secondItem="TSJ-Ng-UXU" secondAttribute="trailing" id="8G8-dx-dod"/>
+                                                <constraint firstAttribute="bottom" secondItem="TSJ-Ng-UXU" secondAttribute="bottom" id="J96-Ey-uyw"/>
+                                                <constraint firstItem="TSJ-Ng-UXU" firstAttribute="leading" secondItem="4PY-tx-kc8" secondAttribute="leading" id="mS2-Fb-uQi"/>
+                                                <constraint firstItem="TSJ-Ng-UXU" firstAttribute="top" secondItem="4PY-tx-kc8" secondAttribute="top" id="mcI-co-h1z"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardView" destination="TSJ-Ng-UXU" id="8cC-KY-eic"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCellDynamic" id="Els-q5-cec">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="16.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCellDynamic" id="Els-q5-cec" customClass="CardTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Els-q5-cec" id="UKF-wl-GAQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="16.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bza-mE-awj" customClass="CardViewDynamic" customModule="Accessibility" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="382" height="0.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Bza-mE-awj" secondAttribute="trailing" constant="16" id="PgR-qo-wNN"/>
-                                                <constraint firstItem="Bza-mE-awj" firstAttribute="top" secondItem="UKF-wl-GAQ" secondAttribute="top" constant="8" id="QLh-jO-cXs"/>
-                                                <constraint firstItem="Bza-mE-awj" firstAttribute="leading" secondItem="UKF-wl-GAQ" secondAttribute="leading" constant="16" id="YMe-nl-JOP"/>
-                                                <constraint firstAttribute="bottom" secondItem="Bza-mE-awj" secondAttribute="bottom" constant="8" id="jFU-Wf-lHB"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bza-mE-awj" secondAttribute="trailing" id="PgR-qo-wNN"/>
+                                                <constraint firstItem="Bza-mE-awj" firstAttribute="top" secondItem="UKF-wl-GAQ" secondAttribute="top" id="QLh-jO-cXs"/>
+                                                <constraint firstItem="Bza-mE-awj" firstAttribute="leading" secondItem="UKF-wl-GAQ" secondAttribute="leading" id="YMe-nl-JOP"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bza-mE-awj" secondAttribute="bottom" id="jFU-Wf-lHB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardViewDynamic" destination="Bza-mE-awj" id="qXh-FS-Utw"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NH6-ao-qtA">
-                                        <rect key="frame" x="0.0" y="61" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" id="NH6-ao-qtA" customClass="ResultTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NH6-ao-qtA" id="FqT-lx-hbH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -211,9 +221,12 @@
                                             <constraint firstItem="ukz-39-qVi" firstAttribute="leading" secondItem="NH6-ao-qtA" secondAttribute="leading" constant="20" id="Z7v-p3-p8z"/>
                                             <constraint firstAttribute="bottom" secondItem="ukz-39-qVi" secondAttribute="bottom" constant="16" id="aVz-ed-mH5"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="title" destination="ukz-39-qVi" id="kpq-IW-vJq"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTeamCell" rowHeight="154" id="n5i-um-7zj" customClass="RankingTeamTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="104.5" width="414" height="154"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="rankingTeamCell" rowHeight="154" id="n5i-um-7zj" customClass="RankingTeamTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158.5" width="414" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n5i-um-7zj" id="Ubd-Qa-TLF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
@@ -226,13 +239,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-Bt-Xwe">
-                                                    <rect key="frame" x="120" y="81" width="55" height="33"/>
+                                                    <rect key="frame" x="125" y="81" width="50" height="33"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-B1-lUT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <bool key="isElement" value="YES"/>
                                                             </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -243,7 +261,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="TAL-B1-lUT" secondAttribute="trailing" id="1GE-CI-ekn"/>
                                                         <constraint firstItem="TAL-B1-lUT" firstAttribute="top" secondItem="H3g-Bt-Xwe" secondAttribute="top" id="980-89-Wlu"/>
                                                         <constraint firstAttribute="bottom" secondItem="TAL-B1-lUT" secondAttribute="bottom" id="Bpl-X1-MXM"/>
-                                                        <constraint firstAttribute="width" constant="55" id="XVA-VA-Tu3"/>
+                                                        <constraint firstAttribute="width" constant="50" id="XVA-VA-Tu3"/>
                                                         <constraint firstItem="TAL-B1-lUT" firstAttribute="leading" secondItem="H3g-Bt-Xwe" secondAttribute="leading" id="con-LA-IOw"/>
                                                         <constraint firstAttribute="height" constant="33" id="p2X-aH-Fwq"/>
                                                     </constraints>
@@ -269,25 +287,30 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SH-xd-qSj">
-                                                    <rect key="frame" x="147.5" y="130" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="150" y="130" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h87-jf-jRG">
-                                                    <rect key="frame" x="266.5" y="130" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="264" y="130" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-P2-A6C">
-                                                    <rect key="frame" x="239" y="81" width="55" height="33"/>
+                                                    <rect key="frame" x="239" y="81" width="50" height="33"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-zE-RCd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <bool key="isElement" value="YES"/>
                                                             </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -295,7 +318,7 @@
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="1KZ-KQ-Xvh"/>
+                                                        <constraint firstAttribute="width" constant="50" id="1KZ-KQ-Xvh"/>
                                                         <constraint firstAttribute="bottom" secondItem="k9F-zE-RCd" secondAttribute="bottom" id="K4d-Vg-gWc"/>
                                                         <constraint firstAttribute="trailing" secondItem="k9F-zE-RCd" secondAttribute="trailing" id="Szl-HC-vpt"/>
                                                         <constraint firstItem="k9F-zE-RCd" firstAttribute="top" secondItem="lDJ-P2-A6C" secondAttribute="top" id="f3M-qW-NP5"/>
@@ -385,7 +408,4 @@
             <point key="canvasLocation" x="1966.6666666666667" y="-257.14285714285711"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Jnc-aA-w9K"/>
-    </inferredMetricsTieBreakers>
 </document>

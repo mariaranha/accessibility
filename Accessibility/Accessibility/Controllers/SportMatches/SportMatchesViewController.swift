@@ -17,6 +17,7 @@ class SportMatchesViewController: UIViewController {
     var discipline: Discipline!
     var matchDay: Int!
     var dayOnly: Bool = true
+    
     //Navigation bar title - CHANGE
     var sportTitle: String = "Boxe"
     
@@ -29,6 +30,10 @@ class SportMatchesViewController: UIViewController {
     
     //Sport Matches Presenter
     private let presenter = SportMatchesPresenter()
+    
+    //Selected card info
+    var selectedCard: CardView.ViewModel!
+    var selectedDynamicCard: CardViewDynamic.ViewModel!
     
     var emptyFlag = UIImage()
 
@@ -51,13 +56,13 @@ class SportMatchesViewController: UIViewController {
         
         if dayOnly {
             
-             let sportsNumber: Int = sportsOfTheDay.count
+            let sportsNumber: Int = sportsOfTheDay.count
             
             for i in 0...sportsNumber-1 {
             
                 cardsDynamicViewModel = presenter.formatCardsDynamic(title: sportsOfTheDay[i].name,
                                                                      subtitle: sportsOfTheDay[i].sport,
-                                                                     numberOfPoints: "-",
+                                                                     numberOfPoints: "–",
                                                                      firstCountryName: "BRA",
                                                                      secondCountryName: "CHN",
                                                                      date: date,
@@ -65,9 +70,9 @@ class SportMatchesViewController: UIViewController {
                 
                 cardsViewModel = presenter.formatCards(title: sportsOfTheDay[i].name,
                                                        subtitle: sportsOfTheDay[i].sport,
-                                                       numberOfPoints: "-",
+                                                       numberOfPoints: "–",
                                                        firstCountryName: "BRA",
-                                                       secondCountryName: "USA",
+                                                       secondCountryName: "CHN",
                                                        day: String(self.matchDay),
                                                        mounth: returnMounth(day: self.matchDay),
                                                        time: "12:00",
@@ -82,31 +87,27 @@ class SportMatchesViewController: UIViewController {
                     date = "\(String(day)) \(returnMounth(day: day)) 12:30"
                     
                 cardsDynamicViewModel = presenter.formatCardsDynamic(title: self.discipline.name,
-                                                                         subtitle: self.discipline.sport,
-                                                                         numberOfPoints: "-",
-                                                                         firstCountryName: "BRA",
-                                                                         secondCountryName: "CHN",
-                                                                         date: date,
-                                                                         viewModelArray: cardsDynamicViewModel)
+                                                                     subtitle: self.discipline.sport,
+                                                                     numberOfPoints: "–",
+                                                                     firstCountryName: "BRA",
+                                                                     secondCountryName: "CHN",
+                                                                     date: date,
+                                                                     viewModelArray: cardsDynamicViewModel)
                     
-                    cardsViewModel = presenter.formatCards(title: self.discipline.name,
-                                                           subtitle: self.discipline.sport,
-                                                           numberOfPoints: "-",
-                                                           firstCountryName: "BRA",
-                                                           secondCountryName: "USA",
-                                                           day: String(day),
-                                                           mounth: returnMounth(day: day),
-                                                           time: "12:00",
-                                                           index: 1,
-                                                           viewModelArray: cardsViewModel)
+                cardsViewModel = presenter.formatCards(title: self.discipline.name,
+                                                       subtitle: self.discipline.sport,
+                                                       numberOfPoints: "–",
+                                                       firstCountryName: "BRA",
+                                                       secondCountryName: "CHN",
+                                                       day: String(day),
+                                                       mounth: returnMounth(day: day),
+                                                       time: "12:00",
+                                                       index: 1,
+                                                       viewModelArray: cardsViewModel)
                     
                     
                 }
-            
         }
-        
-        
-        
         
         let nibDynamic = UINib.init(nibName: "CardViewDynamic", bundle: nil)
         self.matchesTableView.register(nibDynamic, forCellReuseIdentifier: "cardViewDynamic")
@@ -169,6 +170,37 @@ class SportMatchesViewController: UIViewController {
             return "JUN"
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "cardDetail" {
+            let cd = segue.destination as? CardDetailViewController
+
+            if isLargeFont {
+                cd?.cardTitle = selectedDynamicCard.title
+                cd?.subtitle = selectedDynamicCard.subtitle
+                cd?.numberOfPoints = selectedDynamicCard.numberOfPoints
+                cd?.date = selectedDynamicCard.date
+                cd?.firstCountryName = selectedDynamicCard.firstCountryName
+                cd?.secondCountryName = selectedDynamicCard.secondCountryName
+                cd?.firstCountryFlag = selectedDynamicCard.firstCountryFlag
+                cd?.secondCountryFlag = selectedDynamicCard.secondCountryFlag
+            } else {
+                cd?.cardTitle = selectedCard.title
+                cd?.subtitle = selectedCard.subtitle
+                cd?.numberOfPoints = selectedCard.numberOfPoints
+                cd?.day = selectedCard.day
+                cd?.month = selectedCard.mounth
+                cd?.time = selectedCard.time
+                cd?.cornerImage = selectedCard.cornerImage
+                cd?.firstCountryName = selectedCard.firstCountryName
+                cd?.secondCountryName = selectedCard.secondCountryName
+                cd?.firstCountryFlag = selectedCard.firstCountryFlag
+                cd?.secondCountryFlag = selectedCard.secondCountryFlag
+            }
+
+        }
+    }
 }
 
 
@@ -198,5 +230,19 @@ extension SportMatchesViewController: UITableViewDelegate, UITableViewDataSource
             cell.configure(with: viewModel)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if isLargeFont {
+            let dynamicCard = cardsDynamicViewModel[indexPath.row]
+            selectedDynamicCard = dynamicCard
+        } else {
+            let card = cardsViewModel[indexPath.row]
+            selectedCard = card
+        }
+        
+        performSegue(withIdentifier: "cardDetail", sender: nil)
+    
     }
 }
