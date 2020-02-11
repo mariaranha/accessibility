@@ -37,3 +37,6 @@
 "You throbbed at %@" = "Você palpitou em %@";
 "Double tap to throb at %@" = "Toque duas vezes para palpitar em %@";
 "Match %@. %@. %@ %@ at %@. Undefined countries" = "Partida %@, %@, dia %@ de %@ às %@. Países não definidos";
+"Match ended. %@. %@. %@. %@ versus %@." = "Partida encerrada. %@. %@. %@. %@ versus %@.";
+"Match ended. %@. %@. %@. %@ versus %@. Select the country you want to throb" = "Partida encerrada. %@. %@. %@. %@ versus %@. Selecione os países que deseja palpitar";
+"Match. %@. %@. %@. Undefinied countries" = "Partida. %@. %@. %@. Países indefinidos";

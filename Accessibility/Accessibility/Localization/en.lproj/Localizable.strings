@@ -37,3 +37,5 @@
 "You throbbed at %@" = "You throbbed at %@";
 "Double tap to throb at %@" = "Double tap to throb at %@";
 "Match %@. %@. %@ %@ at %@. Undefined countries" = "Match %@. %@. %@ %@ at %@. Undefined countries";
+"Match ended. %@. %@. %@. %@ versus %@." = "Match ended. %@. %@. %@. %@ versus %@.";
+"Match. %@. %@. %@. Undefinied countries" = "Match. %@. %@. %@. Undefinied countries";

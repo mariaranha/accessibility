@@ -115,22 +115,23 @@ extension CardTableViewCell {
         firstButton?.isAccessibilityElement = true
         secondButton?.isAccessibilityElement = true
         
-        var cardAccesInfo = ""
+        var cardAccessInfo = ""
         
         if points != "" && points != "–" && points != nil {
-            cardAccesInfo = NSLocalizedString("Partida encerrada \(title ?? ""), \(subtitle ?? ""), dia \(date ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Você fez \(points ?? "") pontos", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países, pontuação")
+            
+            cardAccessInfo = String(format: NSLocalizedString("Match ended. %@. %@. %@. %@ versus %@.", comment: ""), title ?? "", subtitle ?? "", date ?? "", firstCountry ?? "", secondCountry ?? "")
         } else {
             if firstCountry != "???" {
-                cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(date ?? ""). \(firstCountry ?? "") versus \(secondCountry ?? ""). Selecione um país para palpitar", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
+                cardAccessInfo = String(format: NSLocalizedString("Match ended. %@. %@. %@. %@ versus %@. Select the country you want to throb", comment: "Match card with informations: Title, subtitle, date and countries"), title ?? "", subtitle ?? "", date ?? "", firstCountry ?? "", secondCountry ?? "")
                 
                 firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(firstCountry ?? "País")", comment: "")
                 secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em \(secondCountry ?? "País")", comment: "")
             } else {
-                cardAccesInfo = NSLocalizedString("Partida \(title ?? ""), \(subtitle ?? ""), dia \(date ?? ""). Países não definidos", comment: "Card da partida com todas as informações: Título, subtítulo, dia, mês, hora, países")
+                cardAccessInfo = String(format: NSLocalizedString("Match. %@. %@. %@. Undefinied countries", comment: ""),title ?? "", subtitle ?? "", date ?? "" )
             }
         }
     
-        cardViewDynamic?.accessibilityLabel = cardAccesInfo
+        cardViewDynamic?.accessibilityLabel = cardAccessInfo
         
         accessibilityElements = [cardViewDynamic as Any, firstButton as Any, secondButton as Any]
     }
