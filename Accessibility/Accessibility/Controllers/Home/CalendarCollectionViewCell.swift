@@ -20,19 +20,28 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(weekDay: String, day: String) {
-        
-        self.dayLabel.isAccessibilityElement = true
         let mounth = returnMounth(day: day)
         let weekdayName = getWeekdayName(weekday: day)
-        let accessibilityDayLabel = String(format: NSLocalizedString("%@ %@ %@",
-                                                                     comment: "Date of the day"), weekdayName, mounth, day)
-        self.dayLabel.accessibilityLabel = accessibilityDayLabel
-        self.dayLabel.accessibilityHint = NSLocalizedString ("Double tap to select", comment: "Select week day")
+        
+//        if UIAccessibility.isVoiceOverRunning {
+//            dayLabel.isAccessibilityElement = false
+//        } else {
+            self.dayLabel.isAccessibilityElement = true
+            let accessibilityDayLabel = String(format: NSLocalizedString("%@ %@ %@",
+                                                                         comment: "Date of the day"), weekdayName, mounth, day)
+            self.dayLabel.accessibilityLabel = accessibilityDayLabel
+            self.dayLabel.accessibilityHint = NSLocalizedString ("Double tap to select", comment: "Select week day")
+//        }
 
         self.weekDayLabel.text = weekDay
         self.dayLabel.text = day
         
     }
+
+//    func voiceOver() {
+//        self.dayLabel.isAccessibilityElement = true
+//        self.dayLabel.accessibilityHint = NSLocalizedString ("Double tap to select", comment: "Select week day")
+//    }
     
     private func returnMounth(day: String) -> String {
         let august: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]

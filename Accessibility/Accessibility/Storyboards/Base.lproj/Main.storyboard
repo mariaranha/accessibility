@@ -64,7 +64,7 @@
         <!--Esportes do Dia-->
         <scene sceneID="SZX-FT-vyz">
             <objects>
-                <viewController id="419-8s-BFe" customClass="HomeViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="419-8s-BFe" customClass="HomeViewController" customModule="Palpite_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9g-6e-cdl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCellReuseIdentifier" id="Rdu-eP-ZbK" customClass="CalendarCollectionViewCell" customModule="Accessibility" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCellReuseIdentifier" id="Rdu-eP-ZbK" customClass="CalendarCollectionViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="8" width="58" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rsc-tw-ed7">
@@ -172,7 +172,7 @@
                                     <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Accessibility" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellReuseIdentifier" id="FCl-al-C4s" customClass="CollectionViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="132" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4N8-5g-n7l">
@@ -229,6 +229,9 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk7-4j-dyZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="90"/>
+                                <connections>
+                                    <action selector="selectDay:" destination="419-8s-BFe" eventType="touchUpInside" id="xeC-Rk-ufL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -251,7 +254,7 @@
                     <connections>
                         <outlet property="calendarButton" destination="tk7-4j-dyZ" id="OtR-k9-oZk"/>
                         <outlet property="calendarCollectionView" destination="uwZ-0F-t5G" id="cA4-Xb-RBO"/>
-                        <outlet property="calendarStack" destination="RT6-Pm-eVx" id="5qY-YG-VvS"/>
+                        <outlet property="calendarStack" destination="RT6-Pm-eVx" id="hB3-Lk-fJb"/>
                         <outlet property="calendarStackHeight" destination="i0R-zX-IQQ" id="d9p-qU-Trr"/>
                         <outlet property="collectionView" destination="HEI-AE-3a6" id="TRH-CB-2Gz"/>
                         <outlet property="collectionViewLayout" destination="96k-Ll-yFV" id="gFi-h8-pX9"/>
@@ -266,7 +269,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="Bfx-5E-fHJ">
             <objects>
-                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="EUt-nP-cKH" customClass="TabBarViewController" customModule="Palpite_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="iih-c4-pIE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bBX-f7-Agm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -328,13 +331,13 @@
         <!--Esportes-->
         <scene sceneID="mqd-px-ueO">
             <objects>
-                <tableViewController id="WJR-0f-r5f" customClass="AllSportsTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WJR-0f-r5f" customClass="AllSportsTableViewController" customModule="Palpite_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NBV-Bd-VCb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sportCell" id="TiH-7r-OD0" customClass="AllSportsTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sportCell" id="TiH-7r-OD0" customClass="AllSportsTableViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TiH-7r-OD0" id="BqA-bv-7qt">
@@ -389,21 +392,21 @@
         <!--Subcategories-->
         <scene sceneID="TVQ-bd-FHb">
             <objects>
-                <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DisciplineStoryboard" id="9wJ-eD-RgC" customClass="DisciplinesTableViewController" customModule="Palpite_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sgy-Ur-aLL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Accessibility" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -487,13 +490,13 @@
         <!--Result2 Table View Controller-->
         <scene sceneID="6gq-ER-7XF">
             <objects>
-                <tableViewController id="IZM-QH-EII" customClass="Result2TableViewController" customModule="Accessibility" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IZM-QH-EII" customClass="Result2TableViewController" customModule="Palpite_Olímpico" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg8-Qm-yHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Card2Cell" id="2We-nE-1i1" customClass="Card2TableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Card2Cell" id="2We-nE-1i1" customClass="Card2TableViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2We-nE-1i1" id="i4U-rC-cbk">
@@ -501,7 +504,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Result2Cell" id="ITW-H3-yjs" customClass="ResultTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Result2Cell" id="ITW-H3-yjs" customClass="ResultTableViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="71.5" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITW-H3-yjs" id="WQ4-Js-bPV">
@@ -527,7 +530,7 @@
                                     <outlet property="title" destination="w1e-MA-gpl" id="Ihu-lu-0aI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTeamCell" rowHeight="154" id="Qdw-th-F2n" customClass="RankingTeamTableViewCell" customModule="Accessibility" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankingTeamCell" rowHeight="154" id="Qdw-th-F2n" customClass="RankingTeamTableViewCell" customModule="Palpite_Olímpico" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="124.5" width="414" height="154"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qdw-th-F2n" id="HLa-FX-cN0">

@@ -86,15 +86,30 @@ class HomeViewController: UIViewController {
         if UIAccessibility.isVoiceOverRunning {
             
             calendarButton.isAccessibilityElement = true
+            calendarStack.isAccessibilityElement = true
+            calendarCollectionView.isAccessibilityElement = false
+            dayLabel.isAccessibilityElement = true
             collectionView.isAccessibilityElement = true
             
-            accessibilityElements = [navigationController?.title as Any, calendarButton as Any, collectionView as Any]
+            calendarButton.accessibilityLabel = NSLocalizedString("Clique duas vezes para selecionar o dia", comment: "Selecionar o dia")
+            accessibilityElements = [calendarButton as Any, dayLabel as Any, collectionView as Any]
             print("Voice over running")
         } else {
             calendarButton.removeFromSuperview()
             print("not using voice over")
         }
     }
+    
+    @IBAction func selectDay(_ sender: Any) {
+        print("selecionar dia")
+        let cell = CalendarCollectionViewCell()
+//        cell.voiceOver()
+        
+        
+        
+        UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged,  argument: cell.dayLabel)
+    }
+    
     
     private func printSportsOfTheDay() {
         
