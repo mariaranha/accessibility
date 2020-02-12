@@ -68,8 +68,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        accessibilityElements = [self.navigationController?.title, calendarStack as Any, collectionView as Any]
     }
     
     override func viewWillAppear(_ animated: Bool) {
