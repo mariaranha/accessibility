@@ -1,13 +1,6 @@
 {
     "discipline": [
         {
-            "name" : "",
-            "sport": "opening",
-            "normal": [24],
-            "medal": [],
-            "is1v1": false
-        },
-        {
             "name": "swimming",
             "sport": "aquatics",
             "normal": [25],

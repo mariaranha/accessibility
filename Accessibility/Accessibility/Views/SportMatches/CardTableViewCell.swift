@@ -115,7 +115,7 @@ class CardTableViewCell: UITableViewCell {
                cardAccessInfo = String(format: NSLocalizedString("Match ended. %@. %@. %@. %@ versus %@.", comment: ""), title ?? "", subtitle ?? "", date ?? "", firstCountry ?? "", secondCountry ?? "")
            } else {
                if firstCountry != "???" {
-                   cardAccessInfo = String(format: NSLocalizedString("Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information", comment: "Match card with informations: Title, subtitle, date and countries"), title ?? "", subtitle ?? "", date ?? "")
+                   cardAccessInfo = String(format: NSLocalizedString("Match %@. %@. %@. Brazil versus China. Select a country to throb or double tap for more information", comment: "Match card with informations: Title, subtitle, date and countries"), title ?? "", subtitle ?? "", date ?? "")
                    
                    firstButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em Brazil", comment: "")
                    secondButton?.accessibilityHint = NSLocalizedString("Clique duas vezes para palpitar em China)", comment: "")

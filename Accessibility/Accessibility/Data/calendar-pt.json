@@ -1,13 +1,6 @@
 {
     "discipline": [
         {
-            "name" : "",
-            "sport": "abertura",
-            "normal": [24],
-            "medal": [],
-            "is1v1": false
-        },
-        {
             "name": "nado",
             "sport": "aquático",
             "normal": [25],
