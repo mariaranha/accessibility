@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Accessibility" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Pitaco_Olímpico" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="K4c-5G-2Ay" id="BUz-uS-wjy"/>
                 <outlet property="cornerImage" destination="Y1g-j1-p7b" id="hxr-x6-ruO"/>
@@ -206,6 +206,7 @@
                     <rect key="frame" x="8" y="105.5" width="66" height="75.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <action selector="firstCountryPressed:" destination="-1" eventType="touchUpInside" id="qHi-fe-Nfu"/>
                         <action selector="firstCountrySelected:" destination="-1" eventType="touchUpInside" id="hl2-sf-0wy"/>
                     </connections>
                 </button>
@@ -213,6 +214,7 @@
                     <rect key="frame" x="120" y="105.5" width="66" height="75.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <action selector="secondCountryPressed:" destination="-1" eventType="touchUpInside" id="Kjh-YM-UrH"/>
                         <action selector="secondCountrySelected:" destination="-1" eventType="touchUpInside" id="9qN-Ln-Puj"/>
                     </connections>
                 </button>
