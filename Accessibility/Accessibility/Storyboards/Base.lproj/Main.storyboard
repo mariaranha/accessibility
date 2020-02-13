@@ -387,14 +387,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subcategoryCell" id="DMw-Mz-4tk" customClass="SubcategoriesTableViewCell" customModule="Pitaco_Olímpico" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMw-Mz-4tk" id="Fjl-k7-PGg">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-Xy-LMU">
-                                            <rect key="frame" x="36" y="27" width="323" height="21.5"/>
+                                            <rect key="frame" x="36" y="27" width="323" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -685,7 +685,7 @@
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="selected" width="35" height="35"/>
-        <image name="soccer-icon" width="49.5" height="68"/>
+        <image name="soccer-icon" width="50" height="68"/>
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
