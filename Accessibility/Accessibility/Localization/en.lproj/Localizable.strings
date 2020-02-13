@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Accessibility
 
@@ -32,14 +32,20 @@
 "Double tap to select" = "Double tap to select";
 "Double tap to access this sport games" = "Double tap to access this sport games";
 "Sport: %@" = "Sport: %@";
-"Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points"  = "Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points";
-"Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb" = "Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb";
-"You throbbed at %@" = "You throbbed at %@";
-"Double tap to throb at %@" = "Double tap to throb at %@";
+"Match ended %@, %@, %@ %@ at %@. Brazil versus China. You did %@ points"  = "Match ended %@, %@, %@ %@ at %@. Brazil versus China. You did %@ points";
+"Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information" = "Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information";
+"Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb" = "Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb";
+"You throbbed at Brazil" = "You throbbed at Brazil";
+"You throbbed at China" = "You throbbed at China";
+"Double tap to throb at Brazil" = "Double tap to throb at Brazil";
+"Double tap to throb at China" = "Double tap to throb at China";
 "Match %@. %@. %@ %@ at %@. Undefined countries" = "Match %@. %@. %@ %@ at %@. Undefined countries";
-"Match ended. %@. %@. %@. %@ versus %@." = "Match ended. %@. %@. %@. %@ versus %@.";
+"Match ended. %@. %@. %@. Brazil versus China." = "Match ended. %@. %@. %@. Brazil versus China.";
 "Match. %@. %@. %@. Undefinied countries" = "Match. %@. %@. %@. Undefinied countries";
 "Country flag %@" = "Country flag %@";
 "Country name: %@" = "Country name: %@";
 "Result: %@" = "Result %@";
 "Result" = "Result";
+"Sports of day %@ double tap to choose another day" = "Sports of day %@ double tap to choose another day";
+"Sport: %@." = "Sport: %@";
+"Double tap to open." = "Double tap to open";

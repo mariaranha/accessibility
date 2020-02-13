@@ -22,7 +22,8 @@ class AllSportsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.cellView.isAccessibilityElement = true
-        self.cellView.accessibilityLabel = "\(sportName.text ?? "Sport") icon. \(sportName.text ?? "Sport"). Button."
+        self.cellView.accessibilityLabel = String(format: NSLocalizedString("Sport: %@.", comment: ""), sportName.text ?? "Sport")
+        self.cellView.accessibilityHint = NSLocalizedString("Double tap to open.", comment: "")
     }
 
 }
