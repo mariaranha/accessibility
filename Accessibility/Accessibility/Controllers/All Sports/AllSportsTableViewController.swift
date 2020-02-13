@@ -93,6 +93,12 @@ class AllSportsTableViewController: UITableViewController {
             }
         }
         
+        if (sport == "beisebol/softbol") {
+            if let icon = UIImage(named: "beisebolsoftbol-icon") {
+                return icon
+            }
+        }
+        
         if let icon = UIImage(named: "\(sport)-icon") {
             return icon
         }
