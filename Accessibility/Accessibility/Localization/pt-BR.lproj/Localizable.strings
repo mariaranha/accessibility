@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Accessibility
 
@@ -32,15 +32,20 @@
 "Double tap to select" = "Toque duas vezes para selecionar";
 "Double tap to access this sport games" = "Toque duas vezes para acessar os jogos desse esporte";
 "Sport: %@" = "Esporte: %@";
-"Match ended %@, %@, %@ %@ at %@. %@ versus %@. You did %@ points" = "Partida encerrada %@, %@, dia %@ de %@ às %@. %@ versus %@. Você fez %@ pontos";
-"Match %@. %@. %@ %@ at %@. %@ versus %@. Select a country to throb" = "Partida %@, %@, dia %@ de %@ às %@. %@ versus %@. Selecione um país para palpitar";
-"You throbbed at %@" = "Você palpitou em %@";
-"Double tap to throb at %@" = "Toque duas vezes para palpitar em %@";
+"Match ended %@, %@, %@ %@ at %@. Brazil versus China. You did %@ points" = "Partida encerrada %@, %@, dia %@ de %@ às %@. Brasil versus China. Você fez %@ pontos";
+"Match %@. %@. %@ %@ at %@. Brazil versus China. Select a country to throb or double tap for more information" = "Partida %@, %@, dia %@ de %@ às %@. Brasil versus China. Selecione um país para palpitar ou toque duas vezes para mais informações";
+"You throbbed at Brazil" = "Você palpitou em Brasil";
+"You throbbed at China" = "Você palpitou em China";
+"Double tap to throb at Brazil" = "Toque duas vezes para palpitar em Brasil";
+"Double tap to throb at China" = "Toque duas vezes para palpitar em China";
 "Match %@. %@. %@ %@ at %@. Undefined countries" = "Partida %@, %@, dia %@ de %@ às %@. Países não definidos";
-"Match ended. %@. %@. %@. %@ versus %@." = "Partida encerrada. %@. %@. %@. %@ versus %@.";
-"Match ended. %@. %@. %@. %@ versus %@. Select the country you want to throb" = "Partida encerrada. %@. %@. %@. %@ versus %@. Selecione os países que deseja palpitar";
+"Match ended. %@. %@. %@. Brazil versus China." = "Partida encerrada. %@. %@. %@. Brasil versus China.";
+"Match ended. %@. %@. %@. Brazil versus China. Select the country you want to throb" = "Partida encerrada. %@. %@. %@. Brasil versus China. Selecione os países que deseja palpitar";
 "Match. %@. %@. %@. Undefinied countries" = "Partida. %@. %@. %@. Países indefinidos";
 "Country flag %@" = "Bandeira do país %@";
 "Country name: %@" = "Nome do país: %@";
 "Result: %@" = "Resultado: %@";
 "Result" = "Resultado";
+"Sports of day %@ double tap to choose another day" = "Esportes do dia %@ toque duas vezes para selecionar outro dia";
+"Sport: %@." = "Esporte: %@.";
+"Double tap to open." = "Toque duas vezes para abrir.";
